@@ -22,7 +22,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <div className="relative w-full pb-4">
+    <div className={`relative w-full ${isLeft ? 'pb-6' : 'pb-6 -mt-4'}`}>
       {/* Timeline dot - centered */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
         <div className="w-4 h-4 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-4 border-background shadow-lg" />
