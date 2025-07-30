@@ -15,9 +15,6 @@ export const CVTimeline = () => {
 
       {/* Timeline */}
       <div className="relative">
-        {/* Central timeline line */}
-        <div className="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
-        
         {timelineData.map((entry, index) => (
           <TimelineEntry
             key={index}
