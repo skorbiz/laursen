@@ -61,6 +61,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				tech: {
+					blue: 'hsl(var(--tech-blue))',
+					cyan: 'hsl(var(--tech-cyan))',
+					purple: 'hsl(var(--tech-purple))',
+					green: 'hsl(var(--tech-green))'
+				},
+				timeline: {
+					line: 'hsl(var(--timeline-line))'
 				}
 			},
 			borderRadius: {

@@ -38,6 +38,17 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Robotics theme colors */
+    --tech-blue: 217 91% 60%;
+    --tech-cyan: 189 85% 65%;
+    --tech-purple: 267 57% 50%;
+    --tech-green: 142 76% 36%;
+    --timeline-line: 217 20% 85%;
+    
+    /* Gradients for robotics theme */
+    --gradient-tech: linear-gradient(135deg, hsl(var(--tech-blue)), hsl(var(--tech-cyan)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)/0.3));
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
