@@ -18,5 +18,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/laursen/' // Replace with your GitHub repo name e
+  base: '/laursen/' // Replace with your GitHub repo name
 }));
