@@ -23,12 +23,9 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
 
   return (
     <div className="relative w-full pb-8">
-      {/* Timeline line - centered */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-        <div className="w-4 h-4 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-4 border-background shadow-lg z-10" />
-        {!isLast && (
-          <div className="w-0.5 h-full bg-timeline-line mt-2" />
-        )}
+      {/* Timeline dot - centered */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
+        <div className="w-4 h-4 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-4 border-background shadow-lg" />
       </div>
 
       {/* Content - alternating sides */}
