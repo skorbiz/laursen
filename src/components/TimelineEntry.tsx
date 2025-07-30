@@ -28,9 +28,9 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
         <div className="w-4 h-4 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-4 border-background shadow-lg" />
       </div>
 
-      {/* Content - alternating sides */}
-      <div className={`flex ${isLeft ? 'justify-start pr-8' : 'justify-end pl-8'}`}>
-        <div className={`w-full max-w-md ${isLeft ? 'mr-8' : 'ml-8'}`}>
+      {/* Content - alternating sides with gap from timeline */}
+      <div className={`flex ${isLeft ? 'justify-start pr-16' : 'justify-end pl-16'}`}>
+        <div className={`w-full max-w-md ${isLeft ? 'mr-12' : 'ml-12'}`}>
           <div className="bg-card rounded-lg border shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
             {/* Image - smaller */}
             <div className="h-32 w-full bg-muted overflow-hidden">
