@@ -19,6 +19,7 @@ export const CVTimeline = () => {
           <TimelineEntry
             key={index}
             entry={entry}
+            index={index}
             isLast={index === timelineData.length - 1}
           />
         ))}

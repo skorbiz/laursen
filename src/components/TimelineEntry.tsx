@@ -4,11 +4,12 @@ import { Badge } from "@/components/ui/badge";
 interface TimelineEntryProps {
   entry: TimelineEntryType;
   isLast: boolean;
+  index: number;
 }
 
-export const TimelineEntry = ({ entry, isLast }: TimelineEntryProps) => {
+export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
   const getUnsplashUrl = (photoId: string) => {
-    return `https://images.unsplash.com/${photoId}?w=400&h=300&fit=crop&auto=format`;
+    return `https://images.unsplash.com/${photoId}?w=200&h=150&fit=crop&auto=format`;
   };
 
   const formatDate = () => {
@@ -18,51 +19,55 @@ export const TimelineEntry = ({ entry, isLast }: TimelineEntryProps) => {
     return entry.date;
   };
 
+  const isLeft = index % 2 === 0;
+
   return (
-    <div className="relative flex gap-6 pb-8">
-      {/* Timeline line and dot */}
-      <div className="flex flex-col items-center">
+    <div className="relative w-full pb-8">
+      {/* Timeline line - centered */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <div className="w-4 h-4 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-4 border-background shadow-lg z-10" />
         {!isLast && (
           <div className="w-0.5 h-full bg-timeline-line mt-2" />
         )}
       </div>
 
-      {/* Content */}
-      <div className="flex-1 min-w-0">
-        <div className="bg-card rounded-lg border shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-          {/* Image */}
-          <div className="aspect-video w-full bg-muted overflow-hidden">
-            <img
-              src={getUnsplashUrl(entry.image)}
-              alt={entry.title}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-          
-          {/* Content */}
-          <div className="p-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-              <h3 className="text-xl font-semibold text-foreground">{entry.title}</h3>
-              <span className="text-sm font-medium text-tech-blue bg-tech-blue/10 px-3 py-1 rounded-full">
-                {formatDate()}
-              </span>
+      {/* Content - alternating sides */}
+      <div className={`flex ${isLeft ? 'justify-start pr-8' : 'justify-end pl-8'}`}>
+        <div className={`w-full max-w-md ${isLeft ? 'mr-8' : 'ml-8'}`}>
+          <div className="bg-card rounded-lg border shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+            {/* Image - smaller */}
+            <div className="h-32 w-full bg-muted overflow-hidden">
+              <img
+                src={getUnsplashUrl(entry.image)}
+                alt={entry.title}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
             
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              {entry.text}
-            </p>
-            
-            {/* Tags */}
-            {entry.tags && entry.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {entry.tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary" className="text-xs">
-                    #{tag}
-                  </Badge>
-                ))}
+            {/* Content */}
+            <div className="p-4">
+              <div className="flex flex-col gap-2 mb-3">
+                <h3 className="text-lg font-semibold text-foreground">{entry.title}</h3>
+                <span className="text-sm font-medium text-tech-blue bg-tech-blue/10 px-3 py-1 rounded-full self-start">
+                  {formatDate()}
+                </span>
               </div>
-            )}
+              
+              <p className="text-muted-foreground leading-relaxed mb-3 text-sm">
+                {entry.text}
+              </p>
+              
+              {/* Tags */}
+              {entry.tags && entry.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1">
+                  {entry.tags.map((tag, tagIndex) => (
+                    <Badge key={tagIndex} variant="secondary" className="text-xs">
+                      #{tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
