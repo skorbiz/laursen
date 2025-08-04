@@ -1,6 +1,12 @@
 import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
 import { Badge } from "@/components/ui/badge";
 
+// Import all timeline images
+import robotWallImg from "@/assets/robot-wall.jpg";
+import droneImg from "@/assets/drone.jpg";
+import circuitBoardImg from "@/assets/circuit-board.jpg";
+import codeMonitorImg from "@/assets/code-monitor.jpg";
+
 interface TimelineEntryProps {
   entry: TimelineEntryType;
   isLast: boolean;
@@ -8,8 +14,14 @@ interface TimelineEntryProps {
 }
 
 export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
-  const getUnsplashUrl = (photoId: string) => {
-    return `https://images.unsplash.com/${photoId}?w=200&h=150&fit=crop&auto=format`;
+  const getLocalImage = (imageName: string) => {
+    const imageMap: Record<string, string> = {
+      "robot-wall.jpg": robotWallImg,
+      "drone.jpg": droneImg,
+      "circuit-board.jpg": circuitBoardImg,
+      "code-monitor.jpg": codeMonitorImg,
+    };
+    return imageMap[imageName] || robotWallImg; // fallback to robot-wall if not found
   };
 
   const formatDate = () => {
@@ -38,7 +50,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
             {/* Image - smaller */}
             <div className="h-32 w-full bg-muted overflow-hidden">
               <img
-                src={getUnsplashUrl(entry.image)}
+                src={getLocalImage(entry.image)}
                 alt={entry.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
