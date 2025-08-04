@@ -11,14 +11,14 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "Project - Enabled Robot",
     date: "2023",
-    image: "robot-wall.jpg",
+    image: "manipulator-arm.jpg",
     text: "Had some playtime with our Enabled Robot. Ended up with an aggressive robot tracking a box - but got some hands-on time with a lot of cool things: MoveIT, ROS2, Qualisys motion capture 🤖.",
     tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "motionCapture"]
   },
   {
     title: "Mobile Robot Integration Project",
     date: "2023",
-    image: "drone.jpg",
+    image: "robot-wall.jpg",
     text: "Working as a consultant in the field of robotics. Work mostly evolved around software development in either commercial or research funded projects. It also included various other ad-hoc tasks such as project management, teaching, and customer visits and inspections etc. Notable achievements included landing and executing the largest integration project in the history of the department.",
     tags: ["Consulting", "Integration", "ProjectManagement", "MobileRobots"]
   },
@@ -41,14 +41,14 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "Laser Scanner Analysis Project",
     date: "2020",
-    image: "robot-wall.jpg",
+    image: "laser-scanner.jpg",
     text: "Conducted in-depth analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensor models, analyzed noise patterns, and optimized sensor fusion algorithms. Results improved robot perception accuracy by 25%.",
     tags: ["LaserScanners", "SensorFusion", "Analysis", "Perception", "Optimization"]
   },
   {
     title: "Developer Infrastructure Renewal",
     date: "2019",
-    image: "code-monitor.jpg",
+    image: "devops-pipeline.jpg",
     text: "Led initiative to modernize development infrastructure for robotics software team. Implemented CI/CD pipelines, containerized development environments, and established coding standards. Reduced build times by 60% and improved developer productivity.",
     tags: ["DevOps", "CI/CD", "Docker", "Infrastructure", "Productivity"]
   },
@@ -56,56 +56,56 @@ export const timelineData: TimelineEntry[] = [
     title: "PhD Research - Robotic Assembly",
     date: "2017",
     startDate: "2013",
-    image: "circuit-board.jpg",
+    image: "error-recovery.jpg",
     text: "Conducted research on reversible execution and error recovery in robotic assembly operations. Developed domain-specific languages for robot control and investigated methods for automatic error handling. Published findings in peer-reviewed journals.",
     tags: ["PhD", "Assembly", "ErrorRecovery", "DSL", "Research", "Reversibility"]
   },
   {
     title: "Teaching - Robots in Context",
     date: "2017",
-    image: "robot-wall.jpg",
+    image: "classroom-robotics.jpg",
     text: "Taught introductory robotics course covering kinematic modeling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments using real robot platforms.",
     tags: ["Teaching", "Kinematics", "Control", "PathPlanning", "RANSAC", "Kalman"]
   },
   {
     title: "Swarm Robotics Research",
     date: "2016",
-    image: "drone.jpg",
+    image: "swarm-robots.jpg",
     text: "Visiting researcher focusing on swarm robotics and emergent behavior applications. Developed drivers and algorithms for small mobile robots, investigating collective intelligence and distributed control systems. Conducted experiments with multi-robot coordination.",
     tags: ["SwarmRobotics", "EmergentBehavior", "MultiRobot", "DistributedControl", "Research"]
   },
   {
     title: "Industrial Automation Reuse Study",
     date: "2015",
-    image: "circuit-board.jpg",
+    image: "manufacturing-line.jpg",
     text: "Master's thesis project investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analyzed efficiency improvements in production environments.",
     tags: ["MasterThesis", "Automation", "Reusability", "Manufacturing", "Efficiency"]
   },
   {
     title: "Formula Student Sensor Integration",
     date: "2012",
-    image: "code-monitor.jpg",
+    image: "formula-car.jpg",
     text: "Bachelor's project involving signal analysis and processing for gyroscope, accelerometer, and sensor systems. Implemented embedded C and VHDL solutions for a Formula Student race car, focusing on real-time data processing and control systems.",
     tags: ["BachelorThesis", "Sensors", "EmbeddedC", "VHDL", "RealTime", "Automotive"]
   },
   {
     title: "Domain-Specific Language Development",
     date: "2014",
-    image: "robot-wall.jpg",
+    image: "dsl-programming.jpg",
     text: "Research project developing adaptive action libraries using simulation and domain-specific languages for robotics applications. Created tools for easier robot programming and behavior specification, improving development efficiency for complex robotic tasks.",
     tags: ["DSL", "Simulation", "ActionLibraries", "RobotProgramming", "Tools"]
   },
   {
     title: "Error Recovery System Design",
     date: "2016",
-    image: "circuit-board.jpg",
+    image: "drone.jpg",
     text: "Developed automatic error recovery mechanisms for robot assembly operations using reverse execution techniques. Created systems that could detect failures and automatically backtrack to safe states, significantly improving robotic assembly reliability.",
     tags: ["ErrorRecovery", "ReverseExecution", "Assembly", "Reliability", "Automation"]
   },
   {
     title: "Flexible Manufacturing Research",
     date: "2015",
-    image: "drone.jpg",
+    image: "flexible-manufacturing.jpg",
     text: "Research into software structures for control and monitoring of flexible automation systems. Focused on small batch assembly using robotic manipulators, developing adaptive control systems that could handle varying production requirements.",
     tags: ["FlexibleManufacturing", "SmallBatch", "Manipulators", "AdaptiveControl", "Production"]
   }
