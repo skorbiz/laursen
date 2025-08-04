@@ -1,5 +1,7 @@
 import { timelineData } from "@/data/cv-timeline";
 import { TimelineEntry } from "./TimelineEntry";
+import { Github, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const CVTimeline = () => {
   return (
@@ -10,7 +12,33 @@ export const CVTimeline = () => {
           Robotics Engineer
         </h1>
         <h2 className="text-2xl text-muted-foreground mb-2">Professional Timeline</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-tech-blue to-tech-cyan mx-auto rounded-full"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-tech-blue to-tech-cyan mx-auto rounded-full mb-8"></div>
+        
+        {/* Introduction */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Experienced software developer and robotics engineer with a diverse background, including multi-year
+            research, ad-hoc consultancy, short-term projects, and ongoing maintenance of complex software stacks.
+            Specialized in high-level software for autonomous robots, including navigation, perception, and control.
+            Professionally curious and loves engaging in discussions about ideas and solutions.
+          </p>
+          <p className="text-sm text-muted-foreground/80 mb-6 italic">
+            This timeline represents my introduction into AI-agent based programming, experimenting with Lovable
+            to showcase my professional journey in an interactive format.
+          </p>
+          
+          {/* Social Links */}
+          <div className="flex justify-center gap-4">
+            <Button variant="outline" size="sm" className="flex items-center gap-2">
+              <Github size={16} />
+              GitHub
+            </Button>
+            <Button variant="outline" size="sm" className="flex items-center gap-2">
+              <Linkedin size={16} />
+              LinkedIn
+            </Button>
+          </div>
+        </div>
       </div>
 
       {/* Timeline */}
