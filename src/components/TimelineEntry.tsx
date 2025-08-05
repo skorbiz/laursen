@@ -54,7 +54,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <div className="relative w-full pb-8">
+    <div className="relative w-full pb-3">
       {/* Timeline dot - centered */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
         <div className="w-3 h-3 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-2 border-background shadow-md" />
@@ -64,7 +64,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       <div className={`absolute top-1.5 ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-8 h-0.5 bg-timeline-line z-5`} />
 
       {/* Content - alternating sides with overlap */}
-      <div className={`flex ${isLeft ? 'justify-start pr-12' : 'justify-end pl-12'} ${!isLeft && index > 0 ? '-mt-6' : ''}`}>
+      <div className={`flex ${isLeft ? 'justify-start pr-12' : 'justify-end pl-12'} ${isLeft && index > 0 ? '-mt-8' : ''} ${!isLeft && index > 0 ? '-mt-12' : ''}`}>
         <div className={`w-full max-w-sm ${isLeft ? 'mr-12' : 'ml-12'}`}>
           <div className="bg-card rounded-lg border shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
             {/* Image - compact */}
