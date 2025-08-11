@@ -1,5 +1,6 @@
 import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
 import { Badge } from "@/components/ui/badge";
+import { Briefcase, Code, Users } from 'lucide-react';
 
 // Import all timeline images
 import robotWallImg from "@/assets/robot-wall.jpg";
@@ -51,13 +52,40 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     return entry.date;
   };
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'work': return <Briefcase className="h-3 w-3" />;
+      case 'research': return <Code className="h-3 w-3" />;
+      case 'community': return <Users className="h-3 w-3" />;
+      default: return null;
+    }
+  };
+
+  const getDotColor = (category: string) => {
+    switch (category) {
+      case 'work': return 'bg-blue-500 border-blue-200';
+      case 'research': return 'bg-green-500 border-green-200';
+      case 'community': return 'bg-purple-500 border-purple-200';
+      default: return 'bg-gradient-to-br from-tech-blue to-tech-cyan border-background';
+    }
+  };
+
+  const getCategoryAccent = (category: string) => {
+    switch (category) {
+      case 'work': return 'border-l-blue-500';
+      case 'research': return 'border-l-green-500';
+      case 'community': return 'border-l-purple-500';
+      default: return 'border-l-tech-blue';
+    }
+  };
+
   const isLeft = index % 2 === 0;
 
   return (
     <div className="relative w-full pb-3">
       {/* Timeline dot - centered */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
-        <div className="w-3 h-3 bg-gradient-to-br from-tech-blue to-tech-cyan rounded-full border-2 border-background shadow-md" />
+        <div className={`w-3 h-3 ${getDotColor(entry.category)} rounded-full border-2 shadow-md`} />
       </div>
 
       {/* Connecting line from dot to content */}
@@ -66,7 +94,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       {/* Content - alternating sides with overlap */}
       <div className={`flex ${isLeft ? 'justify-start pr-12' : 'justify-end pl-12'} ${index > 0 ? '-mt-20' : ''}`}>
         <div className={`w-full max-w-sm ${isLeft ? 'mr-12' : 'ml-12'}`}>
-          <div className="bg-card rounded-lg border shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+          <div className={`bg-card rounded-lg border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
             {/* Image - compact */}
             <div className="h-24 w-full bg-muted overflow-hidden">
               <img
@@ -79,7 +107,10 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
             {/* Content */}
             <div className="p-3">
               <div className="flex flex-col gap-1.5 mb-2">
-                <h3 className="text-base font-semibold text-foreground leading-tight">{entry.title}</h3>
+                <div className="flex items-center gap-1.5">
+                  {getCategoryIcon(entry.category)}
+                  <h3 className="text-base font-semibold text-foreground leading-tight">{entry.title}</h3>
+                </div>
                 <span className="text-xs font-medium text-tech-blue bg-tech-blue/10 px-2 py-0.5 rounded-full self-start">
                   {formatDate()}
                 </span>
