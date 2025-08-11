@@ -9,11 +9,39 @@ export interface TimelineEntry {
 
 export const timelineData: TimelineEntry[] = [
   {
+    title: "Mobile Robots Training - Dansk Metal",
+    date: "2024",
+    image: "classroom-robotics.jpg",
+    text: "Conducted hands-on training sessions introducing mobile robots to members of Dansk Metal fagforening. Developed practical exercises and demonstrations to showcase robotics applications in industrial settings, helping union members understand emerging automation technologies.",
+    tags: ["Training", "DanskMetal", "MobileRobots", "HandsOn", "Industrial", "Automation"]
+  },
+  {
+    title: "Public Speaking - When Mobile Robots Leave the Factory Floor",
+    date: "2023",
+    image: "manufacturing-line.jpg",
+    text: "Delivered presentation on the evolution of mobile robots beyond traditional factory environments. Discussed applications in logistics, healthcare, agriculture, and service industries, exploring how mobile robotics is transforming various sectors outside manufacturing.",
+    tags: ["PublicSpeaking", "MobileRobots", "Innovation", "Applications", "Industry40"]
+  },
+  {
     title: "Project - Enabled Robot",
     date: "2023",
     image: "manipulator-arm.jpg",
     text: "Had some playtime with our Enabled Robot. Ended up with an aggressive robot tracking a box - but got some hands-on time with a lot of cool things: MoveIT, ROS2, Qualisys motion capture 🤖.",
     tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "motionCapture"]
+  },
+  {
+    title: "Public Speaking - Algoritmer i selvkørende robotter",
+    date: "2023",
+    image: "classroom-robotics.jpg",
+    text: "Delivered presentation on algorithms in autonomous robots with Dr. Kristine V. K. Knudsen from SDU Robotics. Covered navigation algorithms, mapping, path planning, and obstacle avoidance. Explored what makes algorithms good or bad, and how mathematical approaches drive robotic decision-making.",
+    tags: ["PublicSpeaking", "Algorithms", "Navigation", "PathPlanning", "SLAM", "Mathematics"]
+  },
+  {
+    title: "Christmas Coding Event - 2D Podracing Game",
+    date: "2022",
+    image: "dsl-programming.jpg",
+    text: "Organized and led a Christmas coding event at previous workplace. Developed a 2D podracing game engine where colleagues could write bots to compete in various challenges. Created an engaging programming competition that combined gaming with algorithmic problem-solving.",
+    tags: ["GameDevelopment", "Competition", "Algorithms", "EventOrganization", "2DGames", "Bots"]
   },
   {
     title: "Mobile Robot Integration Project",
