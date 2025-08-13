@@ -8,3 +8,17 @@ The webpage is hosted using GitHub Pages [here](https://skorbiz.github.io/laurse
 # Loveable
 Project is available here: [project](https://lovable.dev/projects/fd7da10e-2ae3-463f-8dec-551df21e6461)
 
+# Todo list
+This list represents the work that is still needed, that is, approved to-dos written by me. Suggestions for improvements by the AI agent. And work completed by the agent.
+
+## Approved todo list:
+- [ ] Option to switch to dark mode.
+- [ ] Mobile-friendly page. Post all on the same side, and bigger readable text.
+
+## Suggested todos: (unapproved)
+- [ ] Placeholder
+- [ ] Placeholder
+
+## Done tasks:
+- [x] Placeholder
+- [x] Placeholder
