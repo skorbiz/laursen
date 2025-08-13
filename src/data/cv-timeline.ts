@@ -10,6 +10,30 @@ export interface TimelineEntry {
 
 export const timelineData: TimelineEntry[] = [
   {
+    title: "Weed Removal Robot - Navigation & Control",
+    date: "2025",
+    image: "robot-wall.jpg",
+    text: "Developed comprehensive motor drivers, ROS2 control integration, and GPS navigation stack for autonomous weed removal robot designed for paved environments. Implemented precision control systems for targeted weed elimination while maintaining safe operation on concrete and asphalt surfaces.",
+    tags: ["WeedRemoval", "MotorDrivers", "ROS2Control", "GPSNavigation", "AutonomousRobot", "PrecisionControl"],
+    category: "research"
+  },
+  {
+    title: "Forklift Robot - ROS2 Simulation & Navigation",
+    date: "2025",
+    image: "manufacturing-line.jpg",
+    text: "Integrated advanced simulation environment with navigation stack in ROS2 for autonomous forklift robot operations. Developed comprehensive testing framework combining realistic warehouse simulations with real-world navigation algorithms for safe and efficient material handling.",
+    tags: ["ForkliftRobot", "ROS2Simulation", "NavigationStack", "WarehouseAutomation", "MaterialHandling", "Integration"],
+    category: "research"
+  },
+  {
+    title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
+    date: "2025",
+    image: "drone.jpg",
+    text: "Pioneered integration of Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Developed sensor fusion algorithms and autonomous patrol systems for industrial safety applications, enabling remote detection of hazardous gas leaks in complex environments.",
+    tags: ["BostonDynamicsSpot", "FlukeSV600", "GasLeakDetection", "AcousticImaging", "IndustrialSafety", "SensorFusion"],
+    category: "research"
+  },
+  {
     title: "Mobile Robots Training - Dansk Metal",
     date: "2024",
     image: "classroom-robotics.jpg",
