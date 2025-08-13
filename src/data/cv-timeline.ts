@@ -3,7 +3,8 @@ export interface TimelineEntry {
   date: string;
   startDate?: string;
   image: string;
-  text: string;
+  draft?: string;  // Your original input - not displayed publicly
+  text: string;    // AI-polished version for display
   tags?: string[];
   category: 'work' | 'research' | 'community';
 }
@@ -13,6 +14,7 @@ export const timelineData: TimelineEntry[] = [
     title: "Weed Removal Robot - Navigation & Control",
     date: "2025",
     image: "robot-wall.jpg",
+    draft: "Working on motor drivers, ros2 control integration and GPS navigation for weed removal robot. For paved environments.",
     text: "Developed comprehensive motor drivers, ROS2 control integration, and GPS navigation stack for autonomous weed removal robot designed for paved environments. Implemented precision control systems for targeted weed elimination while maintaining safe operation on concrete and asphalt surfaces.",
     tags: ["WeedRemoval", "MotorDrivers", "ROS2Control", "GPSNavigation", "AutonomousRobot", "PrecisionControl"],
     category: "research"
