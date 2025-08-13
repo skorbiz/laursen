@@ -6,6 +6,7 @@ export interface TimelineEntry {
   draft?: string;  // Your original input - not displayed publicly
   text: string;    // AI-polished version for display
   tags?: string[];
+  links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
   category: 'work' | 'research' | 'community';
 }
 

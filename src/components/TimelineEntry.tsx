@@ -1,6 +1,6 @@
 import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Code, Users } from 'lucide-react';
+import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe } from 'lucide-react';
 
 // Import all timeline images
 import robotWallImg from "@/assets/robot-wall.jpg";
@@ -79,6 +79,15 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     }
   };
 
+  const getLinkIcon = (type?: string) => {
+    switch (type) {
+      case 'github': return <Github className="h-3 w-3" />;
+      case 'video': return <Play className="h-3 w-3" />;
+      case 'website': return <Globe className="h-3 w-3" />;
+      default: return <ExternalLink className="h-3 w-3" />;
+    }
+  };
+
   const isLeft = index % 2 === 0;
 
   return (
@@ -120,6 +129,24 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
                 {entry.text}
               </p>
               
+              {/* Links */}
+              {entry.links && entry.links.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  {entry.links.map((link, linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 bg-primary/10 hover:bg-primary/20 px-2 py-1 rounded-md transition-colors"
+                    >
+                      {getLinkIcon(link.type)}
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+
               {/* Tags */}
               {entry.tags && entry.tags.length > 0 && (
                 <div className="flex flex-wrap gap-1">
