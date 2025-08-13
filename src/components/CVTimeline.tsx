@@ -41,6 +41,24 @@ export const CVTimeline = () => {
         </div>
       </div>
 
+      {/* Legend */}
+      <div className="flex justify-center mb-8">
+        <div className="flex items-center gap-6 bg-card/50 backdrop-blur-sm border rounded-lg px-4 py-2">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <span className="text-sm text-muted-foreground">Work</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span className="text-sm text-muted-foreground">Research</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+            <span className="text-sm text-muted-foreground">Community</span>
+          </div>
+        </div>
+      </div>
+
       {/* Timeline */}
       <div className="relative">
         {/* Central timeline line */}
