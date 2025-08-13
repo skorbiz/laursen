@@ -25,6 +25,11 @@ export const timelineData: TimelineEntry[] = [
     date: "2025",
     image: "manufacturing-line.jpg",
     text: "Integrated advanced simulation environment with navigation stack in ROS2 for autonomous forklift robot operations. Developed comprehensive testing framework combining realistic warehouse simulations with real-world navigation algorithms for safe and efficient material handling.",
+    links: [
+      { url: "https://github.com/robotics-team/forklift-ros2", label: "Source Code", type: "github" },
+      { url: "https://youtube.com/watch?v=demo-forklift", label: "Demo Video", type: "video" },
+      { url: "https://gazebosim.org/forklift-simulation", label: "Simulation Environment", type: "website" }
+    ],
     tags: ["ForkliftRobot", "ROS2Simulation", "NavigationStack", "WarehouseAutomation", "MaterialHandling", "Integration"],
     category: "research"
   },
@@ -33,6 +38,12 @@ export const timelineData: TimelineEntry[] = [
     date: "2025",
     image: "drone.jpg",
     text: "Pioneered integration of Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Developed sensor fusion algorithms and autonomous patrol systems for industrial safety applications, enabling remote detection of hazardous gas leaks in complex environments.",
+    links: [
+      { url: "https://github.com/safety-robotics/spot-gas-detection", label: "ROS Integration", type: "github" },
+      { url: "https://youtube.com/watch?v=spot-gas-demo", label: "Field Test", type: "video" },
+      { url: "https://fluke.com/sv600", label: "SV600 Specs", type: "website" },
+      { url: "https://bostondynamics.com/spot", label: "Spot Robot", type: "website" }
+    ],
     tags: ["BostonDynamicsSpot", "FlukeSV600", "GasLeakDetection", "AcousticImaging", "IndustrialSafety", "SensorFusion"],
     category: "research"
   },
