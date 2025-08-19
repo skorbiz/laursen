@@ -2,12 +2,16 @@ import { timelineData } from "@/data/cv-timeline";
 import { TimelineEntry } from "./TimelineEntry";
 import { Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const CVTimeline = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="text-center mb-12">
+        <div className="flex justify-end mb-4">
+          <ThemeToggle />
+        </div>
         <h1 className="text-4xl font-bold bg-gradient-to-r from-tech-blue to-tech-cyan bg-clip-text text-transparent mb-4">
           Robotics Engineer
         </h1>

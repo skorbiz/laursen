@@ -12,7 +12,6 @@ Project is available here: [project](https://lovable.dev/projects/fd7da10e-2ae3-
 This list represents the work that is still needed, that is, approved to-dos written by me. Suggestions for improvements by the AI agent. And work completed by the agent.
 
 ## Approved todo list:
-- [ ] Option to switch to dark mode.
 - [ ] Mobile-friendly page. Post all on the same side, and bigger readable text.
 
 ## Suggested todos: (unapproved)
@@ -20,5 +19,4 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [ ] Placeholder
 
 ## Done tasks:
-- [x] Placeholder
-- [x] Placeholder
+- [x] Option to switch to dark mode.
