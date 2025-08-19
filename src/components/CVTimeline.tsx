@@ -65,8 +65,10 @@ export const CVTimeline = () => {
 
       {/* Timeline */}
       <div className="relative">
-        {/* Central timeline line */}
-        <div className="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        {/* Central timeline line - hidden on mobile, visible on desktop */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        {/* Mobile timeline line - left aligned */}
+        <div className="md:hidden absolute left-4 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
         
         {timelineData.map((entry, index) => (
           <TimelineEntry
