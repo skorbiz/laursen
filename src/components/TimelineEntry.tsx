@@ -103,7 +103,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       {/* Content - alternating sides with overlap */}
       <div className={`flex ${isLeft ? 'justify-start pr-12' : 'justify-end pl-12'} ${index > 0 ? '-mt-20' : ''}`}>
         <div className={`w-full max-w-sm ${isLeft ? 'mr-12' : 'ml-12'}`}>
-          <div className={`bg-card rounded-lg border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
+          <div className={`bg-card rounded-lg border border-border border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
             {/* Image - compact */}
             <div className="h-24 w-full bg-muted overflow-hidden">
               <img

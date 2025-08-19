@@ -15,8 +15,16 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [ ] Mobile-friendly page. Post all on the same side, and bigger readable text.
 
 ## Suggested todos: (unapproved)
-- [ ] Placeholder
-- [ ] Placeholder
+- [ ] Add search/filter functionality to timeline entries by category, tags, or date range
+- [ ] Implement smooth scrolling animations when navigating through timeline
+- [ ] Add a "back to top" button for easier navigation on long timelines
+- [ ] Include a skills/technologies section with visual progress bars or cloud tags
+- [ ] Add export functionality to generate PDF version of the CV
+- [ ] Implement lazy loading for images to improve page load performance
+- [ ] Add hover animations and micro-interactions for better user engagement
+- [ ] Include contact form or modal for potential employers/collaborators
+- [ ] Add reading time estimates for each timeline entry
+- [ ] Implement keyboard navigation support for accessibility
 
 ## Done tasks:
 - [x] Option to switch to dark mode.
