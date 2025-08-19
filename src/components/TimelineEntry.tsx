@@ -91,18 +91,21 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <div className="relative w-full pb-3">
-      {/* Timeline dot - centered */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
+    <div className="relative w-full pb-6 md:pb-3">
+      {/* Timeline dot - centered on desktop, left on mobile */}
+      <div className="absolute md:left-1/2 left-6 md:transform md:-translate-x-1/2 flex flex-col items-center z-10">
         <div className={`w-3 h-3 ${getDotColor(entry.category)} rounded-full border-2 shadow-md`} />
       </div>
 
-      {/* Connecting line from dot to content */}
-      <div className={`absolute top-1.5 ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-8 h-0.5 bg-timeline-line z-5`} />
+      {/* Connecting line from dot to content - desktop only */}
+      <div className={`absolute top-1.5 md:block hidden ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-8 h-0.5 bg-timeline-line z-5`} />
+      
+      {/* Mobile connecting line - horizontal from dot to content */}
+      <div className="absolute top-1.5 left-9 w-8 h-0.5 bg-timeline-line z-5 md:hidden" />
 
-      {/* Content - alternating sides with overlap */}
-      <div className={`flex ${isLeft ? 'justify-start pr-12' : 'justify-end pl-12'} ${index > 0 ? '-mt-20' : ''}`}>
-        <div className={`w-full max-w-sm ${isLeft ? 'mr-12' : 'ml-12'}`}>
+      {/* Content - mobile: all on right side, desktop: alternating sides */}
+      <div className={`flex md:${isLeft ? 'justify-start pr-12' : 'justify-end pl-12'} justify-start pl-20 md:pl-0 ${index > 0 ? 'md:-mt-20' : ''}`}>
+        <div className={`w-full max-w-sm md:${isLeft ? 'mr-12' : 'ml-12'} mr-0`}>
           <div className={`bg-card rounded-lg border border-border border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
             {/* Image - compact */}
             <div className="h-24 w-full bg-muted overflow-hidden">
