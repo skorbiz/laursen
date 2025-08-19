@@ -12,7 +12,7 @@ Project is available here: [project](https://lovable.dev/projects/fd7da10e-2ae3-
 This list represents the work that is still needed, that is, approved to-dos written by me. Suggestions for improvements by the AI agent. And work completed by the agent.
 
 ## Approved todo list:
-- [x] Mobile-friendly page. Post overlaps on narrow screen.
+- [ ] Mobile-friendly page. Post overlaps on narrow screen.
 
 ## Suggested todos: (unapproved)
 - [ ] placeholder
