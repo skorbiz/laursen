@@ -17,6 +17,7 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [ ] I uploaded a new image for the Weed Removal Robot - Navigation & Control post but it dosnt show. Fix it - and make it so that images load more genneric next time. And show a dummy image if it fails to load the image. Probably because the loader in the content is a bit wired with redundant typing of image names. Make the flow more smooth.
 - [ ] Add your ai magic to the image o-robotics so that it fits well with the narrow horizontal layout, and other things if you have ideas.
 - [ ] I would like a flow where i can participate more in the development locally. My workflow is often i VS-code, so i would like a dev container with tools i need for it. Plus make changes on how to build and view the site in this readme. If you have other suggestion put them in the todos.
+- [ ] Make a field so that i can easily hide posts. For instance i want to keep the content of some post but i might want to trim what is show on the page.
 - [ ] Remove unused code. There is a lot of code for things like tool tips and other UI elements. Are all the components used? - or can we remove some of them for a cleaner repo. Make a list of things that could be removed or cleaned. If they have a limited function, write that as well.
 - [ ] Make more comments in the code, to make it more understandable and readable to somebody with skills in backend code but limited knowledge of webdevelopmeent like typescript, react and tailwind.  
 
