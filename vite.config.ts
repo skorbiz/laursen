@@ -18,5 +18,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/laursen/' // GitHub repo name
+  base: mode === 'production' ? '/laursen/' : '/' // Only use base path for GitHub Pages deployment
 }));
