@@ -102,7 +102,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
 
       {/* Content - stacked on mobile, alternating on desktop */}
       <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-16' : 'md:justify-end md:pl-16'} ${index > 0 ? 'md:-mt-20' : ''}`}>
-        <div className={`w-full max-w-xl ${isLeft ? 'md:mr-16' : 'md:ml-16'}`}>
+        <div className={`w-full max-w-l ${isLeft ? 'md:mr-16' : 'md:ml-16'}`}>
           <div className={`bg-card rounded-lg border border-border dark:border-border/70 border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
             {/* Image - compact */}
             <div className="h-24 w-full bg-muted overflow-hidden">
