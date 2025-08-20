@@ -98,11 +98,11 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       </div>
 
       {/* Connecting line from dot to content - hidden on mobile */}
-      <div className={`hidden md:block absolute top-1.5 ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-12 h-0.5 bg-timeline-line z-5`} />
+      <div className={`hidden md:block absolute top-1.5 ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-8 h-0.5 bg-timeline-line z-5`} />
 
       {/* Content - stacked on mobile, alternating on desktop */}
-      <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-20' : 'md:justify-end md:pl-20'} ${index > 0 ? 'md:-mt-20' : ''}`}>
-        <div className={`w-full max-w-lg ${isLeft ? 'md:mr-20' : 'md:ml-20'}`}>
+      <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-12' : 'md:justify-end md:pl-12'} ${index > 0 ? 'md:-mt-20' : ''}`}>
+        <div className={`w-full max-w-sm ${isLeft ? 'md:mr-12' : 'md:ml-12'}`}>
           <div className={`bg-card rounded-lg border border-border dark:border-border/70 border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
             {/* Image - compact */}
             <div className="h-24 w-full bg-muted overflow-hidden">
