@@ -6,7 +6,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export const CVTimeline = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-6xl mx-auto px-6 py-8">
       {/* Header */}
       <div className="text-center mb-12">
         <div className="flex justify-end mb-4">
