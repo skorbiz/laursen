@@ -98,7 +98,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       </div>
 
       {/* Connecting line from dot to content - hidden on mobile */}
-      <div className={`hidden md:block absolute top-1.5 ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-10 h-0.5 bg-timeline-line z-5`} />
+      <div className={`hidden md:block absolute top-1.5 ${isLeft ? 'right-1/2 mr-1.5' : 'left-1/2 ml-1.5'} w-8 h-0.5 bg-timeline-line z-5`} />
 
       {/* Content - stacked on mobile, alternating on desktop */}
       <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-16' : 'md:justify-end md:pl-16'} ${index > 0 ? 'md:-mt-20' : ''}`}>
