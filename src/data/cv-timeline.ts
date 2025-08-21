@@ -7,7 +7,7 @@ export interface TimelineEntry {
   text: string;    // AI-polished version for display
   tags?: string[];
   links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
-  category: 'work' | 'research' | 'community';
+  category: 'work' | 'project' | 'community';
 }
 
 export const timelineData: TimelineEntry[] = [
@@ -18,7 +18,7 @@ export const timelineData: TimelineEntry[] = [
     draft: "Assisted client with their weed removal robot for paved environments. Wrapped their motor drivers in ROS2 control and proceeded to help with integrating a GPS navigtion stack in both the gazebo simulation and the mobile robot.",
     text: "todo: Assisted client with their weed removal robot for paved environments. Wrapped their motor drivers in ROS2 control and proceeded to help with integrating a GPS navigtion stack in both the gazebo simulation and the mobile robot.",
     tags: ["ROS2", "ROS2Control", "Nav2", "GPS Navigation", "AutonomousRobot", "Gazebo"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Forklift Robot - ROS2 Simulation & Navigation",
@@ -31,7 +31,7 @@ export const timelineData: TimelineEntry[] = [
       { url: "https://gazebosim.org/forklift-simulation", label: "Simulation Environment", type: "website" }
     ],
     tags: ["ForkliftRobot", "ROS2Simulation", "NavigationStack", "WarehouseAutomation", "MaterialHandling", "Integration"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
@@ -45,7 +45,7 @@ export const timelineData: TimelineEntry[] = [
       { url: "https://bostondynamics.com/spot", label: "Spot Robot", type: "website" }
     ],
     tags: ["BostonDynamicsSpot", "FlukeSV600", "GasLeakDetection", "AcousticImaging", "IndustrialSafety", "SensorFusion"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Mobile Robots Training - Dansk Metal",
@@ -69,7 +69,7 @@ export const timelineData: TimelineEntry[] = [
     image: "manipulator-arm.jpg",
     text: "Had some playtime with our Enabled Robot. Ended up with an aggressive robot tracking a box - but got some hands-on time with a lot of cool things: MoveIT, ROS2, Qualisys motion capture 🤖.",
     tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "motionCapture"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Public Speaking - Algoritmer i selvkørende robotter",
@@ -111,7 +111,7 @@ export const timelineData: TimelineEntry[] = [
     image: "circuit-board.jpg",
     text: "Developed and maintained a comprehensive navigation stack for autonomous mobile robots. Created a testable architecture that improved code quality and reduced integration issues. Focused on path planning, obstacle avoidance, and localization algorithms.",
     tags: ["Navigation", "PathPlanning", "Testing", "ROS", "SLAM", "Localization"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Laser Scanner Analysis Project",
@@ -119,7 +119,7 @@ export const timelineData: TimelineEntry[] = [
     image: "laser-scanner.jpg",
     text: "Conducted in-depth analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensor models, analyzed noise patterns, and optimized sensor fusion algorithms. Results improved robot perception accuracy by 25%.",
     tags: ["LaserScanners", "SensorFusion", "Analysis", "Perception", "Optimization"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Developer Infrastructure Renewal",
@@ -136,7 +136,7 @@ export const timelineData: TimelineEntry[] = [
     image: "error-recovery.jpg",
     text: "Conducted research on reversible execution and error recovery in robotic assembly operations. Developed domain-specific languages for robot control and investigated methods for automatic error handling. Published findings in peer-reviewed journals.",
     tags: ["PhD", "Assembly", "ErrorRecovery", "DSL", "Research", "Reversibility"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Teaching - Robots in Context",
@@ -152,7 +152,7 @@ export const timelineData: TimelineEntry[] = [
     image: "swarm-robots.jpg",
     text: "Visiting researcher focusing on swarm robotics and emergent behavior applications. Developed drivers and algorithms for small mobile robots, investigating collective intelligence and distributed control systems. Conducted experiments with multi-robot coordination.",
     tags: ["SwarmRobotics", "EmergentBehavior", "MultiRobot", "DistributedControl", "Research"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Industrial Automation Reuse Study",
@@ -160,7 +160,7 @@ export const timelineData: TimelineEntry[] = [
     image: "manufacturing-line.jpg",
     text: "Master's thesis project investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analyzed efficiency improvements in production environments.",
     tags: ["MasterThesis", "Automation", "Reusability", "Manufacturing", "Efficiency"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Formula Student Sensor Integration",
@@ -168,7 +168,7 @@ export const timelineData: TimelineEntry[] = [
     image: "formula-car.jpg",
     text: "Bachelor's project involving signal analysis and processing for gyroscope, accelerometer, and sensor systems. Implemented embedded C and VHDL solutions for a Formula Student race car, focusing on real-time data processing and control systems.",
     tags: ["BachelorThesis", "Sensors", "EmbeddedC", "VHDL", "RealTime", "Automotive"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Domain-Specific Language Development",
@@ -176,7 +176,7 @@ export const timelineData: TimelineEntry[] = [
     image: "dsl-programming.jpg",
     text: "Research project developing adaptive action libraries using simulation and domain-specific languages for robotics applications. Created tools for easier robot programming and behavior specification, improving development efficiency for complex robotic tasks.",
     tags: ["DSL", "Simulation", "ActionLibraries", "RobotProgramming", "Tools"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Error Recovery System Design",
@@ -184,7 +184,7 @@ export const timelineData: TimelineEntry[] = [
     image: "drone.jpg",
     text: "Developed automatic error recovery mechanisms for robot assembly operations using reverse execution techniques. Created systems that could detect failures and automatically backtrack to safe states, significantly improving robotic assembly reliability.",
     tags: ["ErrorRecovery", "ReverseExecution", "Assembly", "Reliability", "Automation"],
-    category: "research"
+    category: "project"
   },
   {
     title: "Flexible Manufacturing Research",
@@ -192,6 +192,6 @@ export const timelineData: TimelineEntry[] = [
     image: "flexible-manufacturing.jpg",
     text: "Research into software structures for control and monitoring of flexible automation systems. Focused on small batch assembly using robotic manipulators, developing adaptive control systems that could handle varying production requirements.",
     tags: ["FlexibleManufacturing", "SmallBatch", "Manipulators", "AdaptiveControl", "Production"],
-    category: "research"
+    category: "project"
   }
 ];
