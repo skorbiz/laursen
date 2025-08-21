@@ -16,6 +16,7 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [x] Dark mode.
 - [x] Labels update: job, project, community.
 - [ ] **Easy image adding** - I uploaded a new image for the Weed Removal Robot - Navigation & Control post but it dosnt show. Fix it - and make it so that images load more genneric next time. And show a dummy image if it fails to load the image. Probably because the loader in the content is a bit wired with redundant typing of image names. Make the flow more smooth.
+- [ ] **Update links** - Update links for github and linkedin to https://github.com/skorbiz and https://www.linkedin.com/in/johan-sund-laursen/
 - [ ] **Hide posts option** - Make a field so that i can easily hide posts. For instance i want to keep the content of some post but i might want to trim what is show on the page.
 - [ ] **Style guide** - Add a style guide (probably as a comment in the cv-timeline.ts) for how to go from the draft text to the AI-corrected text. A key point is to avoid excessive positive words like 'advanced' and 'pioneering', as they can make it look like a sales pitch. Here, the focus is on prices and exact descriptions of the tasks. Technology keywords and tasks are more critical.
 - [ ] **o-robotics image** - Add your ai magic to the image o-robotics so that it fits well with the narrow horizontal layout, and other things if you have ideas.

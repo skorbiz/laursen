@@ -28,7 +28,7 @@ export const CVTimeline = () => {
           </p>
           <p className="text-sm text-muted-foreground/80 mb-6 italic">
             This timeline represents my introduction into AI-agent based programming. Learning and experimenting with Lovable
-            to showcase my professional journey in an interactive format.
+            to showcase some of my fun highlights in an interactive format.
           </p>
           
           {/* Social Links */}

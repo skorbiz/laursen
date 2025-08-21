@@ -36,7 +36,6 @@ export const timelineData: TimelineEntry[] = [
     draft: "Integrated Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Included project managment and scoping, development of python plugins for interacting with doors and firealarm, safety regulations, ",
     text: "Integrated the Boston Dynamics Spot robot with a Fluke SV600 acoustic imager for autonomous gas leak detection. Involved project management and scoping, developing Python plugins for interacting with doors and fire alarms, ensuring compliance with safety regulations, conducting Wi-Fi analysis, and more.",
     links: [
-      // { url: "https://github.com/safety-robotics/spot-gas-detection", label: "ROS Integration", type: "github" },
       // { url: "https://youtube.com/watch?v=spot-gas-demo", label: "Field Test", type: "video" },
       { url: "https://www.flukeprocessinstruments.com/en-us/products/imaging-solutions/acoustic-imaging-solutions/sv600-fixed-acoustic-imager", label: "SV600 Specs", type: "website" },
       { url: "https://bostondynamics.com/products/spot/", label: "Spot Robot", type: "website" }
@@ -45,19 +44,11 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
-    title: "Mobile Robots Training - Dansk Metal",
-    date: "2024",
-    image: "classroom-robotics.jpg",
-    text: "Conducted hands-on training sessions introducing mobile robots to members of Dansk Metal fagforening. Developed practical exercises and demonstrations to showcase robotics applications in industrial settings, helping union members understand emerging automation technologies.",
-    tags: ["Training", "DanskMetal", "MobileRobots", "HandsOn", "Industrial", "Automation"],
-    category: "community"
-  },
-  {
     title: "Public Speaking - When Mobile Robots Leave the Factory Floor",
     date: "2023",
     image: "manufacturing-line.jpg",
     text: "Delivered presentation on the evolution of mobile robots beyond traditional factory environments. Discussed applications in logistics, healthcare, agriculture, and service industries, exploring how mobile robotics is transforming various sectors outside manufacturing.",
-    tags: ["PublicSpeaking", "MobileRobots", "Innovation", "Applications", "Industry40"],
+    tags: ["PublicSpeaking", "MobileRobots",],
     category: "community"
   },
   {
@@ -69,7 +60,7 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
-    title: "Public Speaking - Algoritmer i selvkørende robotter",
+    title: "Public Speaking - Algorithms in Autonomous Mobile Robots",
     date: "2023",
     image: "classroom-robotics.jpg",
     text: "Delivered presentation on algorithms in autonomous robots with Dr. Kristine V. K. Knudsen from SDU Robotics. Covered navigation algorithms, mapping, path planning, and obstacle avoidance. Explored what makes algorithms good or bad, and how mathematical approaches drive robotic decision-making.",
@@ -79,8 +70,11 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "Christmas Coding Event - 2D Podracing Game",
     date: "2022",
-    image: "dsl-programming.jpg",
-    text: "Organized and led a Christmas coding event at previous workplace. Developed a 2D podracing game engine where colleagues could write bots to compete in various challenges. Created an engaging programming competition that combined gaming with algorithmic problem-solving.",
+    image: "podracer.gif",
+    text: "Organized and led a Christmas coding event. Developed a small 2D podracing game engine where colleagues could write bots to compete in various challenges. Organized programming competition that combined gaming with algorithmic problem-solving.",
+    links: [
+      { url: "https://github.com/skorbiz/podracer", label: "Github", type: "github" },
+    ],
     tags: ["GameDevelopment", "Competition", "Algorithms", "EventOrganization", "2DGames", "Bots"],
     category: "community"
   },
