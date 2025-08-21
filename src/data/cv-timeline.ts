@@ -16,35 +16,32 @@ export const timelineData: TimelineEntry[] = [
     date: "2025",
     image: "o-robotics.png", 
     draft: "Assisted client with their weed removal robot for paved environments. Wrapped their motor drivers in ROS2 control and proceeded to help with integrating a GPS navigtion stack in both the gazebo simulation and the mobile robot.",
-    text: "todo: Assisted client with their weed removal robot for paved environments. Wrapped their motor drivers in ROS2 control and proceeded to help with integrating a GPS navigtion stack in both the gazebo simulation and the mobile robot.",
+    text: "Assisted a client with their weed removal robot designed for paved environments. Wrapped their motor drivers using ROS2 Control and helped integrate a GPS navigation stack in both the Gazebo simulation and the physical mobile robot.",
     tags: ["ROS2", "ROS2Control", "Nav2", "GPS Navigation", "AutonomousRobot", "Gazebo"],
     category: "project"
   },
   {
     title: "Forklift Robot - ROS2 Simulation & Navigation",
     date: "2025",
-    image: "manufacturing-line.jpg",
-    text: "Integrated advanced simulation environment with navigation stack in ROS2 for autonomous forklift robot operations. Developed comprehensive testing framework combining realistic warehouse simulations with real-world navigation algorithms for safe and efficient material handling.",
-    links: [
-      { url: "https://github.com/robotics-team/forklift-ros2", label: "Source Code", type: "github" },
-      { url: "https://youtube.com/watch?v=demo-forklift", label: "Demo Video", type: "video" },
-      { url: "https://gazebosim.org/forklift-simulation", label: "Simulation Environment", type: "website" }
-    ],
-    tags: ["ForkliftRobot", "ROS2Simulation", "NavigationStack", "WarehouseAutomation", "MaterialHandling", "Integration"],
+    image: "mobile-robotics-company.png",
+    draft: "Spare time project: Created initial software stack for a collaborative forklift robot for a startup. Initial outline of software architecture, Setup URDF model of robot, created a ROS2 simulation environment using Gazebo, integrated the Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, adapted SLAM framework, participated in discussions and planning.",
+    text: "    Spare time project: Developed the initial software stack for a collaborative forklift robot for a startup. Outlined the software architecture, set up the URDF model of the robot, created a ROS2 simulation environment using Gazebo, integrated the Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, adapted the SLAM framework, and participated in design discussions and project planning.",
+    tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
     category: "project"
   },
   {
     title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
-    date: "2025",
-    image: "drone.jpg",
-    text: "Pioneered integration of Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Developed sensor fusion algorithms and autonomous patrol systems for industrial safety applications, enabling remote detection of hazardous gas leaks in complex environments.",
+    date: "2024-2025",
+    image: "spot1.jpg",
+    draft: "Integrated Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Included project managment and scoping, development of python plugins for interacting with doors and firealarm, safety regulations, ",
+    text: "Integrated the Boston Dynamics Spot robot with a Fluke SV600 acoustic imager for autonomous gas leak detection. Involved project management and scoping, developing Python plugins for interacting with doors and fire alarms, ensuring compliance with safety regulations, conducting Wi-Fi analysis, and more.",
     links: [
-      { url: "https://github.com/safety-robotics/spot-gas-detection", label: "ROS Integration", type: "github" },
-      { url: "https://youtube.com/watch?v=spot-gas-demo", label: "Field Test", type: "video" },
-      { url: "https://fluke.com/sv600", label: "SV600 Specs", type: "website" },
-      { url: "https://bostondynamics.com/spot", label: "Spot Robot", type: "website" }
+      // { url: "https://github.com/safety-robotics/spot-gas-detection", label: "ROS Integration", type: "github" },
+      // { url: "https://youtube.com/watch?v=spot-gas-demo", label: "Field Test", type: "video" },
+      { url: "https://www.flukeprocessinstruments.com/en-us/products/imaging-solutions/acoustic-imaging-solutions/sv600-fixed-acoustic-imager", label: "SV600 Specs", type: "website" },
+      { url: "https://bostondynamics.com/products/spot/", label: "Spot Robot", type: "website" }
     ],
-    tags: ["BostonDynamicsSpot", "FlukeSV600", "GasLeakDetection", "AcousticImaging", "IndustrialSafety", "SensorFusion"],
+    tags: ["BostonDynamicsSpot", "FlukeSV600", "AcousticImaging", "Python plugin", "Integration", "ProjectManagement"],
     category: "project"
   },
   {
