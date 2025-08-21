@@ -15,7 +15,6 @@ export const timelineData: TimelineEntry[] = [
     title: "Weed Removal Robot - Navigation & Control",
     date: "2025",
     image: "o-robotics.png", 
-    draft: "Assisted client with their weed removal robot for paved environments. Wrapped their motor drivers in ROS2 control and proceeded to help with integrating a GPS navigtion stack in both the gazebo simulation and the mobile robot.",
     text: "Assisted a client with their weed removal robot designed for paved environments. Wrapped their motor drivers using ROS2 Control and helped integrate a GPS navigation stack in both the Gazebo simulation and the physical mobile robot.",
     tags: ["ROS2", "ROS2Control", "Nav2", "GPS Navigation", "AutonomousRobot", "Gazebo"],
     category: "project"
@@ -24,8 +23,7 @@ export const timelineData: TimelineEntry[] = [
     title: "Forklift Robot - ROS2 Simulation & Navigation",
     date: "2025",
     image: "mobile-robotics-company.png",
-    draft: "Spare time project: Created initial software stack for a collaborative forklift robot for a startup. Initial outline of software architecture, Setup URDF model of robot, created a ROS2 simulation environment using Gazebo, integrated the Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, adapted SLAM framework, participated in discussions and planning.",
-    text: "    Spare time project: Developed the initial software stack for a collaborative forklift robot for a startup. Outlined the software architecture, set up the URDF model of the robot, created a ROS2 simulation environment using Gazebo, integrated the Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, adapted the SLAM framework, and participated in design discussions and project planning.",
+    text: "Spare time project: Developed the initial software stack for a collaborative forklift robot for a startup. Outlined the software architecture, set up the URDF model of the robot, created a ROS2 simulation environment using Gazebo, integrated the Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, adapted the SLAM framework, and participated in design discussions and project planning.",
     tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
     category: "project"
   },
@@ -36,7 +34,6 @@ export const timelineData: TimelineEntry[] = [
     draft: "Integrated Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Included project managment and scoping, development of python plugins for interacting with doors and firealarm, safety regulations, ",
     text: "Integrated the Boston Dynamics Spot robot with a Fluke SV600 acoustic imager for autonomous gas leak detection. Involved project management and scoping, developing Python plugins for interacting with doors and fire alarms, ensuring compliance with safety regulations, conducting Wi-Fi analysis, and more.",
     links: [
-      // { url: "https://youtube.com/watch?v=spot-gas-demo", label: "Field Test", type: "video" },
       { url: "https://www.flukeprocessinstruments.com/en-us/products/imaging-solutions/acoustic-imaging-solutions/sv600-fixed-acoustic-imager", label: "SV600 Specs", type: "website" },
       { url: "https://bostondynamics.com/products/spot/", label: "Spot Robot", type: "website" }
     ],
@@ -44,20 +41,25 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
+    title: "Enabled Robot playtime",
+    date: "2025",
+    image: "enabled.png",
+    links: [
+      { url: "https://www.linkedin.com/posts/johan-sund-laursen_enabledrobotics-moveit-ros2-activity-7309853141770895361-kC3J?utm_source=share&utm_medium=member_desktop&rcm=ACoAACRmOckBcV81y-M8tdhMUuDC4Rc3nGq8WlM", label: "Video", type: "video" },
+    ],
+    text: "Had some playtime with our Enabled Robot. Ended up with an aggressive robot tracking a box - but got some hands-on time with a lot of cool things: MoveIT, ROS2, Qualisys motion capture 🤖.",
+    tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "motionCapture"],
+    category: "project"
+  },
+  // Post on alitrak
+  // Post on Made Safety
+  {
     title: "Public Speaking - When Mobile Robots Leave the Factory Floor",
     date: "2023",
     image: "manufacturing-line.jpg",
     text: "Delivered presentation on the evolution of mobile robots beyond traditional factory environments. Discussed applications in logistics, healthcare, agriculture, and service industries, exploring how mobile robotics is transforming various sectors outside manufacturing.",
     tags: ["PublicSpeaking", "MobileRobots",],
     category: "community"
-  },
-  {
-    title: "Project - Enabled Robot",
-    date: "2023",
-    image: "manipulator-arm.jpg",
-    text: "Had some playtime with our Enabled Robot. Ended up with an aggressive robot tracking a box - but got some hands-on time with a lot of cool things: MoveIT, ROS2, Qualisys motion capture 🤖.",
-    tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "motionCapture"],
-    category: "project"
   },
   {
     title: "Public Speaking - Algorithms in Autonomous Mobile Robots",
@@ -68,31 +70,32 @@ export const timelineData: TimelineEntry[] = [
     category: "community"
   },
   {
+    title: "Job: Robotics specialist at Teknologisk Institut",
+    date: "2023",
+    image: "robot-wall.jpg",
+    text: "New Job! Working as a consultant in the field of robotics. Work mostly evolved around software development in either commercial or research funded projects. It also included various other ad-hoc tasks such as project management, teaching, and customer visits and inspections etc. Notable achievements included landing and executing the largest integration project in the history of the department.",
+    tags: ["Consulting", "Integration", "ProjectManagement", "MobileRobots"],
+    category: "work"
+  },
+  // Post on Bazel
+  {
     title: "Christmas Coding Event - 2D Podracing Game",
     date: "2022",
     image: "podracer.gif",
     text: "Organized and led a Christmas coding event. Developed a small 2D podracing game engine where colleagues could write bots to compete in various challenges. Organized programming competition that combined gaming with algorithmic problem-solving.",
     links: [
-      { url: "https://github.com/skorbiz/podracer", label: "Github", type: "github" },
+      { url: "https://github.com/skorbiz/podracer", label: "code", type: "github" },
     ],
     tags: ["GameDevelopment", "Competition", "Algorithms", "EventOrganization", "2DGames", "Bots"],
     category: "community"
   },
   {
-    title: "Mobile Robot Integration Project",
-    date: "2023",
-    image: "robot-wall.jpg",
-    text: "Working as a consultant in the field of robotics. Work mostly evolved around software development in either commercial or research funded projects. It also included various other ad-hoc tasks such as project management, teaching, and customer visits and inspections etc. Notable achievements included landing and executing the largest integration project in the history of the department.",
-    tags: ["Consulting", "Integration", "ProjectManagement", "MobileRobots"],
-    category: "work"
-  },
-  {
-    title: "Team Leadership - Robot Software Stack",
+    title: "Job: TeamLead - Mobile Industrial Robots",
     date: "2023",
     startDate: "2021",
     image: "code-monitor.jpg",
     text: "Led a team of nine developers responsible for core infrastructure components, drivers, and processing in an autonomous mobile robot software stack. Introduced Scrum methodology and test-driven development practices. Successfully migrated build system to Bazel for improved development workflow.",
-    tags: ["TeamLead", "Scrum", "TDD", "Bazel", "Infrastructure", "C++", "Python"],
+    tags: ["ProjectManagement", "Scrum", "TDD", "JIRA"],
     category: "work"
   },
   {
@@ -101,88 +104,70 @@ export const timelineData: TimelineEntry[] = [
     startDate: "2018",
     image: "circuit-board.jpg",
     text: "Developed and maintained a comprehensive navigation stack for autonomous mobile robots. Created a testable architecture that improved code quality and reduced integration issues. Focused on path planning, obstacle avoidance, and localization algorithms.",
-    tags: ["Navigation", "PathPlanning", "Testing", "ROS", "SLAM", "Localization"],
+    tags: ["Navigation", "TTD", "GTEST", "C++"],
     category: "project"
   },
   {
     title: "Laser Scanner Analysis Project",
     date: "2020",
     image: "laser-scanner.jpg",
-    text: "Conducted in-depth analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensor models, analyzed noise patterns, and optimized sensor fusion algorithms. Results improved robot perception accuracy by 25%.",
-    tags: ["LaserScanners", "SensorFusion", "Analysis", "Perception", "Optimization"],
+    text: "Conducted in-depth analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensor, analyzed noise patterns, so forth to fix hard to find bugs in the robots docking performance.",
+    tags: ["LaserScanners", "Analysis", "Perception", "Optimization"],
     category: "project"
   },
   {
-    title: "Developer Infrastructure Renewal",
-    date: "2019",
-    image: "devops-pipeline.jpg",
-    text: "Led initiative to modernize development infrastructure for robotics software team. Implemented CI/CD pipelines, containerized development environments, and established coding standards. Reduced build times by 60% and improved developer productivity.",
-    tags: ["DevOps", "CI/CD", "Docker", "Infrastructure", "Productivity"],
+    title: "Job: Robot software developer - Mobile Industrial Robots",
+    date: "2021",
+    startDate: "2018",
+    image: "code-monitor.jpg",
+    text: "Developed and maintained software for the MiR autonomous mobile robots. Notable projects included a testable navigation stack, an in-depth analysis of laser-scanners, and renewing developer infrastructure.",
+    tags: ["C++", "Python"],
     category: "work"
-  },
-  {
-    title: "PhD Research - Robotic Assembly",
-    date: "2017",
-    startDate: "2013",
-    image: "error-recovery.jpg",
-    text: "Conducted research on reversible execution and error recovery in robotic assembly operations. Developed domain-specific languages for robot control and investigated methods for automatic error handling. Published findings in peer-reviewed journals.",
-    tags: ["PhD", "Assembly", "ErrorRecovery", "DSL", "Research", "Reversibility"],
-    category: "project"
   },
   {
     title: "Teaching - Robots in Context",
     date: "2017",
     image: "classroom-robotics.jpg",
-    text: "Taught introductory robotics course covering kinematic modeling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments using real robot platforms.",
+    text: "Taught introductory robotics course covering kinematic modeling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments.",
     tags: ["Teaching", "Kinematics", "Control", "PathPlanning", "RANSAC", "Kalman"],
     category: "community"
   },
   {
+    title: "Job: Scientific assistant - University of Southern Denmark",
+    date: "2017",
+    image: "code-monitor.jpg",
+    text: "Continued PhD research and thought the course Robots in context.",
+    tags: ["Research", "Teaching"],
+    category: "work"
+  },
+  {
+    title: "PhD degree - Robotics Manipulation",
+    date: "2017",
+    startDate: "2013",
+    image: "error-recovery.jpg",
+    // text: "Conducted research on reversible execution and error recovery in robotic assembly operations. Developed domain-specific languages for robot control and investigated methods for automatic error handling. Published findings in peer-reviewed journals.",
+    text: "Dissertation focused on domain-specific languages for robotic assembly. A particular emphasis was on the creation of a reversible programming language, that is, programs can be executed both forward and backward. This would enable robots to fix errors without the need for addi- tional error-handling code by using a trial-and-error approach.",
+    tags: ["PhD", "Assembly", "ErrorRecovery", "DSL", "Research", "Reversibility"],
+    category: "work"
+  },
+  // Insert paper maybe
+  {
     title: "Swarm Robotics Research",
     date: "2016",
     image: "swarm-robots.jpg",
-    text: "Visiting researcher focusing on swarm robotics and emergent behavior applications. Developed drivers and algorithms for small mobile robots, investigating collective intelligence and distributed control systems. Conducted experiments with multi-robot coordination.",
+    text: "Visiting researcher at University of Ottawa, Canada. /Work included a driver and research into the small Epuck robot meant for swarm robotics and emergent behaviour applications.",
+    links: [
+      { url: "https://github.com/skorbiz/epuck_driver", label: "code", type: "github" },
+    ],
     tags: ["SwarmRobotics", "EmergentBehavior", "MultiRobot", "DistributedControl", "Research"],
     category: "project"
   },
   {
-    title: "Industrial Automation Reuse Study",
+    title: "Master's thesis - Industrial Automation Reuse Study",
     date: "2015",
     image: "manufacturing-line.jpg",
     text: "Master's thesis project investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analyzed efficiency improvements in production environments.",
     tags: ["MasterThesis", "Automation", "Reusability", "Manufacturing", "Efficiency"],
     category: "project"
   },
-  {
-    title: "Formula Student Sensor Integration",
-    date: "2012",
-    image: "formula-car.jpg",
-    text: "Bachelor's project involving signal analysis and processing for gyroscope, accelerometer, and sensor systems. Implemented embedded C and VHDL solutions for a Formula Student race car, focusing on real-time data processing and control systems.",
-    tags: ["BachelorThesis", "Sensors", "EmbeddedC", "VHDL", "RealTime", "Automotive"],
-    category: "project"
-  },
-  {
-    title: "Domain-Specific Language Development",
-    date: "2014",
-    image: "dsl-programming.jpg",
-    text: "Research project developing adaptive action libraries using simulation and domain-specific languages for robotics applications. Created tools for easier robot programming and behavior specification, improving development efficiency for complex robotic tasks.",
-    tags: ["DSL", "Simulation", "ActionLibraries", "RobotProgramming", "Tools"],
-    category: "project"
-  },
-  {
-    title: "Error Recovery System Design",
-    date: "2016",
-    image: "drone.jpg",
-    text: "Developed automatic error recovery mechanisms for robot assembly operations using reverse execution techniques. Created systems that could detect failures and automatically backtrack to safe states, significantly improving robotic assembly reliability.",
-    tags: ["ErrorRecovery", "ReverseExecution", "Assembly", "Reliability", "Automation"],
-    category: "project"
-  },
-  {
-    title: "Flexible Manufacturing Research",
-    date: "2015",
-    image: "flexible-manufacturing.jpg",
-    text: "Research into software structures for control and monitoring of flexible automation systems. Focused on small batch assembly using robotic manipulators, developing adaptive control systems that could handle varying production requirements.",
-    tags: ["FlexibleManufacturing", "SmallBatch", "Manipulators", "AdaptiveControl", "Production"],
-    category: "project"
-  }
 ];
