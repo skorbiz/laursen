@@ -84,9 +84,9 @@ export const timelineData: TimelineEntry[] = [
     image: "podracer.gif",
     text: "Organized and led a Christmas coding event. Developed a small 2D podracing game engine where colleagues could write bots to compete in various challenges. Organized programming competition that combined gaming with algorithmic problem-solving.",
     links: [
-      { url: "https://github.com/skorbiz/podracer", label: "code", type: "github" },
+      { url: "https://github.com/skorbiz/podracer", label: "Code", type: "github" },
     ],
-    tags: ["GameDevelopment", "Competition", "Algorithms", "EventOrganization", "2DGames", "Bots"],
+    tags: ["Competition", "Algorithms", "PhysicsSimulation", "Bots"],
     category: "community"
   },
   {
@@ -136,8 +136,8 @@ export const timelineData: TimelineEntry[] = [
     title: "Job: Scientific assistant - University of Southern Denmark",
     date: "2017",
     image: "code-monitor.jpg",
-    text: "Continued PhD research and thought the course Robots in context.",
-    tags: ["Research", "Teaching"],
+    text: "Continuation of PhD research.",
+    // tags: ["Research", "Teaching"],
     category: "work"
   },
   {
@@ -157,7 +157,7 @@ export const timelineData: TimelineEntry[] = [
     image: "swarm-robots.jpg",
     text: "Visiting researcher at University of Ottawa, Canada. /Work included a driver and research into the small Epuck robot meant for swarm robotics and emergent behaviour applications.",
     links: [
-      { url: "https://github.com/skorbiz/epuck_driver", label: "code", type: "github" },
+      { url: "https://github.com/skorbiz/epuck_driver", label: "Code", type: "github" },
     ],
     tags: ["SwarmRobotics", "EmergentBehavior", "MultiRobot", "DistributedControl", "Research"],
     category: "project"
