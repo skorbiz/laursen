@@ -15,14 +15,15 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [x] Mobile-friendly page.
 - [x] Dark mode.
 - [x] Labels update: job, project, community.
-- [x] **Easy image adding** - I uploaded a new image for the Weed Removal Robot - Navigation & Control post but it dosnt show. Fix it - and make it so that images load more genneric next time. And show a dummy image if it fails to load the image. Probably because the loader in the content is a bit wired with redundant typing of image names. Make the flow more smooth.
-- [x] **Update links** - Update links for github and linkedin to https://github.com/skorbiz and https://www.linkedin.com/in/johan-sund-laursen/
-- [x] **Fix Link** - Why doesnt the link in Christmas Coding Event - 2D Podracing Game work?
-- [x] **Hide posts option** - Make a field so that i can easily hide posts. For instance i want to keep the content of some post but i might want to trim what is show on the page.
-- [x] **Style guide** - Add a style guide (probably as a comment in the cv-timeline.ts) for how to go from the draft text to the AI-corrected text. A key point is to avoid excessive positive words like 'advanced' and 'pioneering', as they can make it look like a sales pitch. Here, the focus is on prices and exact descriptions of the tasks. Technology keywords and tasks are more critical.
-- [x] **Updated description** - Based on our chact and the code, make a description of what features the page has in the button of the readme. Make the description clear and consice so that it could in theory be used (in broad terms) to gennerate the page again (without all the content of cource)
-- [x] **website name** - When seeing the tab in browser, the site is called chronos-bot-forge. Why is that? Can we change it to 'laursen timeline' or something?
+- [x] Update links
+- [x] Hide posts option
+- [x] Style guide for centent
+- [x] Updated description
+- [x] website name
+- [ ] **Easy image adding** - Every time i want to add an image, i have to add  write the image name multiple times. Once in cv-timeline.tx and twice in TimelineEntry.tsx. Can this be simplified, e.g. can we only specify the image in cv-timeline.tx and then dynamically load it?
+- [ ] **Fix Link** - The link in the post Christmas Coding Event - 2D Podracing Game does not work. Can you fix it?
 - [ ] **o-robotics image** - Add your ai magic to the image o-robotics so that it fits well with the narrow horizontal layout, and other things if you have ideas.
+- [ ] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.
 - [ ] **Dark background in light mode** - Lets try and make the background dark even in light mode. Not for the posts, they remain white - but the actual background itself. Also consider how to handle the introduction text then.
 - [ ] **Unused code** - Remove unused code. There is a lot of code for things like tool tips and other UI elements. Are all the components used? - or can we remove some of them for a cleaner repo. Make a list of things that could be removed or cleaned. If they have a limited function, write that as well.
 - [ ] **Comments** - Make more comments in the code, to make it more understandable and readable to somebody with skills in backend code but limited knowledge of webdevelopmeent like typescript, react and tailwind.
@@ -59,7 +60,7 @@ Open the link shown in chrome.
 # What is this page
 
 ## Features Overview
-This is a professional timeline application built with React, TypeScript, and Tailwind CSS that showcases Johan Sund Laursen's career journey in robotics and software development. Key features include:
+This is a professional timeline application built with React, TypeScript, and Tailwind CSS that showcases my career journey in robotics and software development. Key features include:
 
 **Core Functionality:**
 - **Interactive Timeline**: Chronological display of career milestones with alternating left/right layout on desktop, stacked on mobile
