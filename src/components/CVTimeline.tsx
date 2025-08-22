@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 
 export const CVTimeline = () => {
+  // Filter out hidden entries
+  const visibleTimelineData = timelineData.filter(entry => !entry.hidden);
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
       {/* Header */}
@@ -33,13 +36,17 @@ export const CVTimeline = () => {
           
           {/* Social Links */}
           <div className="flex justify-center gap-4">
-            <Button variant="outline" size="sm" className="flex items-center gap-2">
-              <Github size={16} />
-              GitHub
+            <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
+              <a href="https://github.com/skorbiz" target="_blank" rel="noopener noreferrer">
+                <Github size={16} />
+                GitHub
+              </a>
             </Button>
-            <Button variant="outline" size="sm" className="flex items-center gap-2">
-              <Linkedin size={16} />
-              LinkedIn
+            <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
+              <a href="https://www.linkedin.com/in/johan-sund-laursen/" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={16} />
+                LinkedIn
+              </a>
             </Button>
           </div>
         </div>
@@ -70,12 +77,12 @@ export const CVTimeline = () => {
         {/* Mobile timeline line - left aligned */}
         <div className="md:hidden absolute left-4 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
         
-        {timelineData.map((entry, index) => (
+        {visibleTimelineData.map((entry, index) => (
           <TimelineEntry
             key={index}
             entry={entry}
             index={index}
-            isLast={index === timelineData.length - 1}
+            isLast={index === visibleTimelineData.length - 1}
           />
         ))}
       </div>

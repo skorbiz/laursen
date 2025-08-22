@@ -1,3 +1,19 @@
+/*
+STYLE GUIDE FOR TIMELINE ENTRIES:
+
+When converting draft text to polished text, follow these guidelines:
+1. AVOID excessive positive words like 'advanced', 'pioneering', 'cutting-edge' - they sound like sales pitch
+2. FOCUS on precise descriptions of tasks and technologies used
+3. EMPHASIZE technology keywords and specific accomplishments
+4. KEEP language professional but not boastful
+5. PRIORITIZE concrete details over abstract praise
+6. USE active voice and specific action verbs
+7. INCLUDE quantifiable results when possible
+
+Good: "Developed navigation stack for autonomous mobile robots using ROS2 Control and Nav2"
+Bad: "Pioneered cutting-edge advanced navigation solutions for revolutionary autonomous robots"
+*/
+
 export interface TimelineEntry {
   title: string;
   date: string;
@@ -8,6 +24,7 @@ export interface TimelineEntry {
   tags?: string[];
   links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
   category: 'work' | 'project' | 'community';
+  hidden?: boolean; // Set to true to hide from display
 }
 
 export const timelineData: TimelineEntry[] = [

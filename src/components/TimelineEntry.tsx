@@ -17,6 +17,11 @@ import formulaCarImg from "@/assets/formula-car.jpg";
 import dslProgrammingImg from "@/assets/dsl-programming.jpg";
 import errorRecoveryImg from "@/assets/error-recovery.jpg";
 import flexibleManufacturingImg from "@/assets/flexible-manufacturing.jpg";
+import oRoboticsImg from "@/assets/o-robotics.png";
+import mobileRoboticsCompanyImg from "@/assets/mobile-robotics-company.png";
+import enabledImg from "@/assets/enabled.png";
+import podracerGif from "@/assets/podracer.gif";
+import spot1Img from "@/assets/spot1.jpg";
 
 interface TimelineEntryProps {
   entry: TimelineEntryType;
@@ -41,6 +46,11 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       "dsl-programming.jpg": dslProgrammingImg,
       "error-recovery.jpg": errorRecoveryImg,
       "flexible-manufacturing.jpg": flexibleManufacturingImg,
+      "o-robotics.png": oRoboticsImg,
+      "mobile-robotics-company.png": mobileRoboticsCompanyImg,
+      "enabled.png": enabledImg,
+      "podracer.gif": podracerGif,
+      "spot1.jpg": spot1Img,
     };
     return imageMap[imageName] || robotWallImg; // fallback to robot-wall if not found
   };
@@ -110,6 +120,9 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
                 src={getLocalImage(entry.image)}
                 alt={entry.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.currentTarget.src = robotWallImg; // fallback image on error
+                }}
               />
             </div>
             
