@@ -20,7 +20,7 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [x] Style guide for centent
 - [x] Updated description
 - [x] website name
-- [ ] **Easy image adding** - Every time i want to add an image, i have to add  write the image name multiple times. Once in cv-timeline.tx and twice in TimelineEntry.tsx. Can this be simplified, e.g. can we only specify the image in cv-timeline.tx and then dynamically load it?
+- [x] **Easy image adding** - Every time i want to add an image, i have to add  write the image name multiple times. Once in cv-timeline.tx and twice in TimelineEntry.tsx. Can this be simplified, e.g. can we only specify the image in cv-timeline.tx and then dynamically load it?
 - [ ] **Fix Link** - The link in the post Christmas Coding Event - 2D Podracing Game does not work. Can you fix it?
 - [ ] **o-robotics image** - Add your ai magic to the image o-robotics so that it fits well with the narrow horizontal layout, and other things if you have ideas.
 - [ ] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.

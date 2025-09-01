@@ -2,26 +2,22 @@ import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe } from 'lucide-react';
 
-// Import all timeline images
-import robotWallImg from "@/assets/robot-wall.jpg";
-import droneImg from "@/assets/drone.jpg";
-import circuitBoardImg from "@/assets/circuit-board.jpg";
-import codeMonitorImg from "@/assets/code-monitor.jpg";
-import manipulatorArmImg from "@/assets/manipulator-arm.jpg";
-import laserScannerImg from "@/assets/laser-scanner.jpg";
-import devopsPipelineImg from "@/assets/devops-pipeline.jpg";
-import classroomRoboticsImg from "@/assets/classroom-robotics.jpg";
-import swarmRobotsImg from "@/assets/swarm-robots.jpg";
-import manufacturingLineImg from "@/assets/manufacturing-line.jpg";
-import formulaCarImg from "@/assets/formula-car.jpg";
-import dslProgrammingImg from "@/assets/dsl-programming.jpg";
-import errorRecoveryImg from "@/assets/error-recovery.jpg";
-import flexibleManufacturingImg from "@/assets/flexible-manufacturing.jpg";
-import oRoboticsImg from "@/assets/o-robotics.png";
-import mobileRoboticsCompanyImg from "@/assets/mobile-robotics-company.png";
-import enabledImg from "@/assets/enabled.png";
-import podracerGif from "@/assets/podracer.gif";
-import spot1Img from "@/assets/spot1.jpg";
+// Dynamically import all images from assets folder
+const importAssets = () => {
+  const images = import.meta.glob('@/assets/*', { eager: true });
+  const imageMap: Record<string, string> = {};
+  
+  Object.entries(images).forEach(([path, module]) => {
+    const filename = path.split('/').pop(); // Extract filename from path
+    if (filename && (module as any).default) {
+      imageMap[filename] = (module as any).default;
+    }
+  });
+  
+  return imageMap;
+};
+
+const assetImages = importAssets();
 
 interface TimelineEntryProps {
   entry: TimelineEntryType;
@@ -31,28 +27,8 @@ interface TimelineEntryProps {
 
 export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
   const getLocalImage = (imageName: string) => {
-    const imageMap: Record<string, string> = {
-      "robot-wall.jpg": robotWallImg,
-      "drone.jpg": droneImg,
-      "circuit-board.jpg": circuitBoardImg,
-      "code-monitor.jpg": codeMonitorImg,
-      "manipulator-arm.jpg": manipulatorArmImg,
-      "laser-scanner.jpg": laserScannerImg,
-      "devops-pipeline.jpg": devopsPipelineImg,
-      "classroom-robotics.jpg": classroomRoboticsImg,
-      "swarm-robots.jpg": swarmRobotsImg,
-      "manufacturing-line.jpg": manufacturingLineImg,
-      "formula-car.jpg": formulaCarImg,
-      "dsl-programming.jpg": dslProgrammingImg,
-      "error-recovery.jpg": errorRecoveryImg,
-      "flexible-manufacturing.jpg": flexibleManufacturingImg,
-      "o-robotics.png": oRoboticsImg,
-      "mobile-robotics-company.png": mobileRoboticsCompanyImg,
-      "enabled.png": enabledImg,
-      "podracer.gif": podracerGif,
-      "spot1.jpg": spot1Img,
-    };
-    return imageMap[imageName] || robotWallImg; // fallback to robot-wall if not found
+    // Use dynamically imported images or fallback to robot-wall.jpg
+    return assetImages[imageName] || assetImages['robot-wall.jpg'] || '/placeholder.svg';
   };
 
   const formatDate = () => {
@@ -121,7 +97,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
                 alt={entry.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 onError={(e) => {
-                  e.currentTarget.src = robotWallImg; // fallback image on error
+                  e.currentTarget.src = assetImages['robot-wall.jpg'] || '/placeholder.svg';
                 }}
               />
             </div>
