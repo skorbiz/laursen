@@ -20,15 +20,12 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [x] Style guide for centent
 - [x] Updated description
 - [x] website name
-- [x] **Easy image adding** - Every time i want to add an image, i have to add  write the image name multiple times. Once in cv-timeline.tx and twice in TimelineEntry.tsx. Can this be simplified, e.g. can we only specify the image in cv-timeline.tx and then dynamically load it?
-- [x] **Fix Link** - The link in the post Christmas Coding Event - 2D Podracing Game does not work. Can you fix it?
-- [x] **o-robotics image** - Add your ai magic to the image o-robotics so that it fits well with the narrow horizontal layout, and other things if you have ideas.
-- [ ] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.
-- [ ] **Dark background in light mode** - Lets try and make the background dark even in light mode. Not for the posts, they remain white - but the actual background itself. Also consider how to handle the introduction text then.
+- [x] Easy image adding
 - [ ] **Unused code** - Remove unused code. There is a lot of code for things like tool tips and other UI elements. Are all the components used? - or can we remove some of them for a cleaner repo. Make a list of things that could be removed or cleaned. If they have a limited function, write that as well.
 - [ ] **Comments** - Make more comments in the code, to make it more understandable and readable to somebody with skills in backend code but limited knowledge of webdevelopmeent like typescript, react and tailwind.
 - [ ] **Serverless** - Make a todo and comment on the complexity and consequences of getting rid of the server to run the site. E.g.  do we really need the  SPA routing and how will the site still load static assests like images probably when they are hosted on github.
 - [ ] **Local development** - I would like a flow where i can participate more in the development locally. My workflow is often i VS-code, so i would like a dev container with tools i need for it. Plus make changes on how to build and view the site in this readme. If you have other suggestion or tools i should use or do put them in the todos. Remember im normally a backend developer with little experience in web development.
+- [ ] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.
 
 ## Suggested todos: (unapproved)
 - [ ] placeholder
