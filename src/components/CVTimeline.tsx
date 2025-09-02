@@ -23,13 +23,13 @@ export const CVTimeline = () => {
         
         {/* Introduction */}
         <div className="max-w-3xl mx-auto mb-8">
-          <p className="text-muted-foreground leading-relaxed mb-6">
+          <p className="text-foreground leading-relaxed mb-6">
             Experienced software developer and robotics engineer with a diverse background, including multi-year
             research, ad-hoc consultancy, short-term projects, and ongoing maintenance of complex software stacks.
             Specialized in high-level software for autonomous robots, including navigation, perception, and control.
             Professionally curious and loves engaging in discussions about ideas and solutions.
           </p>
-          <p className="text-sm text-muted-foreground/80 mb-6 italic">
+          <p className="text-sm text-foreground/80 mb-6 italic">
             This timeline represents my introduction into AI-agent based programming. Learning and experimenting with Lovable
             to showcase some of my fun highlights in an interactive format.
           </p>

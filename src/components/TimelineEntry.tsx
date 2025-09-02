@@ -1,6 +1,7 @@
 import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe } from 'lucide-react';
+import { ImageModal } from "./ImageModal";
 
 // Dynamically import all images from assets folder
 const importAssets = () => {
@@ -90,16 +91,18 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-16' : 'md:justify-end md:pl-16'} ${index > 0 ? 'md:-mt-20' : ''}`}>
         <div className={`w-full max-w-lg ${isLeft ? 'md:mr-16' : 'md:ml-16'}`}>
           <div className={`bg-card rounded-lg border border-border dark:border-border/70 border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
-            {/* Image - compact */}
+            {/* Image - compact with modal */}
             <div className="h-24 w-full bg-muted overflow-hidden">
-              <img
-                src={getLocalImage(entry.image)}
-                alt={entry.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.src = assetImages['robot-wall.jpg'] || '/placeholder.svg';
-                }}
-              />
+              <ImageModal src={getLocalImage(entry.image)} alt={entry.title}>
+                <img
+                  src={getLocalImage(entry.image)}
+                  alt={entry.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = assetImages['robot-wall.jpg'] || '/placeholder.svg';
+                  }}
+                />
+              </ImageModal>
             </div>
             
             {/* Content */}
