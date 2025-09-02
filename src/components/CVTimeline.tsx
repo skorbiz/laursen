@@ -1,11 +1,27 @@
+// Timeline data and types
 import { timelineData } from "@/data/cv-timeline";
 import { TimelineEntry } from "./TimelineEntry";
+
+// Icons for social links and UI elements
 import { Github, Linkedin } from "lucide-react";
+
+// UI components
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 
+/**
+ * CVTimeline Component
+ * 
+ * Main component that renders the professional timeline interface.
+ * Features:
+ * - Responsive design (mobile-first)
+ * - Dark/light theme support
+ * - Social media links
+ * - Category legend
+ * - Chronological timeline with alternating layout
+ */
 export const CVTimeline = () => {
-  // Filter out hidden entries
+  // Filter out any timeline entries marked as hidden
   const visibleTimelineData = timelineData.filter(entry => !entry.hidden);
 
   return (

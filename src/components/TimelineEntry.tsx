@@ -1,14 +1,31 @@
+// Timeline data types
 import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
+
+// UI components  
 import { Badge } from "@/components/ui/badge";
+
+// Icons for categories and external links
 import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe } from 'lucide-react';
 
-// Dynamically import all images from assets folder
+/**
+ * Dynamic Asset Import System
+ * 
+ * Uses Vite's import.meta.glob to automatically import all images from the assets folder.
+ * This eliminates the need to manually import each image file.
+ * 
+ * Benefits:
+ * - Automatic discovery of new images
+ * - Type-safe access to assets
+ * - Fallback handling for missing images
+ */
 const importAssets = () => {
+  // Eagerly import all files from the assets directory
   const images = import.meta.glob('@/assets/*', { eager: true });
   const imageMap: Record<string, string> = {};
   
+  // Transform the import paths into a filename-to-URL mapping
   Object.entries(images).forEach(([path, module]) => {
-    const filename = path.split('/').pop(); // Extract filename from path
+    const filename = path.split('/').pop(); // Extract just the filename
     if (filename && (module as any).default) {
       imageMap[filename] = (module as any).default;
     }
@@ -17,20 +34,42 @@ const importAssets = () => {
   return imageMap;
 };
 
+// Pre-load all assets for use in components
 const assetImages = importAssets();
 
+// Component props interface
 interface TimelineEntryProps {
   entry: TimelineEntryType;
   isLast: boolean;
   index: number;
 }
 
+/**
+ * TimelineEntry Component
+ * 
+ * Renders a single timeline entry with responsive design:
+ * - Mobile: Stacked layout with left-aligned timeline
+ * - Desktop: Alternating left/right layout with centered timeline
+ * 
+ * Features:
+ * - Category-based styling (work/project/community)
+ * - Dynamic image loading with fallbacks
+ * - External links with appropriate icons
+ * - Responsive hover effects
+ */
 export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
+  /**
+   * Image resolution helper
+   * Uses the pre-loaded asset map to find images, with graceful fallbacks
+   */
   const getLocalImage = (imageName: string) => {
-    // Use dynamically imported images or fallback to robot-wall.jpg
     return assetImages[imageName] || assetImages['robot-wall.jpg'] || '/placeholder.svg';
   };
 
+  /**
+   * Date formatting helper
+   * Supports both single dates and date ranges (startDate - endDate)
+   */
   const formatDate = () => {
     if (entry.startDate) {
       return `${entry.startDate} - ${entry.date}`;
@@ -38,6 +77,10 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     return entry.date;
   };
 
+  /**
+   * Category icon mapping
+   * Each category (work/project/community) has a distinct icon
+   */
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'work': return <Briefcase className="h-3 w-3" />;
@@ -47,6 +90,10 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     }
   };
 
+  /**
+   * Timeline dot color based on entry category
+   * Uses semantic colors to distinguish between work, projects, and community activities
+   */
   const getDotColor = (category: string) => {
     switch (category) {
       case 'work': return 'bg-blue-500 border-blue-200';
@@ -56,6 +103,10 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     }
   };
 
+  /**
+   * Left border accent color for timeline cards
+   * Provides visual consistency with the timeline dots
+   */
   const getCategoryAccent = (category: string) => {
     switch (category) {
       case 'work': return 'border-l-blue-500';
@@ -65,6 +116,10 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     }
   };
 
+  /**
+   * Link icon resolver based on link type
+   * Provides appropriate icons for different external link types
+   */
   const getLinkIcon = (type?: string) => {
     switch (type) {
       case 'github': return <Github className="h-3 w-3" />;
@@ -74,6 +129,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     }
   };
 
+  // Determine layout side for desktop alternating layout (even = left, odd = right)
   const isLeft = index % 2 === 0;
 
   return (

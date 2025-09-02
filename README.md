@@ -21,9 +21,9 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [x] Updated description
 - [x] website name
 - [x] Easy image adding
-- [ ] **Unused code** - Remove unused code. There is a lot of code for things like tool tips and other UI elements. Are all the components used? - or can we remove some of them for a cleaner repo. Make a list of things that could be removed or cleaned. If they have a limited function, write that as well.
-- [ ] **Comments** - Make more comments in the code, to make it more understandable and readable to somebody with skills in backend code but limited knowledge of webdevelopmeent like typescript, react and tailwind.
-- [ ] **Serverless** - Make a todo and comment on the complexity and consequences of getting rid of the server to run the site. E.g.  do we really need the  SPA routing and how will the site still load static assests like images probably when they are hosted on github.
+- [x] **Unused code** - Remove unused code. There is a lot of code for things like tool tips and other UI elements. Are all the components used? - or can we remove some of them for a cleaner repo. Make a list of things that could be removed or cleaned. If they have a limited function, write that as well.
+- [x] **Comments** - Make more comments in the code, to make it more understandable and readable to somebody with skills in backend code but limited knowledge of webdevelopmeent like typescript, react and tailwind.
+- [x] **Serverless** - Make a todo and comment on the complexity and consequences of getting rid of the server to run the site. E.g.  do we really need the  SPA routing and how will the site still load static assests like images probably when they are hosted on github.
 - [ ] **Local development** - I would like a flow where i can participate more in the development locally. My workflow is often i VS-code, so i would like a dev container with tools i need for it. Plus make changes on how to build and view the site in this readme. If you have other suggestion or tools i should use or do put them in the todos. Remember im normally a backend developer with little experience in web development.
 - [ ] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.
 
