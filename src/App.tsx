@@ -1,5 +1,4 @@
 // Core UI components for toast notifications and tooltips
-import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -14,7 +13,6 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 // Page components
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
 
 // Initialize React Query client for data management
 const queryClient = new QueryClient();
@@ -29,23 +27,21 @@ const queryClient = new QueryClient();
  * 4. HashRouter - Client-side routing using hash-based URLs (GitHub Pages compatible)
  * 
  * Routing:
- * - "/" - Main timeline page (Index component)
- * - "*" - Catch-all for unknown routes (NotFound component)
+ * - All routes lead to the Index component (single page application)
  */
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="light" storageKey="laursen-theme">
       <TooltipProvider>
-        {/* Toast notifications - dual setup for flexibility */}
-        <Toaster />
+        {/* Toast notifications using Sonner */}
         <Sonner />
         
         {/* Hash-based routing for static hosting compatibility */}
         <HashRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            {/* Single page application - all routes go to Index */}
+            <Route path="*" element={<Index />} />
           </Routes>
         </HashRouter>
       </TooltipProvider>
