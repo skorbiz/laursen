@@ -25,8 +25,8 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [x] **Comments** - Make more comments in the code, to make it more understandable and readable to somebody with skills in backend code but limited knowledge of webdevelopmeent like typescript, react and tailwind.
 - [x] **Serverless** - Make a todo and comment on the complexity and consequences of getting rid of the server to run the site. E.g.  do we really need the  SPA routing and how will the site still load static assests like images probably when they are hosted on github.
 - [x] **Unused code part 2** - Implement the suggestions made in unused-code-analysis.md
-- [ ] **Local development** - I would like a flow where i can participate more in the development locally. My workflow is often i VS-code, so i would like a dev container with tools i need for it. Plus make changes on how to build and view the site in this readme. If you have other suggestion or tools i should use or do put them in the todos. Remember im normally a backend developer with little experience in web development.
-- [ ] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.
+- [x] **Local development** - I would like a flow where i can participate more in the development locally. My workflow is often i VS-code, so i would like a dev container with tools i need for it. Plus make changes on how to build and view the site in this readme. If you have other suggestion or tools i should use or do put them in the todos. Remember im normally a backend developer with little experience in web development.
+- [x] **Expanded images** - Make it so that when you click an image it shows the entire image. Focus on doing it so that it adds the least amount of complexity to the TimelineEntry.tsx and CVTimeline.tsx code.
 
 ## Suggested todos: (unapproved)
 - [ ] placeholder
@@ -45,15 +45,42 @@ This list represents the work that is still needed, that is, approved to-dos wri
 - [ ] Implement keyboard navigation support for accessibility
 
 # Local development
-(Link on deploying locally and on github pages)[https://dev.to/coderatul/host-lovabledev-project-on-github-pages-1c61]
 
-```
+## Using VS Code Dev Container (Recommended for Backend Developers)
+This project includes a complete VS Code Dev Container setup that provides all the tools you need for web development:
+
+1. **Open in Dev Container:**
+   - Install the "Dev Containers" extension in VS Code
+   - Open this project in VS Code
+   - When prompted, click "Reopen in Container" (or use Ctrl+Shift+P → "Dev Containers: Reopen in Container")
+   - The container will automatically install Node.js, dependencies, and useful VS Code extensions
+
+2. **Start Development:**
+   ```bash
+   npm run dev        # Start the development server
+   ```
+   - The dev server will be automatically forwarded to your local machine (usually port 5173)
+   - Live reload will update the page as you make changes
+
+3. **Build for Production:**
+   ```bash
+   npm run build      # Build for production
+   npm run preview    # Preview the production build locally
+   ```
+
+## Manual Local Setup (Alternative)
+If you prefer not to use the dev container:
+
+```bash
 npm install       # Install all dependencies
-npm run build
-npm run dev
+npm run dev       # Start development server
+npm run build     # Build for production
 ```
 
-Open the link shown in chrome.
+## Deployment
+GitHub Pages deployment is handled automatically via GitHub Actions when you push to the main branch.
+
+Reference: [Deploy Lovable.dev project on GitHub Pages](https://dev.to/coderatul/host-lovabledev-project-on-github-pages-1c61)
 
 # What is this page
 

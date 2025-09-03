@@ -3,6 +3,10 @@ import { TimelineEntry as TimelineEntryType } from "@/data/cv-timeline";
 
 // UI components  
 import { Badge } from "@/components/ui/badge";
+import { ImageModal } from "./ImageModal";
+
+// React hooks
+import { useState } from "react";
 
 // Icons for categories and external links
 import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe } from 'lucide-react';
@@ -58,6 +62,8 @@ interface TimelineEntryProps {
  * - Responsive hover effects
  */
 export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
+  // State for image modal
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   /**
    * Image resolution helper
    * Uses the pre-loaded asset map to find images, with graceful fallbacks
@@ -146,8 +152,8 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-16' : 'md:justify-end md:pl-16'} ${index > 0 ? 'md:-mt-20' : ''}`}>
         <div className={`w-full max-w-lg ${isLeft ? 'md:mr-16' : 'md:ml-16'}`}>
           <div className={`bg-card rounded-lg border border-border dark:border-border/70 border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
-            {/* Image - compact */}
-            <div className="h-24 w-full bg-muted overflow-hidden">
+            {/* Image - compact and clickable for full view */}
+            <div className="h-24 w-full bg-muted overflow-hidden cursor-pointer" onClick={() => setIsImageModalOpen(true)}>
               <img
                 src={getLocalImage(entry.image)}
                 alt={entry.title}
@@ -206,6 +212,14 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      <ImageModal
+        src={getLocalImage(entry.image)}
+        alt={entry.title}
+        isOpen={isImageModalOpen}
+        onClose={() => setIsImageModalOpen(false)}
+      />
     </div>
   );
 };
