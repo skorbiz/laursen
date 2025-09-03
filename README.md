@@ -1,4 +1,4 @@
-# Johan Sund Laursen - Professional Timeline
+# Professional Timeline
 
 This is a modern, interactive timeline showcasing my professional journey in robotics and software development. Built as my introduction to AI-agent-based programming using Lovable, this project demonstrates both my career progression and modern web development practices.
 

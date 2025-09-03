@@ -3,9 +3,9 @@
  */
 
 export const APP_CONFIG = {
-  title: "Johan Sund Laursen - Professional Timeline",
+  title: "Professional Timeline",
   description: "Professional journey in robotics and software development",
-  author: "Johan Sund Laursen",
+  author: "Professional Developer",
   url: "https://skorbiz.github.io/laursen/",
   version: "1.0.0"
 } as const;

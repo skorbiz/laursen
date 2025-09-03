@@ -1,7 +1,7 @@
-# Contributing to Johan's Professional Timeline
+# Contributing to Professional Timeline
 
 ## Project Overview
-This is a personal portfolio project showcasing Johan Sund Laursen's professional journey in robotics and software development. The project serves as both a career timeline and a learning exercise in modern web development practices.
+This is a personal portfolio project showcasing a professional journey in robotics and software development. The project serves as both a career timeline and a learning exercise in modern web development practices.
 
 ## Technology Stack
 - **Frontend**: React 18, TypeScript, Tailwind CSS
