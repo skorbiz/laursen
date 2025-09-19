@@ -1,6 +1,6 @@
 // Timeline data and types
 import { timelineData } from "@/data/cv-timeline";
-import { NewTimelineEntry } from "./NewTimelineEntry";
+import { TimelineEntry } from "./TimelineEntry";
 
 // Icons for social links and UI elements
 import { Github, Linkedin } from "lucide-react";
@@ -87,12 +87,18 @@ export const CVTimeline = () => {
       </div>
 
       {/* Timeline */}
-      <div className="max-w-5xl mx-auto">
+      <div className="relative">
+        {/* Central timeline line - hidden on mobile, visible on desktop */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        {/* Mobile timeline line - left aligned */}
+        <div className="md:hidden absolute left-4 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        
         {visibleTimelineData.map((entry, index) => (
-          <NewTimelineEntry
+          <TimelineEntry
             key={index}
             entry={entry}
             index={index}
+            isLast={index === visibleTimelineData.length - 1}
           />
         ))}
       </div>
