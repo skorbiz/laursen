@@ -35,7 +35,8 @@ export const timelineData: TimelineEntry[] = [
     image: "o-robotics.png", 
     text: "Assisted a client with their weed removal robot designed for paved environments. Wrapped their motor drivers using ROS2 Control and helped integrate a GPS navigation stack in both the Gazebo simulation and the physical mobile robot.",
     tags: ["ROS2", "ROS2Control", "Nav2", "GPS Navigation", "AutonomousRobot", "Gazebo"],
-    category: "project"
+    category: "project",
+    largeBanner: true
   },
   {
     title: "Forklift Robot - ROS2 Simulation & Navigation",
@@ -44,7 +45,7 @@ export const timelineData: TimelineEntry[] = [
     text: "Spare time project: Developed the initial software stack for a collaborative forklift robot startup. Outlined software architecture, configured URDF model, created ROS2 simulation environment using Gazebo, integrated Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, and adapted SLAM framework.",
     tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
     category: "project",
-    largeBanner: true
+    largeBanner: false
   },
   {
     title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
@@ -79,7 +80,8 @@ export const timelineData: TimelineEntry[] = [
     draft: "Lead the Made Safety project. The goal was to develop a safety system that would allow safe collaboration between robot manipulators and autonomous mobile robots in industrial environments. The project included the development of a safety controller that allowed collaboration between the mobile robot platforms safety and the safety on the robot workcell only when the to were docked.",
     text: "Led Made Safety project developing safety systems for collaboration between robot manipulators and autonomous mobile robots in industrial environments. Developed safety controller enabling secure communication between mobile robot platform safety systems and robot workcell safety systems during docking operations.",
     tags: ["Safety", "SICK", "MIR", "IndustrialRobots", "SafetyController"],
-    category: "project"
+    category: "project",
+    largeBanner: true
   },
   {
     title: "Alitrak Robot - Outdoor Autonomous Navigation Platform",
@@ -125,7 +127,8 @@ export const timelineData: TimelineEntry[] = [
       { url: "https://github.com/skorbiz/podracer", label: "Code", type: "github" },
     ],
     tags: ["Competition", "Algorithms", "PhysicsSimulation", "Bots"],
-    category: "community"
+    category: "community",
+    largeBanner: true
   },
   {
     title: "Bazel Build System Migration",
