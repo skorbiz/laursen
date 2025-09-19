@@ -81,7 +81,7 @@ export const timelineData: TimelineEntry[] = [
     text: "Led Made Safety project developing safety systems for collaboration between robot manipulators and autonomous mobile robots in industrial environments. Developed safety controller enabling secure communication between mobile robot platform safety systems and robot workcell safety systems during docking operations.",
     tags: ["Safety", "SICK", "MIR", "IndustrialRobots", "SafetyController"],
     category: "project",
-    largeBanner: true
+    largeBanner: false
   },
   {
     title: "Alitrak Robot - Outdoor Autonomous Navigation Platform",
@@ -122,13 +122,13 @@ export const timelineData: TimelineEntry[] = [
     title: "Christmas Coding Event - 2D Podracing Game",
     date: "2022",
     image: "podracer.gif",
-    text: "Organized and led Christmas coding event. Developed 2D podracing game engine where colleagues could write bots to compete in various challenges. Created programming competition combining gaming with algorithmic problem-solving.",
+    text: "Organised and led Christmas coding event. Developed 2D podracing game engine where colleagues could write bots to compete in various challenges. Created programming competition combining gaming with algorithmic problem-solving.",
     links: [
       { url: "https://github.com/skorbiz/podracer", label: "Code", type: "github" },
     ],
     tags: ["Competition", "Algorithms", "PhysicsSimulation", "Bots"],
     category: "community",
-    largeBanner: true
+    largeBanner: false
   },
   {
     title: "Bazel Build System Migration",
@@ -161,8 +161,8 @@ export const timelineData: TimelineEntry[] = [
     title: "Laser Scanner Analysis Project",
     date: "2020",
     image: "laser-scanner.jpg",
-    text: "Conducted analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensors, analyzed noise patterns, and resolved complex bugs in robot docking performance through systematic sensor characterization.",
-    tags: ["LaserScanners", "Analysis", "Perception", "Optimization"],
+    text: "Conducted analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensors, analysed noise patterns, and resolved complex bugs in robot docking performance through systematic sensor characterization.",
+    tags: ["LaserScanners", "Analysis", "Perception", "Optimisation"],
     category: "project"
   },
   {
@@ -178,7 +178,7 @@ export const timelineData: TimelineEntry[] = [
     title: "Teaching - Robots in Context",
     date: "2017",
     image: "classroom-robotics.jpg",
-    text: "Taught introductory robotics course covering kinematic modeling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments.",
+    text: "Taught introductory robotics course covering kinematic modelling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments.",
     tags: ["Teaching", "Kinematics", "Control", "PathPlanning", "RANSAC", "Kalman"],
     category: "community"
   },
