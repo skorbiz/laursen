@@ -25,6 +25,7 @@ export interface TimelineEntry {
   links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
   category: 'work' | 'project' | 'community';
   hidden?: boolean; // Set to true to hide from display
+  largeBanner?: boolean; // Set to true for double height banner
 }
 
 export const timelineData: TimelineEntry[] = [
@@ -42,7 +43,8 @@ export const timelineData: TimelineEntry[] = [
     image: "mobile-robotics-company.png",
     text: "Spare time project: Developed the initial software stack for a collaborative forklift robot startup. Outlined software architecture, configured URDF model, created ROS2 simulation environment using Gazebo, integrated Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, and adapted SLAM framework.",
     tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
-    category: "project"
+    category: "project",
+    largeBanner: true
   },
   {
     title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
@@ -55,7 +57,8 @@ export const timelineData: TimelineEntry[] = [
       { url: "https://bostondynamics.com/products/spot/", label: "Spot Robot", type: "website" }
     ],
     tags: ["BostonDynamicsSpot", "FlukeSV600", "AcousticImaging", "Python", "Integration", "ProjectManagement"],
-    category: "project"
+    category: "project",
+    largeBanner: true
   },
   {
     title: "Enabled Robot Playtime",
@@ -66,7 +69,8 @@ export const timelineData: TimelineEntry[] = [
     ],
     text: "Implemented box tracking system using Enabled Robot mobile manipulator. Integrated MoveIT motion planning with ROS2 and Qualisys motion capture system for real-time object tracking and manipulation 🤖.",
     tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "MotionCapture"],
-    category: "project"
+    category: "project",
+    largeBanner: true
   },
   {
     title: "Made Safety - Safe Collaboration Between Robot Manipulators and AMRs",
@@ -85,7 +89,8 @@ export const timelineData: TimelineEntry[] = [
     draft: "Participated in the big european reasearch project Canopies. The goal was to develop robots for grape harvesting. Our role was converting the Alitrak platform into a platform sutible for autonomous navigation. This included backwards engineering the CAN interface for the tracks, adding sensors and drivers and modelling the robot in Gazebo and ROS.",
     text: "Participated in European Canopies research project developing robots for grape harvesting. Converted Alitrak platform for autonomous navigation by reverse-engineering CAN interface for track controls, integrating sensors and drivers, and creating robot simulation models in Gazebo and ROS.",
     tags: ["ROS2", "Gazebo", "URDF", "CAN", "OutdoorRobots", "Agriculture"],
-    category: "project"
+    category: "project",
+    largeBanner: true
   },
   {
     title: "Public Speaking - When Mobile Robots Leave the Factory Floor",

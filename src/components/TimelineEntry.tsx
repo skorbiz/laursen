@@ -152,8 +152,8 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
       <div className={`flex pl-12 md:pl-0 ${isLeft ? 'md:justify-start md:pr-16' : 'md:justify-end md:pl-16'} ${index > 0 ? 'md:-mt-20' : ''}`}>
         <div className={`w-full max-w-lg ${isLeft ? 'md:mr-16' : 'md:ml-16'}`}>
           <div className={`bg-card rounded-lg border border-border dark:border-border/70 border-l-4 ${getCategoryAccent(entry.category)} shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden`}>
-            {/* Image - compact and clickable for full view */}
-            <div className="h-24 w-full bg-muted overflow-hidden cursor-pointer" onClick={() => setIsImageModalOpen(true)}>
+            {/* Image - compact and clickable for full view, with dynamic height */}
+            <div className={`w-full bg-muted overflow-hidden cursor-pointer ${entry.largeBanner ? 'h-48' : 'h-24'}`} onClick={() => setIsImageModalOpen(true)}>
               <img
                 src={getLocalImage(entry.image)}
                 alt={entry.title}
