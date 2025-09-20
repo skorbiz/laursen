@@ -41,6 +41,69 @@ All core features have been implemented and the project is ready for production 
 - [ ] **Social sharing** - Add sharing buttons for individual timeline entries
 - [ ] **Progressive Web App** - Service worker for offline functionality
 
+### 🎯 PRIORITY TODO: Responsive Layout Engine Redesign
+
+**Issue**: Current timeline layout has scaling problems, overlapping content, and disconnected visual elements at various screen sizes.
+
+**Goal**: Create a fluid, container-query-based layout system that adapts smoothly to any viewport size.
+
+**Implementation Steps**:
+
+1. **Analysis Phase**
+   - [ ] Audit current breakpoint behavior across device sizes (320px - 2560px)
+   - [ ] Identify specific failure points where layout breaks
+   - [ ] Document content width requirements vs. available space
+
+2. **Design New Layout System**
+   - [ ] Replace fixed breakpoint system with container queries
+   - [ ] Design fluid grid system that adapts to content + available space
+   - [ ] Create progressive layout modes: mobile → tablet → desktop → wide
+   - [ ] Plan smooth transitions between layout states
+
+3. **Timeline Architecture Refactor**
+   - [ ] **Create `TimelineContainer.tsx`**: Smart container that measures available space
+   - [ ] **Create `TimelineLayout.tsx`**: Layout strategy component that chooses optimal arrangement
+   - [ ] **Refactor `TimelineEntry.tsx`**: Make positioning props-driven instead of self-calculating
+   - [ ] **Create `TimelineConnector.tsx`**: Dedicated component for visual connections
+
+4. **Layout Strategy Implementation**
+   - [ ] **Narrow Mobile (< 480px)**: Single column, minimal padding, compact cards
+   - [ ] **Wide Mobile (480px - 640px)**: Single column with more breathing room
+   - [ ] **Tablet Portrait (640px - 900px)**: Consider asymmetric layout or wider cards
+   - [ ] **Tablet Landscape/Small Desktop (900px - 1200px)**: Introduce alternating layout
+   - [ ] **Desktop (1200px+)**: Full alternating with optimal spacing
+
+5. **Smart Spacing System**
+   - [ ] Replace fixed margins with calculated spacing based on available width
+   - [ ] Implement dynamic card width that fills available space optimally
+   - [ ] Create adaptive typography scaling for different card sizes
+   - [ ] Ensure minimum touch targets on all devices
+
+6. **Connection System Redesign**
+   - [ ] Replace absolute positioning with CSS Grid or Flexbox for timeline dots
+   - [ ] Create adaptive connector lines that adjust to actual content positioning
+   - [ ] Implement visual connection system that never disconnects
+   - [ ] Add smooth animations for layout transitions
+
+7. **Testing & Refinement**
+   - [ ] Test on real devices: phones, tablets, laptops, desktops
+   - [ ] Verify no overlapping content at any screen size
+   - [ ] Ensure smooth transitions when resizing browser
+   - [ ] Validate accessibility across all layout modes
+
+**AI Implementation Prompt for Future Use**:
+```
+"Redesign the timeline layout system with these requirements:
+1. Replace the current alternating desktop layout with a container-query-based system
+2. Create smooth scaling from mobile (320px) to ultrawide (2560px+) displays
+3. Eliminate all content overlapping and disconnected visual elements
+4. Use CSS Grid or Flexbox for robust positioning instead of absolute positioning
+5. Make the layout adapt fluidly to content width needs vs. available space
+6. Create dedicated components for layout logic, timeline connections, and container management
+7. Implement progressive layout modes that transition smoothly
+8. Ensure the timeline dots and connecting lines always align perfectly with content cards"
+```
+
 ### 🚫 Considered but Rejected:
 - Search/filter functionality (complexity vs. benefit for personal CV)
 - Smooth scrolling animations (performance vs. visual impact)
@@ -88,6 +151,43 @@ npm run build     # Build for production
 GitHub Pages deployment is handled automatically via GitHub Actions when you push to the main branch.
 
 Reference: [Deploy Lovable.dev project on GitHub Pages](https://dev.to/coderatul/host-lovabledev-project-on-github-pages-1c61)
+
+---
+
+## 🏗️ Layout Architecture
+
+### Component Hierarchy
+The timeline layout system consists of several interconnected components:
+
+**CVTimeline.tsx** (Main Container)
+- Root component managing the overall page layout
+- Fixed max-width container (`max-w-6xl`) with centered alignment
+- Handles header, legend, timeline container, and footer sections
+- Manages the central timeline line positioning (dual lines for mobile/desktop)
+
+**TimelineEntry.tsx** (Individual Timeline Items)
+- Renders each timeline entry with responsive positioning
+- Implements alternating left/right layout on desktop (`index % 2`)
+- Uses complex positioning with absolute/relative layouts for timeline dots
+- Manages connecting lines between timeline dots and content cards
+
+### Current Layout Mechanics
+1. **Desktop Layout**: Alternating left/right positioning with centered timeline
+   - Even indices (0, 2, 4...) appear on the left side
+   - Odd indices (1, 3, 5...) appear on the right side
+   - Timeline dots positioned at 50% with transforms
+   - Connecting lines use conditional positioning based on entry side
+
+2. **Mobile Layout**: Stacked vertical layout with left-aligned timeline
+   - All entries stack vertically with consistent left padding
+   - Timeline line positioned at fixed left offset
+   - Timeline dots aligned to the left timeline
+
+### Known Layout Issues
+- **Overlapping on Small Screens**: Content cards can overlap when viewport is too narrow
+- **Disconnected Arrows**: Connecting lines between timeline dots and cards sometimes have gaps
+- **Scaling Problems**: Layout breaks at intermediate screen sizes between mobile/desktop breakpoints
+- **Fixed Breakpoints**: Hard transitions at `md:` breakpoint (768px) don't account for content needs
 
 ---
 
