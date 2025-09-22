@@ -1,10 +1,6 @@
-import { useState } from "react";
-
 // Timeline data and types
 import { timelineData } from "@/data/cv-timeline";
-import { NewTimelineEntry } from "./NewTimelineEntry";
-import { TimelineContainer, LayoutMode } from "./TimelineContainer";
-import { TimelineLayout } from "./TimelineLayout";
+import { TimelineEntry } from "./TimelineEntry";
 
 // Icons for social links and UI elements
 import { Github, Linkedin } from "lucide-react";
@@ -25,7 +21,6 @@ import { ThemeToggle } from "./ThemeToggle";
  * - Chronological timeline with alternating layout
  */
 export const CVTimeline = () => {
-  const [layoutMode, setLayoutMode] = useState<LayoutMode>('narrow-mobile');
   // Filter out any timeline entries marked as hidden
   const visibleTimelineData = timelineData.filter(entry => !entry.hidden);
 
@@ -91,37 +86,22 @@ export const CVTimeline = () => {
         </div>
       </div>
 
-      {/* Timeline Section */}
-      <TimelineContainer onLayoutChange={setLayoutMode}>
-        <TimelineLayout layoutMode={layoutMode}>
-          {visibleTimelineData.map((entry, index) => {
-            const isMobile = layoutMode === 'narrow-mobile' || layoutMode === 'wide-mobile';
-            const isTablet = layoutMode === 'tablet';
-            
-            // Determine position based on layout mode
-            let position: 'left' | 'right' | 'mobile';
-            if (isMobile) {
-              position = 'mobile';
-            } else if (isTablet) {
-              // For tablet, alternate but bias towards right column for better balance
-              position = index % 3 === 0 ? 'left' : 'right';
-            } else {
-              // Desktop: traditional alternating
-              position = index % 2 === 0 ? 'left' : 'right';
-            }
-            
-            return (
-              <NewTimelineEntry
-                key={index}
-                entry={entry}
-                layoutMode={layoutMode}
-                position={position}
-                isLast={index === visibleTimelineData.length - 1}
-              />
-            );
-          })}
-        </TimelineLayout>
-      </TimelineContainer>
+      {/* Timeline */}
+      <div className="relative">
+        {/* Central timeline line - hidden on mobile, visible on desktop */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        {/* Mobile timeline line - left aligned */}
+        <div className="md:hidden absolute left-4 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        
+        {visibleTimelineData.map((entry, index) => (
+          <TimelineEntry
+            key={index}
+            entry={entry}
+            index={index}
+            isLast={index === visibleTimelineData.length - 1}
+          />
+        ))}
+      </div>
 
       {/* Footer */}
       <div className="text-center mt-12 pt-8 border-t border-border">
