@@ -6,6 +6,8 @@ This is a modern, interactive timeline showcasing my professional journey in rob
 
 **🔧 Lovable Project:** [https://lovable.dev/projects/fd7da10e-2ae3-463f-8dec-551df21e6461](https://lovable.dev/projects/fd7da10e-2ae3-463f-8dec-551df21e6461)
 
+**📄 Site analytics:** [https://dashboard.simpleanalytics.com/skorbiz.github.io](https://dashboard.simpleanalytics.com/skorbiz.github.io) (requires login)
+
 ---
 
 ## Project Status: ✅ Complete
