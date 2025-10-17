@@ -7,9 +7,16 @@ import { ImageModal } from "./ImageModal";
 
 // React hooks
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// Context
+import { useEditMode } from "./EditModeProvider";
 
 // Icons for categories and external links
-import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe } from 'lucide-react';
+import { Briefcase, Code, Users, ExternalLink, Github, Play, Globe, Edit } from 'lucide-react';
+
+// UI components
+import { Button } from "@/components/ui/button";
 
 /**
  * Dynamic Asset Import System
@@ -64,6 +71,8 @@ interface TimelineEntryProps {
 export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
   // State for image modal
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+  const { editMode } = useEditMode();
+  const navigate = useNavigate();
   /**
    * Image resolution helper
    * Uses the pre-loaded asset map to find images, with graceful fallbacks
@@ -167,9 +176,21 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
             {/* Content */}
             <div className="p-3">
               <div className="flex flex-col gap-1.5 mb-2">
-                <div className="flex items-center gap-1.5">
-                  {getCategoryIcon(entry.category)}
-                  <h3 className="text-base font-semibold text-foreground leading-tight">{entry.title}</h3>
+                <div className="flex items-center gap-1.5 justify-between">
+                  <div className="flex items-center gap-1.5">
+                    {getCategoryIcon(entry.category)}
+                    <h3 className="text-base font-semibold text-foreground leading-tight">{entry.title}</h3>
+                  </div>
+                  {editMode && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => navigate(`/edit/${index}`)}
+                      className="h-7 w-7 p-0"
+                    >
+                      <Edit className="h-3 w-3" />
+                    </Button>
+                  )}
                 </div>
                 <span className="text-xs font-medium text-tech-blue bg-tech-blue/10 px-2 py-0.5 rounded-full self-start">
                   {formatDate()}

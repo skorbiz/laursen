@@ -8,6 +8,7 @@ import { Github, Linkedin } from "lucide-react";
 // UI components
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import { EditModeToggle } from "./EditModeToggle";
 
 /**
  * CVTimeline Component
@@ -28,7 +29,8 @@ export const CVTimeline = () => {
     <div className="max-w-6xl mx-auto px-6 py-8">
       {/* Header */}
       <div className="text-center mb-12">
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end gap-2 mb-4">
+          <EditModeToggle />
           <ThemeToggle />
         </div>
         <h1 className="text-4xl font-bold bg-gradient-to-r from-tech-blue to-tech-cyan bg-clip-text text-transparent mb-4">

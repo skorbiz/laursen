@@ -11,8 +11,12 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 // Custom theme provider for dark/light mode switching
 import { ThemeProvider } from "@/components/ThemeProvider";
 
+// Edit mode provider
+import { EditModeProvider } from "@/components/EditModeProvider";
+
 // Page components
 import Index from "./pages/Index";
+import EditPost from "./pages/EditPost";
 
 // Initialize React Query client for data management
 const queryClient = new QueryClient();
@@ -32,19 +36,22 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="light" storageKey="laursen-theme">
-      <TooltipProvider>
-        {/* Toast notifications using Sonner */}
-        <Sonner />
-        
-        {/* Hash-based routing for static hosting compatibility */}
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* Single page application - all routes go to Index */}
-            <Route path="*" element={<Index />} />
-          </Routes>
-        </HashRouter>
-      </TooltipProvider>
+      <EditModeProvider>
+        <TooltipProvider>
+          {/* Toast notifications using Sonner */}
+          <Sonner />
+          
+          {/* Hash-based routing for static hosting compatibility */}
+          <HashRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/edit/:id" element={<EditPost />} />
+              {/* Single page application - all routes go to Index */}
+              <Route path="*" element={<Index />} />
+            </Routes>
+          </HashRouter>
+        </TooltipProvider>
+      </EditModeProvider>
     </ThemeProvider>
   </QueryClientProvider>
 );
