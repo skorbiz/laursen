@@ -1,12 +1,13 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useMemo } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { timelineData } from "@/data/cv-timeline"
+import { timelineData, TimelineEntry as TimelineEntryType } from "@/data/cv-timeline"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { ArrowLeft, Copy, Check } from "lucide-react"
 import { toast } from "sonner"
+import { TimelineEntry } from "@/components/TimelineEntry"
 
 const importAssets = () => {
   const images = import.meta.glob('@/assets/*', { eager: true });
@@ -39,38 +40,6 @@ export default function EditPost() {
   const [category, setCategory] = useState(entry?.category || "project")
   const [copied, setCopied] = useState(false)
   
-  // Image cropping state
-  const [zoom, setZoom] = useState(1)
-  const [offsetY, setOffsetY] = useState(50)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  
-  useEffect(() => {
-    if (canvasRef.current && selectedImage) {
-      const canvas = canvasRef.current
-      const ctx = canvas.getContext('2d')
-      const img = new Image()
-      
-      img.onload = () => {
-        const bannerHeight = largeBanner ? 192 : 96
-        canvas.width = 512
-        canvas.height = bannerHeight
-        
-        if (ctx) {
-          const scale = zoom
-          const imgWidth = img.width * scale
-          const imgHeight = img.height * scale
-          const x = (canvas.width - imgWidth) / 2
-          const y = ((canvas.height - imgHeight) * offsetY) / 100
-          
-          ctx.clearRect(0, 0, canvas.width, canvas.height)
-          ctx.drawImage(img, x, y, imgWidth, imgHeight)
-        }
-      }
-      
-      img.src = assetImages[selectedImage] || '/placeholder.svg'
-    }
-  }, [selectedImage, zoom, offsetY, largeBanner])
-  
   if (!entry) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center">
@@ -101,6 +70,19 @@ export default function EditPost() {
     toast.success("Prompt copied to clipboard!")
     setTimeout(() => setCopied(false), 2000)
   }
+
+  // Create a preview entry object from the current form state
+  const previewEntry: TimelineEntryType = useMemo(() => ({
+    title,
+    text,
+    date,
+    startDate,
+    image: selectedImage,
+    largeBanner,
+    tags: tags.split(",").map(t => t.trim()).filter(Boolean),
+    category: category as "work" | "project" | "community",
+    links: entry?.links || []
+  }), [title, text, date, startDate, selectedImage, largeBanner, tags, category, entry?.links])
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
@@ -176,34 +158,6 @@ export default function EditPost() {
             </div>
             
             <div>
-              <Label htmlFor="zoom">Image Zoom: {zoom.toFixed(2)}x</Label>
-              <input
-                type="range"
-                id="zoom"
-                min="0.5"
-                max="3"
-                step="0.1"
-                value={zoom}
-                onChange={(e) => setZoom(parseFloat(e.target.value))}
-                className="w-full"
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="offsetY">Vertical Position: {offsetY}%</Label>
-              <input
-                type="range"
-                id="offsetY"
-                min="0"
-                max="100"
-                step="1"
-                value={offsetY}
-                onChange={(e) => setOffsetY(parseInt(e.target.value))}
-                className="w-full"
-              />
-            </div>
-            
-            <div>
               <Label htmlFor="category">Category</Label>
               <select
                 id="category"
@@ -266,31 +220,12 @@ export default function EditPost() {
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Preview</h2>
             
-            <div className="bg-card rounded-lg border border-border shadow-sm overflow-hidden">
-              <div className={`w-full bg-muted overflow-hidden ${largeBanner ? 'h-48' : 'h-24'}`}>
-                <canvas
-                  ref={canvasRef}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  {startDate ? `${startDate} - ${date}` : date}
-                </p>
-                <p className="text-sm text-muted-foreground mb-3">{text}</p>
-                <div className="flex flex-wrap gap-1">
-                  {tags.split(",").filter(t => t.trim()).map((tag, i) => (
-                    <span
-                      key={i}
-                      className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded"
-                    >
-                      #{tag.trim()}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="relative">
+              <TimelineEntry 
+                entry={previewEntry} 
+                isLast={true} 
+                index={0}
+              />
             </div>
           </div>
         </div>
