@@ -167,6 +167,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
                 src={getLocalImage(entry.image)}
                 alt={entry.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                style={{ objectPosition: entry.imagePosition || 'center' }}
                 onError={(e) => {
                   e.currentTarget.src = assetImages['robot-wall.jpg'] || '/placeholder.svg';
                 }}

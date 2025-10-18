@@ -26,6 +26,7 @@ export interface TimelineEntry {
   category: 'work' | 'project' | 'community';
   hidden?: boolean; // Set to true to hide from display
   largeBanner?: boolean; // Set to true for double height banner
+  imagePosition?: string; // CSS object-position value for vertical image positioning (e.g., 'center', 'top', 'center 70%')
 }
 
 export const timelineData: TimelineEntry[] = [

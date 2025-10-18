@@ -36,6 +36,7 @@ export default function EditPost() {
   const [startDate, setStartDate] = useState(entry?.startDate || "")
   const [selectedImage, setSelectedImage] = useState(entry?.image || "")
   const [largeBanner, setLargeBanner] = useState(entry?.largeBanner || false)
+  const [imagePosition, setImagePosition] = useState(entry?.imagePosition || "center")
   const [tags, setTags] = useState(entry?.tags?.join(", ") || "")
   const [category, setCategory] = useState(entry?.category || "project")
   const [copied, setCopied] = useState(false)
@@ -57,6 +58,7 @@ export default function EditPost() {
 - Date: "${date}"${startDate ? `\n- Start Date: "${startDate}"` : ''}
 - Image: "${selectedImage}"
 - Large Banner: ${largeBanner}
+- Image Position: "${imagePosition}"
 - Text: "${text}"
 - Tags: [${tags.split(",").map(t => `"${t.trim()}"`).join(", ")}]
 - Category: "${category}"`
@@ -79,10 +81,11 @@ export default function EditPost() {
     startDate,
     image: selectedImage,
     largeBanner,
+    imagePosition,
     tags: tags.split(",").map(t => t.trim()).filter(Boolean),
     category: category as "work" | "project" | "community",
     links: entry?.links || []
-  }), [title, text, date, startDate, selectedImage, largeBanner, tags, category, entry?.links])
+  }), [title, text, date, startDate, selectedImage, largeBanner, imagePosition, tags, category, entry?.links])
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
@@ -155,6 +158,50 @@ export default function EditPost() {
                 className="h-4 w-4"
               />
               <Label htmlFor="largeBanner">Large Banner</Label>
+            </div>
+            
+            <div>
+              <Label htmlFor="imagePosition">Image Vertical Position</Label>
+              <div className="flex items-center gap-4">
+                <input
+                  type="range"
+                  id="imagePosition"
+                  min="0"
+                  max="100"
+                  value={imagePosition === 'center' ? 50 : parseInt(imagePosition.replace(/\D/g, '')) || 50}
+                  onChange={(e) => setImagePosition(`center ${e.target.value}%`)}
+                  className="flex-1"
+                />
+                <span className="text-sm text-muted-foreground min-w-[60px]">
+                  {imagePosition === 'center' ? '50%' : imagePosition.replace('center ', '')}
+                </span>
+              </div>
+              <div className="flex gap-2 mt-2">
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setImagePosition('center 0%')}
+                >
+                  Top
+                </Button>
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setImagePosition('center')}
+                >
+                  Center
+                </Button>
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setImagePosition('center 100%')}
+                >
+                  Bottom
+                </Button>
+              </div>
             </div>
             
             <div>
