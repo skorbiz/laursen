@@ -42,11 +42,12 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "Forklift Robot - ROS2 Simulation & Navigation",
     date: "2025",
-    image: "mobile-robotics-company.png",
+    image: "moble-robot-company-localization.gif",
     text: "Spare time project: Developed the initial software stack for a collaborative forklift robot startup. Outlined software architecture, configured URDF model, created ROS2 simulation environment using Gazebo, integrated Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, and adapted SLAM framework.",
     tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
     category: "project",
-    largeBanner: false
+    largeBanner: true,
+    imagePosition: "center 75%"
   },
   {
     title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
