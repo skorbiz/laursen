@@ -60,7 +60,8 @@ export const timelineData: TimelineEntry[] = [
     ],
     tags: ["BostonDynamicsSpot", "FlukeSV600", "AcousticImaging", "Python", "Integration", "ProjectManagement"],
     category: "project",
-    largeBanner: true
+    largeBanner: true,
+    imagePosition: "center 21%"
   },
   {
     title: "Enabled Robot Playtime",
