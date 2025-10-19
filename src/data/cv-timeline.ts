@@ -141,15 +141,15 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
-    title: "Mobile Industrial - Robots Team Lead",
+    title: "Mobile Industrial Robots - Team Lead",
     date: "2023",
     startDate: "2021",
     image: "mir.jpg",
     text: "Led team of nine developers responsible for core infrastructure components, drivers, and processing in autonomous mobile robot software stack. Introduced Scrum methodology and test-driven development practices. Successfully migrated build system to Bazel for improved development workflow.",
     tags: ["TeamLead", "Scrum", "TDD", "JIRA"],
     category: "work",
-    largeBanner: true
-
+    largeBanner: true,
+    imagePosition: "center"
   },
   {
     title: "Testable Navigation Stack",
