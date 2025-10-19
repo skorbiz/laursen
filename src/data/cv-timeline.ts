@@ -112,9 +112,9 @@ export const timelineData: TimelineEntry[] = [
     category: "community"
   },
   {
-    title: "Job: Robotics Specialist at Teknologisk Institut",
+    title: "Teknologisk Institut - Robotics Specialist",
     date: "2023",
-    image: "robot-wall.jpg",
+    image: "dti_logo.png",
     text: "Working as robotics consultant on commercial and research-funded projects. Responsibilities include software development, project management, teaching, customer visits and technical inspections. Landed and executed the largest integration project in department history.",
     tags: ["Consulting", "Integration", "ProjectManagement", "MobileRobots"],
     category: "work"
@@ -141,13 +141,15 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
-    title: "Job: Team Lead - Mobile Industrial Robots",
+    title: "Mobile Industrial - Robots Team Lead",
     date: "2023",
     startDate: "2021",
-    image: "code-monitor.jpg",
+    image: "mir.jpg",
     text: "Led team of nine developers responsible for core infrastructure components, drivers, and processing in autonomous mobile robot software stack. Introduced Scrum methodology and test-driven development practices. Successfully migrated build system to Bazel for improved development workflow.",
     tags: ["TeamLead", "Scrum", "TDD", "JIRA"],
-    category: "work"
+    category: "work",
+    largeBanner: true
+
   },
   {
     title: "Testable Navigation Stack",
@@ -167,10 +169,10 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
-    title: "Job: Robot Software Developer - Mobile Industrial Robots",
+    title: "Mobile Industrial Robots - Robot Software Developer",
     date: "2021",
     startDate: "2018",
-    image: "code-monitor.jpg",
+    image: "mir_logo.jpg",
     text: "Developed and maintained software for MiR autonomous mobile robots. Created testable navigation stack, conducted laser scanner analysis, and renewed developer infrastructure. Focused on core navigation algorithms and sensor integration.",
     tags: ["C++", "Python", "Navigation", "SensorIntegration"],
     category: "work"
@@ -184,9 +186,9 @@ export const timelineData: TimelineEntry[] = [
     category: "community"
   },
   {
-    title: "Job: Scientific Assistant - University of Southern Denmark",
+    title: "University of Southern Denmark - Scientific Assistant",
     date: "2017",
-    image: "code-monitor.jpg",
+    image: "sdu_logo.jpg",
     text: "Continued PhD research in robotics manipulation and assembly. Developed domain-specific languages for robot control and investigated reversible execution methods for error recovery.",
     tags: ["Research", "Teaching", "DSL", "ErrorRecovery"],
     category: "work"
