@@ -94,7 +94,8 @@ export const timelineData: TimelineEntry[] = [
     text: "Participated in European Canopies research project developing robots for grape harvesting. Converted Alitrak platform for autonomous navigation by reverse-engineering CAN interface for track controls, integrating sensors and drivers, and creating robot simulation models in Gazebo and ROS.",
     tags: ["ROS2", "Gazebo", "URDF", "CAN", "OutdoorRobots", "Agriculture"],
     category: "project",
-    largeBanner: true
+    largeBanner: true,
+    imagePosition: "center 25%"
   },
   {
     title: "Public Speaking - When Mobile Robots Leave the Factory Floor",
