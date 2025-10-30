@@ -31,6 +31,15 @@ export interface TimelineEntry {
 
 export const timelineData: TimelineEntry[] = [
   {
+    title: "Skid-steering robot for inspection",
+    date: "2025",
+    image: "fls_air.gif",
+    text: "Can you build a robot in three weeks? With great colleagues and conservative design decisions (and only a little bit of panic), then yes it's entirely possible. We built this working prototype for a customer to show at an exhibition. The robot is skid steered and mostly based on ROS2 Nav2. 3 weeks from rough CAD drawings and functional POC. Including everything from sourcing of components, printing to coding, web UI and tuning of navigation.",
+    tags: ["ROS2", "Nav2", "Gazebo", "CrossDepartmentCollaboration", "GreatColleagues"],
+    category: "project",
+    largeBanner: true
+  },
+  {
     title: "Weed Removal Robot - Navigation & Control",
     date: "2025",
     image: "o-robotics.png", 
