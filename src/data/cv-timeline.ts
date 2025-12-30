@@ -35,7 +35,7 @@ export const timelineData: TimelineEntry[] = [
     date: "2025",
     image: "jensen_group_logo.png",
     text: "New team, new task, and no preexisting code. Collect data from heavy duty laundry machines and provide meaningful insights. Tasks include architecting, prototyping and developing the system for deployment at scale.",
-    tags: ["Architecture", "IoT", "Analytics", "Balena", "Networking", "EdgeComputing", "CloudComputing"],
+    tags: ["Architecture", "FullStack", "IoT", "Analytics", "Balena", "Networking", "EdgeComputing"],
     category: "work"
   },
   {
