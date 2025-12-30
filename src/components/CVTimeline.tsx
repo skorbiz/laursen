@@ -1,4 +1,5 @@
 // Timeline data and types
+import { useState } from "react";
 import { timelineData } from "@/data/cv-timeline";
 import { TimelineEntry } from "./TimelineEntry";
 
@@ -10,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import { EditModeToggle } from "./EditModeToggle";
 
+type CategoryFilter = 'work' | 'project' | 'community';
+
 /**
  * CVTimeline Component
  * 
@@ -18,12 +21,31 @@ import { EditModeToggle } from "./EditModeToggle";
  * - Responsive design (mobile-first)
  * - Dark/light theme support
  * - Social media links
- * - Category legend
+ * - Category legend with toggle functionality
  * - Chronological timeline with alternating layout
  */
 export const CVTimeline = () => {
-  // Filter out any timeline entries marked as hidden
-  const visibleTimelineData = timelineData.filter(entry => !entry.hidden);
+  // Track which categories are visible (all visible by default)
+  const [visibleCategories, setVisibleCategories] = useState<Set<CategoryFilter>>(
+    new Set(['work', 'project', 'community'])
+  );
+
+  const toggleCategory = (category: CategoryFilter) => {
+    setVisibleCategories(prev => {
+      const next = new Set(prev);
+      if (next.has(category)) {
+        next.delete(category);
+      } else {
+        next.add(category);
+      }
+      return next;
+    });
+  };
+
+  // Filter out hidden entries and by selected categories
+  const visibleTimelineData = timelineData.filter(
+    entry => !entry.hidden && visibleCategories.has(entry.category)
+  );
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
@@ -70,21 +92,36 @@ export const CVTimeline = () => {
         </div>
       </div>
 
-      {/* Legend */}
+      {/* Legend - Clickable category toggles */}
       <div className="flex justify-center mb-8">
         <div className="flex items-center gap-6 bg-card/50 backdrop-blur-sm border rounded-lg px-4 py-2">
-          <div className="flex items-center gap-2">
+          <button
+            onClick={() => toggleCategory('work')}
+            className={`flex items-center gap-2 transition-opacity ${
+              visibleCategories.has('work') ? 'opacity-100' : 'opacity-40'
+            }`}
+          >
             <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
             <span className="text-sm text-muted-foreground">Workplace</span>
-          </div>
-          <div className="flex items-center gap-2">
+          </button>
+          <button
+            onClick={() => toggleCategory('project')}
+            className={`flex items-center gap-2 transition-opacity ${
+              visibleCategories.has('project') ? 'opacity-100' : 'opacity-40'
+            }`}
+          >
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
             <span className="text-sm text-muted-foreground">Projects</span>
-          </div>
-          <div className="flex items-center gap-2">
+          </button>
+          <button
+            onClick={() => toggleCategory('community')}
+            className={`flex items-center gap-2 transition-opacity ${
+              visibleCategories.has('community') ? 'opacity-100' : 'opacity-40'
+            }`}
+          >
             <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
             <span className="text-sm text-muted-foreground">Other</span>
-          </div>
+          </button>
         </div>
       </div>
 
