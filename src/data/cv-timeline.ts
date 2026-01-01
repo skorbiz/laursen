@@ -23,7 +23,7 @@ export interface TimelineEntry {
   text: string;    // AI-polished version for display
   tags?: string[];
   links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
-  category: 'work' | 'project' | 'community' | 'other';
+  category: 'work' | 'project' | 'personal';
   hidden?: boolean; // Set to true to hide from display
   largeBanner?: boolean; // Set to true for double height banner
   imagePosition?: string; // CSS object-position value for vertical image positioning (e.g., 'center', 'top', 'center 70%')
@@ -36,7 +36,7 @@ export const timelineData: TimelineEntry[] = [
     image: "circuit-board.jpg",
     text: "Migrated home automation to open source alternatives. Implemented multi-room audio streaming using iotsound, Snapcast, and Balena on Raspberry Pi devices. Automated lighting and smart appliances with Home Assistant. Replaced many big-tech dependencies with self-hosted and privacy-focused solutions.",
     tags: ["HomeAutomation", "HomeAssistant", "Balena", "OpenSource", "Snapcast", "RaspberryPi"],
-    category: "other"
+    category: "personal"
   },
   {
     title: "Jensen Group - Founding Software Developer",
@@ -69,7 +69,7 @@ export const timelineData: TimelineEntry[] = [
     image: "moble-robot-company-localization.gif",
     text: "Spare time project: Developed the initial software stack for a collaborative forklift robot startup. Outlined software architecture, configured URDF model, created ROS2 simulation environment using Gazebo, integrated Nav2 navigation stack, ported Livox laser scanner drivers to ROS2, and adapted SLAM framework.",
     tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
-    category: "project",
+    category: "personal",
     largeBanner: true,
     imagePosition: "center 75%"
   },
@@ -128,7 +128,7 @@ export const timelineData: TimelineEntry[] = [
     image: "manufacturing-line.jpg",
     text: "Delivered presentation on the evolution of mobile robots beyond traditional factory environments. Discussed applications in logistics, healthcare, agriculture, and service industries, exploring how mobile robotics is transforming various sectors outside manufacturing.",
     tags: ["PublicSpeaking", "MobileRobots"],
-    category: "community"
+    category: "personal"
   },
   {
     title: "Public Speaking - Algorithms in Autonomous Mobile Robots",
@@ -136,7 +136,7 @@ export const timelineData: TimelineEntry[] = [
     image: "classroom-robotics.jpg",
     text: "Delivered presentation on algorithms in autonomous robots with Dr. Kristine V. K. Knudsen from SDU Robotics. Covered navigation algorithms, mapping, path planning, and obstacle avoidance. Explored what makes algorithms good or bad, and how mathematical approaches drive robotic decision-making.",
     tags: ["PublicSpeaking", "Algorithms", "Navigation", "PathPlanning", "SLAM", "Mathematics"],
-    category: "community"
+    category: "personal"
   },
   {
     title: "Teknologisk Institut - Robotics Specialist",
@@ -155,7 +155,7 @@ export const timelineData: TimelineEntry[] = [
       { url: "https://github.com/skorbiz/podracer", label: "Code", type: "github" },
     ],
     tags: ["Competition", "Algorithms", "PhysicsSimulation", "Bots"],
-    category: "community",
+    category: "personal",
     largeBanner: false
   },
   {
@@ -210,7 +210,7 @@ export const timelineData: TimelineEntry[] = [
     image: "classroom-robotics.jpg",
     text: "Taught introductory robotics course covering kinematic modelling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments.",
     tags: ["Teaching", "Kinematics", "Control", "PathPlanning", "RANSAC", "Kalman"],
-    category: "community"
+    category: "personal"
   },
   {
     title: "University of Southern Denmark - Scientific Assistant",
