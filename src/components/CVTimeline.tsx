@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import { EditModeToggle } from "./EditModeToggle";
 
-type CategoryFilter = 'work' | 'project' | 'community' | 'other';
+type CategoryFilter = 'work' | 'project' | 'personal';
 
 /**
  * CVTimeline Component
@@ -27,7 +27,7 @@ type CategoryFilter = 'work' | 'project' | 'community' | 'other';
 export const CVTimeline = () => {
   // Track which categories are visible (all visible by default)
   const [visibleCategories, setVisibleCategories] = useState<Set<CategoryFilter>>(
-    new Set(['work', 'project', 'community', 'other'])
+    new Set(['work', 'project', 'personal'])
   );
 
   const toggleCategory = (category: CategoryFilter) => {
@@ -114,22 +114,13 @@ export const CVTimeline = () => {
             <span className="text-sm text-muted-foreground">Projects</span>
           </button>
           <button
-            onClick={() => toggleCategory('community')}
+            onClick={() => toggleCategory('personal')}
             className={`flex items-center gap-2 transition-opacity ${
-              visibleCategories.has('community') ? 'opacity-100' : 'opacity-40'
+              visibleCategories.has('personal') ? 'opacity-100' : 'opacity-40'
             }`}
           >
             <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-            <span className="text-sm text-muted-foreground">Community</span>
-          </button>
-          <button
-            onClick={() => toggleCategory('other')}
-            className={`flex items-center gap-2 transition-opacity ${
-              visibleCategories.has('other') ? 'opacity-100' : 'opacity-40'
-            }`}
-          >
-            <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-            <span className="text-sm text-muted-foreground">Other</span>
+            <span className="text-sm text-muted-foreground">Personal</span>
           </button>
         </div>
       </div>
