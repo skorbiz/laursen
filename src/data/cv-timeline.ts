@@ -23,13 +23,21 @@ export interface TimelineEntry {
   text: string;    // AI-polished version for display
   tags?: string[];
   links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
-  category: 'work' | 'project' | 'community';
+  category: 'work' | 'project' | 'community' | 'other';
   hidden?: boolean; // Set to true to hide from display
   largeBanner?: boolean; // Set to true for double height banner
   imagePosition?: string; // CSS object-position value for vertical image positioning (e.g., 'center', 'top', 'center 70%')
 }
 
 export const timelineData: TimelineEntry[] = [
+  {
+    title: "Home IoT Migration",
+    date: "2026",
+    image: "circuit-board.jpg",
+    text: "Migrated home automation to open source alternatives. Implemented multi-room audio streaming using iotsound, Snapcast, and Balena on Raspberry Pi devices. Automated lighting and smart appliances with Home Assistant. Replaced many big-tech dependencies with self-hosted and privacy-focused solutions.",
+    tags: ["HomeAutomation", "HomeAssistant", "Balena", "OpenSource", "Snapcast", "RaspberryPi"],
+    category: "other"
+  },
   {
     title: "Jensen Group - Founding Software Developer",
     date: "2025",
