@@ -83,7 +83,7 @@ export default function EditPost() {
     largeBanner,
     imagePosition,
     tags: tags.split(",").map(t => t.trim()).filter(Boolean),
-    category: category as "work" | "project" | "personal",
+    category: category as "work" | "project" | "community",
     links: entry?.links || []
   }), [title, text, date, startDate, selectedImage, largeBanner, imagePosition, tags, category, entry?.links])
   

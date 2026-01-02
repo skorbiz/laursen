@@ -100,7 +100,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     switch (category) {
       case 'work': return <Briefcase className="h-3 w-3" />;
       case 'project': return <Code className="h-3 w-3" />;
-      case 'personal': return <Users className="h-3 w-3" />;
+      case 'community': return <Users className="h-3 w-3" />;
       default: return null;
     }
   };
@@ -113,7 +113,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     switch (category) {
       case 'work': return 'bg-blue-500 border-blue-200';
       case 'project': return 'bg-green-500 border-green-200';
-      case 'personal': return 'bg-purple-500 border-purple-200';
+      case 'community': return 'bg-purple-500 border-purple-200';
       default: return 'bg-gradient-to-br from-tech-blue to-tech-cyan border-background';
     }
   };
@@ -126,7 +126,7 @@ export const TimelineEntry = ({ entry, isLast, index }: TimelineEntryProps) => {
     switch (category) {
       case 'work': return 'border-l-blue-500';
       case 'project': return 'border-l-green-500';
-      case 'personal': return 'border-l-purple-500';
+      case 'community': return 'border-l-purple-500';
       default: return 'border-l-tech-blue';
     }
   };
