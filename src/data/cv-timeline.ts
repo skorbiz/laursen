@@ -34,8 +34,9 @@ export const timelineData: TimelineEntry[] = [
     title: "Home IoT Migration",
     date: "2026",
     image: "home-iot.jpg",
-    text: "Migrated home automation to open source alternatives. Implemented multi-room audio streaming using iotsound, Snapcast, and Balena on Raspberry Pi devices. Automated lighting and smart appliances with Home Assistant. Replaced many big-tech dependencies with self-hosted and privacy-focused solutions.",
+    text: "Migrated home automation to open source alternatives. Implemented multi-room audio streaming using Librespot, Snapcast, and Balena on Raspberry Pi devices. Automated lighting and smart appliances with Home Assistant. Replaced many big-tech dependencies with self-hosted and privacy-focused solutions.",
     tags: ["HomeAutomation", "HomeAssistant", "Balena", "OpenSource", "Snapcast", "RaspberryPi"],
+    links: [{ url: "https://github.com/skorbiz/balena_snapcast_server", label: "GitHub", type: "github" }],
     category: "project"
   },
   {
