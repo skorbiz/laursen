@@ -31,20 +31,20 @@ export interface TimelineEntry {
 
 export const timelineData: TimelineEntry[] = [
   {
+    title: "Edge Data Collection Platform",
+    date: "2026",
+    image: "mezcada-poc1.gif",
+    text: "Deployed prototype data collection stack at a commercial laundry facility. System collects data from legacy PLC machines and pushes to cloud for processing. Designed for retrofitting with existing systems and corporate IT requirements while maintaining modern capabilities including over-the-air updates, observability, and continuous deployment close to hardware.",
+    tags: ["EdgeComputing", "IoT", "Balena", "OpenTelemetry", "Azure", "Grafana", "Networking"],
+    category: "project"
+  },
+  {
     title: "Home IoT Migration",
     date: "2026",
     image: "home-iot.jpg",
     text: "Migrated home automation to open source alternatives. Implemented multi-room audio streaming using Librespot, Snapcast, and Balena on Raspberry Pi devices. Automated lighting and smart appliances with Home Assistant. Replaced many big-tech dependencies with self-hosted and privacy-focused solutions.",
     tags: ["HomeAutomation", "HomeAssistant", "Balena", "OpenSource", "Snapcast", "RaspberryPi"],
     links: [{ url: "https://github.com/skorbiz/balena_snapcast_server", label: "GitHub: Multiroom Audio", type: "github" }],
-    category: "project"
-  },
-  {
-    title: "Edge Data Collection Platform",
-    date: "2026",
-    image: "mezcada-poc1.gif",
-    text: "Deployed prototype data collection stack at a commercial laundry facility. System collects data from legacy PLC machines and pushes to cloud for processing. Designed for retrofitting with existing systems and corporate IT requirements while maintaining modern capabilities including over-the-air updates, observability, and continuous deployment close to hardware.",
-    tags: ["EdgeComputing", "IoT", "CloudComputing", "OpenTelemetry", "Azure", "Grafana", "Containerisation", "Networking"],
     category: "project"
   },
   {
