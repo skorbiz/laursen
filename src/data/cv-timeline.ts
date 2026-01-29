@@ -217,7 +217,7 @@ export const timelineData: TimelineEntry[] = [
   {
     title: "Teaching - Robots in Context",
     date: "2017",
-    image: "classroom-robotics.jpg",
+    image: "manipulator-arm.jpg",
     text: "Taught introductory robotics course covering kinematic modelling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments.",
     tags: ["Teaching", "Kinematics", "Control", "PathPlanning", "RANSAC", "Kalman"],
     category: "community"
@@ -228,13 +228,14 @@ export const timelineData: TimelineEntry[] = [
     image: "sdu_logo.jpg",
     text: "Continued PhD research in robotics manipulation and assembly. Developed domain-specific languages for robot control and investigated reversible execution methods for error recovery.",
     tags: ["Research", "Teaching", "DSL", "ErrorRecovery"],
-    category: "work"
+    category: "work",
+    hidden: true
   },
   {
     title: "PhD Degree - Robotics Manipulation",
     date: "2017",
     startDate: "2013",
-    image: "error-recovery.jpg",
+    image: "sdu_logo.jpg",
     text: "Dissertation focused on domain-specific languages for robotic assembly with emphasis on reversible programming languages. Developed methods enabling robots to execute programs both forward and backward, allowing error correction through trial-and-error approaches without additional error-handling code.",
     tags: ["PhD", "Assembly", "ErrorRecovery", "DSL", "Research", "Reversibility"],
     category: "work"
@@ -257,6 +258,7 @@ export const timelineData: TimelineEntry[] = [
     image: "manufacturing-line.jpg",
     text: "Master's thesis investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analyzed efficiency improvements in production environments.",
     tags: ["MasterThesis", "Automation", "Reusability", "Manufacturing", "Efficiency"],
-    category: "project"
+    category: "project",
+    hidden: true
   },
 ];
