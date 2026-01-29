@@ -36,7 +36,8 @@ export const timelineData: TimelineEntry[] = [
     image: "mezcada-poc1.gif",
     text: "Deployed prototype data collection stack at a commercial laundry facility. System collects data from legacy PLC machines and pushes to cloud for processing. Designed for retrofitting with existing systems and corporate IT requirements while maintaining modern capabilities including over-the-air updates, observability, and continuous deployment close to hardware.",
     tags: ["EdgeComputing", "IoT", "Balena", "OpenTelemetry", "Azure", "Grafana", "Networking"],
-    category: "project"
+    category: "project",
+    imagePosition: "center 82%"
   },
   {
     title: "Home IoT Migration",
