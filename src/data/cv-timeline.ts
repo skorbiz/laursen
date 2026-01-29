@@ -40,11 +40,19 @@ export const timelineData: TimelineEntry[] = [
     category: "project"
   },
   {
+    title: "Edge Data Collection Platform",
+    date: "2026",
+    image: "mezcada-poc1.gif",
+    text: "Deployed prototype data collection stack at a commercial laundry facility. System collects data from legacy PLC machines and pushes to cloud for processing. Designed for retrofitting with existing systems and corporate IT requirements while maintaining modern capabilities including over-the-air updates, observability, and continuous deployment close to hardware.",
+    tags: ["EdgeComputing", "IoT", "CloudComputing", "OpenTelemetry", "Azure", "Grafana", "Containerisation", "Networking"],
+    category: "project"
+  },
+  {
     title: "Jensen Group - Founding Software Developer",
     date: "2025",
     image: "jensen_group_logo.png",
     text: "New team, new task, and no preexisting code. Collect data from heavy duty laundry machines and provide meaningful insights. Tasks include architecting, prototyping and developing the system for deployment at scale.",
-    tags: ["Architecture", "CloudComputing", "IoT", "Analytics", "Balena", "Networking", "EdgeComputing"],
+    tags: ["Architecture", "CloudComputing", "IoT", "Analytics", "Networking", "EdgeComputing"],
     category: "work"
   },
   {
