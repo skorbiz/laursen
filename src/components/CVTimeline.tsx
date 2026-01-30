@@ -101,7 +101,7 @@ export const CVTimeline = () => {
               visibleCategories.has('work') ? 'opacity-100' : 'opacity-40'
             }`}
           >
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-category-work rounded-full"></div>
             <span className="text-sm text-muted-foreground">Workplace</span>
           </button>
           <button
@@ -110,7 +110,7 @@ export const CVTimeline = () => {
               visibleCategories.has('project') ? 'opacity-100' : 'opacity-40'
             }`}
           >
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-category-project rounded-full"></div>
             <span className="text-sm text-muted-foreground">Projects</span>
           </button>
           <button
@@ -119,18 +119,16 @@ export const CVTimeline = () => {
               visibleCategories.has('community') ? 'opacity-100' : 'opacity-40'
             }`}
           >
-            <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-category-community rounded-full"></div>
             <span className="text-sm text-muted-foreground">Community</span>
           </button>
         </div>
       </div>
 
-      {/* Timeline */}
-      <div className="relative">
-        {/* Central timeline line - hidden on mobile, visible on desktop */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
-        {/* Mobile timeline line - left aligned */}
-        <div className="md:hidden absolute left-4 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+      {/* Timeline - CSS Grid Layout */}
+      <div className="relative grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-y-6 md:gap-y-4">
+        {/* Central timeline line - spans all rows */}
+        <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-timeline-line z-0" />
         
         {visibleTimelineData.map((entry, index) => (
           <TimelineEntry
