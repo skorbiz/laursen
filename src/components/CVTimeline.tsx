@@ -125,19 +125,55 @@ export const CVTimeline = () => {
         </div>
       </div>
 
-      {/* Timeline - CSS Grid Layout */}
-      <div className="relative grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-y-6 md:gap-y-4">
-        {/* Central timeline line - spans all rows */}
+      {/* Timeline - Two Column Layout */}
+      <div className="relative">
+        {/* Central timeline line */}
         <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-timeline-line z-0" />
         
-        {visibleTimelineData.map((entry, index) => (
-          <TimelineEntry
-            key={index}
-            entry={entry}
-            index={index}
-            isLast={index === visibleTimelineData.length - 1}
-          />
-        ))}
+        {/* Mobile: Single column */}
+        <div className="md:hidden flex flex-col gap-6">
+          {visibleTimelineData.map((entry, index) => (
+            <TimelineEntry
+              key={index}
+              entry={entry}
+              index={index}
+              side="left"
+            />
+          ))}
+        </div>
+
+        {/* Desktop: Two independent columns */}
+        <div className="hidden md:grid md:grid-cols-2 md:gap-x-12">
+          {/* Left column - even indices */}
+          <div className="flex flex-col gap-4 pr-6">
+            {visibleTimelineData
+              .map((entry, originalIndex) => ({ entry, originalIndex }))
+              .filter((_, i) => i % 2 === 0)
+              .map(({ entry, originalIndex }) => (
+                <TimelineEntry
+                  key={originalIndex}
+                  entry={entry}
+                  index={originalIndex}
+                  side="left"
+                />
+              ))}
+          </div>
+          
+          {/* Right column - odd indices */}
+          <div className="flex flex-col gap-4 pl-6">
+            {visibleTimelineData
+              .map((entry, originalIndex) => ({ entry, originalIndex }))
+              .filter((_, i) => i % 2 === 1)
+              .map(({ entry, originalIndex }) => (
+                <TimelineEntry
+                  key={originalIndex}
+                  entry={entry}
+                  index={originalIndex}
+                  side="right"
+                />
+              ))}
+          </div>
+        </div>
       </div>
 
       {/* Footer */}
