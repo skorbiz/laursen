@@ -42,8 +42,8 @@ const assetImages = importAssets();
 
 interface TimelineEntryProps {
   entry: TimelineEntryType;
-  isLast: boolean;
   index: number;
+  side: 'left' | 'right';
 }
 
 /**
@@ -53,7 +53,7 @@ interface TimelineEntryProps {
  * - Mobile: Single column with left-aligned timeline
  * - Desktop: Alternating left/right layout using grid columns
  */
-export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
+export const TimelineEntry = ({ entry, index, side }: TimelineEntryProps) => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
   const { editMode } = useEditMode();
   const navigate = useNavigate();
@@ -111,7 +111,7 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
     }
   };
 
-  const isLeft = index % 2 === 0;
+  const isLeft = side === 'left';
   const styles = getCategoryStyles(entry.category);
 
   // Card content - shared between mobile and desktop
@@ -196,7 +196,7 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
   return (
     <>
       {/* Mobile Layout - Single column */}
-      <div className="md:hidden col-span-1 relative pl-10">
+      <div className="md:hidden relative pl-10">
         {/* Timeline dot */}
         <div className="absolute left-4 top-3 -translate-x-1/2 z-10">
           <div className={`w-3 h-3 ${styles.dot} rounded-full border-2 shadow-md`} />
@@ -206,22 +206,15 @@ export const TimelineEntry = ({ entry, index }: TimelineEntryProps) => {
         {cardContent}
       </div>
 
-      {/* Desktop Layout - CSS Grid with alternating positions */}
-      {/* Left content (even indices) */}
-      <div className={`hidden md:block ${isLeft ? 'pr-4' : ''}`}>
-        {isLeft && cardContent}
-      </div>
-      
-      {/* Center column - timeline dot */}
-      <div className="hidden md:flex justify-center items-start pt-3 relative">
-        <div className={`w-3 h-3 ${styles.dot} rounded-full border-2 shadow-md z-10`} />
-        {/* Connecting lines */}
-        <div className={`absolute top-4 w-4 h-0.5 bg-timeline-line ${isLeft ? 'right-full mr-0.5' : 'left-full ml-0.5'}`} />
-      </div>
-      
-      {/* Right content (odd indices) */}
-      <div className={`hidden md:block ${!isLeft ? 'pl-4' : ''}`}>
-        {!isLeft && cardContent}
+      {/* Desktop Layout - Independent column stacking */}
+      <div className="hidden md:block relative">
+        {/* Timeline dot - positioned at edge of column */}
+        <div className={`absolute top-3 z-10 ${isLeft ? '-right-6' : '-left-6'}`}>
+          <div className={`w-3 h-3 ${styles.dot} rounded-full border-2 shadow-md`} />
+        </div>
+        {/* Connecting line to timeline */}
+        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? '-right-6 w-6' : '-left-6 w-6'}`} />
+        {cardContent}
       </div>
 
       {/* Image Modal */}

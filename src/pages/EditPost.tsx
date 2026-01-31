@@ -270,8 +270,8 @@ export default function EditPost() {
             <div className="relative">
               <TimelineEntry 
                 entry={previewEntry} 
-                isLast={true} 
                 index={0}
+                side="left"
               />
             </div>
           </div>
