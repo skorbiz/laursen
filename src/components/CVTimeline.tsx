@@ -145,7 +145,7 @@ export const CVTimeline = () => {
         {/* Desktop: Two independent columns */}
         <div className="hidden md:grid md:grid-cols-2 md:gap-x-12">
           {/* Left column - even indices */}
-          <div className="flex flex-col gap-8 pr-6">
+          <div className="flex flex-col gap-24 pr-6">
             {visibleTimelineData
               .map((entry, originalIndex) => ({ entry, originalIndex }))
               .filter((_, i) => i % 2 === 0)
@@ -160,7 +160,7 @@ export const CVTimeline = () => {
           </div>
           
           {/* Right column - odd indices, offset for asymmetry */}
-          <div className="flex flex-col gap-8 pl-6 mt-24">
+          <div className="flex flex-col gap-24 pl-6 mt-24">
             {visibleTimelineData
               .map((entry, originalIndex) => ({ entry, originalIndex }))
               .filter((_, i) => i % 2 === 1)
