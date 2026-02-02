@@ -147,7 +147,7 @@ export const CVTimeline = () => {
           {visibleTimelineData.map((entry, index) => (
             <div 
               key={index}
-              className={`relative ${index === 0 ? '' : '-mt-32'}`}
+              className={`relative ${index === 0 ? '' : '-mt-16'}`}
             >
               <TimelineEntry
                 entry={entry}
