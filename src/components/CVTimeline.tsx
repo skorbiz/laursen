@@ -101,7 +101,7 @@ export const CVTimeline = () => {
               visibleCategories.has('work') ? 'opacity-100' : 'opacity-40'
             }`}
           >
-            <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-category-work rounded-full"></div>
             <span className="text-sm text-muted-foreground">Workplace</span>
           </button>
           <button
@@ -110,7 +110,7 @@ export const CVTimeline = () => {
               visibleCategories.has('project') ? 'opacity-100' : 'opacity-40'
             }`}
           >
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-category-project rounded-full"></div>
             <span className="text-sm text-muted-foreground">Projects</span>
           </button>
           <button
@@ -119,27 +119,44 @@ export const CVTimeline = () => {
               visibleCategories.has('community') ? 'opacity-100' : 'opacity-40'
             }`}
           >
-            <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-category-community rounded-full"></div>
             <span className="text-sm text-muted-foreground">Community</span>
           </button>
         </div>
       </div>
 
-      {/* Timeline */}
+      {/* Timeline - Overlapping Layout */}
       <div className="relative">
-        {/* Central timeline line - hidden on mobile, visible on desktop */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
-        {/* Mobile timeline line - left aligned */}
-        <div className="md:hidden absolute left-4 transform -translate-x-0.5 w-0.5 h-full bg-timeline-line z-0"></div>
+        {/* Central timeline line */}
+        <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-timeline-line z-0" />
         
-        {visibleTimelineData.map((entry, index) => (
-          <TimelineEntry
-            key={index}
-            entry={entry}
-            index={index}
-            isLast={index === visibleTimelineData.length - 1}
-          />
-        ))}
+        {/* Mobile: Single column */}
+        <div className="md:hidden flex flex-col gap-6">
+          {visibleTimelineData.map((entry, index) => (
+            <TimelineEntry
+              key={index}
+              entry={entry}
+              index={index}
+              side="left"
+            />
+          ))}
+        </div>
+
+        {/* Desktop: Single column with alternating sides and overlap */}
+        <div className="hidden md:block">
+          {visibleTimelineData.map((entry, index) => (
+            <div 
+              key={index}
+              className={`relative ${index === 0 ? '' : '-mt-32'}`}
+            >
+              <TimelineEntry
+                entry={entry}
+                index={index}
+                side={index % 2 === 0 ? 'left' : 'right'}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Footer */}
