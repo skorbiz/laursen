@@ -219,7 +219,7 @@ export const TimelineEntry = ({ entry, index, side }: TimelineEntryProps) => {
         </div>
         
         {/* Connecting line */}
-        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? 'left-[calc(50%-0.5rem)] w-2' : 'left-1/2 w-2'}`} />
+        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? 'left-[calc(50%-0.5rem)] w-4' : 'left-1/2 w-4'}`} />
         
         {/* Right side content */}
         <div className={`${!isLeft ? 'pl-2' : ''}`}>
