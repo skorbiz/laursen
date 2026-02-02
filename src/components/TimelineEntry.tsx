@@ -206,15 +206,25 @@ export const TimelineEntry = ({ entry, index, side }: TimelineEntryProps) => {
         {cardContent}
       </div>
 
-      {/* Desktop Layout - Independent column stacking */}
-      <div className="hidden md:block relative">
-        {/* Timeline dot - positioned at edge of column */}
-        <div className={`absolute top-3 z-10 ${isLeft ? '-right-6' : '-left-6'}`}>
+      {/* Desktop Layout - Alternating sides with overlap */}
+      <div className={`hidden md:grid md:grid-cols-2 md:gap-x-12 relative`}>
+        {/* Left side content */}
+        <div className={`${isLeft ? 'pr-6' : ''}`}>
+          {isLeft && cardContent}
+        </div>
+        
+        {/* Timeline dot - centered */}
+        <div className="absolute left-1/2 -translate-x-1/2 top-3 z-10">
           <div className={`w-3 h-3 ${styles.dot} rounded-full border-2 shadow-md`} />
         </div>
-        {/* Connecting line to timeline */}
-        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? '-right-6 w-6' : '-left-6 w-6'}`} />
-        {cardContent}
+        
+        {/* Connecting line */}
+        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? 'left-[calc(50%-1.5rem)] w-6' : 'left-1/2 w-6'}`} />
+        
+        {/* Right side content */}
+        <div className={`${!isLeft ? 'pl-6' : ''}`}>
+          {!isLeft && cardContent}
+        </div>
       </div>
 
       {/* Image Modal */}
