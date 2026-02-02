@@ -207,9 +207,9 @@ export const TimelineEntry = ({ entry, index, side }: TimelineEntryProps) => {
       </div>
 
       {/* Desktop Layout - Alternating sides with overlap */}
-      <div className={`hidden md:grid md:grid-cols-2 md:gap-x-12 relative`}>
+      <div className={`hidden md:grid md:grid-cols-2 md:gap-x-8 relative`}>
         {/* Left side content */}
-        <div className={`${isLeft ? 'pr-6' : ''}`}>
+        <div className={`${isLeft ? 'pr-2' : ''}`}>
           {isLeft && cardContent}
         </div>
         
@@ -219,10 +219,10 @@ export const TimelineEntry = ({ entry, index, side }: TimelineEntryProps) => {
         </div>
         
         {/* Connecting line */}
-        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? 'left-[calc(50%-1.5rem)] w-6' : 'left-1/2 w-6'}`} />
+        <div className={`absolute top-4 h-0.5 bg-timeline-line ${isLeft ? 'left-[calc(50%-0.5rem)] w-2' : 'left-1/2 w-2'}`} />
         
         {/* Right side content */}
-        <div className={`${!isLeft ? 'pl-6' : ''}`}>
+        <div className={`${!isLeft ? 'pl-2' : ''}`}>
           {!isLeft && cardContent}
         </div>
       </div>
