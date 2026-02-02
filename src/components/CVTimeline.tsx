@@ -125,7 +125,7 @@ export const CVTimeline = () => {
         </div>
       </div>
 
-      {/* Timeline - Two Column Layout */}
+      {/* Timeline - Overlapping Layout */}
       <div className="relative">
         {/* Central timeline line */}
         <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-timeline-line z-0" />
@@ -142,37 +142,20 @@ export const CVTimeline = () => {
           ))}
         </div>
 
-        {/* Desktop: Two independent columns */}
-        <div className="hidden md:grid md:grid-cols-2 md:gap-x-12">
-          {/* Left column - even indices */}
-          <div className="flex flex-col gap-24 pr-6">
-            {visibleTimelineData
-              .map((entry, originalIndex) => ({ entry, originalIndex }))
-              .filter((_, i) => i % 2 === 0)
-              .map(({ entry, originalIndex }) => (
-                <TimelineEntry
-                  key={originalIndex}
-                  entry={entry}
-                  index={originalIndex}
-                  side="left"
-                />
-              ))}
-          </div>
-          
-          {/* Right column - odd indices, offset for asymmetry */}
-          <div className="flex flex-col gap-24 pl-6 mt-24">
-            {visibleTimelineData
-              .map((entry, originalIndex) => ({ entry, originalIndex }))
-              .filter((_, i) => i % 2 === 1)
-              .map(({ entry, originalIndex }) => (
-                <TimelineEntry
-                  key={originalIndex}
-                  entry={entry}
-                  index={originalIndex}
-                  side="right"
-                />
-              ))}
-          </div>
+        {/* Desktop: Single column with alternating sides and overlap */}
+        <div className="hidden md:block">
+          {visibleTimelineData.map((entry, index) => (
+            <div 
+              key={index}
+              className={`relative ${index === 0 ? '' : '-mt-32'}`}
+            >
+              <TimelineEntry
+                entry={entry}
+                index={index}
+                side={index % 2 === 0 ? 'left' : 'right'}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
