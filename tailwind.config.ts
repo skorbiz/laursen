@@ -70,14 +70,6 @@ export default {
 				},
 				timeline: {
 					line: 'hsl(var(--timeline-line))'
-				},
-				category: {
-					work: 'hsl(var(--category-work))',
-					'work-light': 'hsl(var(--category-work-light))',
-					project: 'hsl(var(--category-project))',
-					'project-light': 'hsl(var(--category-project-light))',
-					community: 'hsl(var(--category-community))',
-					'community-light': 'hsl(var(--category-community-light))'
 				}
 			},
 			borderRadius: {
