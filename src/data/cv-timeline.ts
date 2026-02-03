@@ -69,7 +69,7 @@ export const timelineData: TimelineEntry[] = [
     date: "2025",
     image: "o-robotics.png", 
     text: "Assisted a client with their weed removal robot designed for paved environments. Wrapped their motor drivers using ROS2 Control and helped integrate a GPS navigation stack in both the Gazebo simulation and the physical mobile robot.",
-    tags: ["ROS2", "ROS2Control", "Nav2", "GPS Navigation", "AutonomousRobot", "Gazebo"],
+    tags: ["ROS2", "ROS2Control", "Nav2", "GPSNavigation", "AutonomousRobots", "Gazebo"],
     category: "project",
     largeBanner: true
   },
@@ -202,7 +202,7 @@ export const timelineData: TimelineEntry[] = [
     date: "2020",
     image: "laser-scanner.jpg",
     text: "Conducted analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensors, analysed noise patterns, and resolved complex bugs in robot docking performance through systematic sensor characterization.",
-    tags: ["LaserScanners", "Analysis", "Perception", "Optimisation"],
+    tags: ["LaserScanners", "Analysis", "Perception", "Optimization"],
     category: "project"
   },
   {
