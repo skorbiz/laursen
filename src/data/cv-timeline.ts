@@ -201,8 +201,8 @@ export const timelineData: TimelineEntry[] = [
     title: "Laser Scanner Analysis Project",
     date: "2020",
     image: "laser-scanner.jpg",
-    text: "Conducted analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensors, analysed noise patterns, and resolved complex bugs in robot docking performance through systematic sensor characterization.",
-    tags: ["LaserScanners", "Analysis", "Perception", "Optimization"],
+    text: "Conducted analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensors, analysed noise patterns, and resolved complex bugs in robot docking performance through systematic sensor characterisation.",
+    tags: ["LaserScanners", "Analysis", "Perception", "Optimisation"],
     category: "project"
   },
   {
@@ -245,7 +245,7 @@ export const timelineData: TimelineEntry[] = [
     title: "Swarm Robotics Research",
     date: "2016",
     image: "swarm-robots.jpg",
-    text: "Visiting researcher at University of Ottawa, Canada. Developed driver and conducted research using E-Puck robots for swarm robotics and emergent behavior applications. Implemented distributed control algorithms for multi-robot coordination.",
+    text: "Visiting researcher at University of Ottawa, Canada. Developed driver and conducted research using E-Puck robots for swarm robotics and emergent behaviour applications. Implemented distributed control algorithms for multi-robot coordination.",
     links: [
       { url: "https://github.com/skorbiz/epuck_driver", label: "Code", type: "github" },
     ],
