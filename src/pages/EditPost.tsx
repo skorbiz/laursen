@@ -9,7 +9,7 @@ import { ArrowLeft, Copy, Check, ExternalLink } from "lucide-react"
 import { toast } from "sonner"
 
 // GitHub repository info - update these if the repo changes
-const GITHUB_REPO = "skorbiz/laursen-timeline"
+const GITHUB_REPO = "skorbiz/laursen"
 const GITHUB_FILE_PATH = "src/data/cv-timeline.ts"
 import { TimelineEntry } from "@/components/TimelineEntry"
 
