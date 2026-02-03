@@ -193,7 +193,7 @@ export const timelineData: TimelineEntry[] = [
     date: "2021",
     startDate: "2018",
     image: "circuit-board.jpg",
-    text: "Developed and maintained comprehensive navigation stack for autonomous mobile robots. Created testable architecture that improved code quality and reduced integration issues. Implemented path planning, obstacle avoidance, and localization algorithms.",
+    text: "Developed and maintained comprehensive navigation stack for autonomous mobile robots. Created testable architecture that improved code quality and reduced integration issues. Implemented path planning, obstacle avoidance, and localisation algorithms.",
     tags: ["Navigation", "TDD", "GTEST", "C++"],
     category: "project"
   },
@@ -249,14 +249,14 @@ export const timelineData: TimelineEntry[] = [
     links: [
       { url: "https://github.com/skorbiz/epuck_driver", label: "Code", type: "github" },
     ],
-    tags: ["SwarmRobotics", "EmergentBehavior", "MultiRobot", "DistributedControl", "Research"],
+    tags: ["SwarmRobotics", "EmergentBehaviour", "MultiRobot", "DistributedControl", "Research"],
     category: "project"
   },
   {
     title: "Master's Thesis - Industrial Automation Reuse Study",
     date: "2015",
     image: "manufacturing-line.jpg",
-    text: "Master's thesis investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analyzed efficiency improvements in production environments.",
+    text: "Master's thesis investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analysed efficiency improvements in production environments.",
     tags: ["MasterThesis", "Automation", "Reusability", "Manufacturing", "Efficiency"],
     category: "project",
     hidden: true
