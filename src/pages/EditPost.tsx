@@ -5,8 +5,12 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Copy, Check } from "lucide-react"
+import { ArrowLeft, Copy, Check, ExternalLink } from "lucide-react"
 import { toast } from "sonner"
+
+// GitHub repository info - update these if the repo changes
+const GITHUB_REPO = "skorbiz/laursen-timeline"
+const GITHUB_FILE_PATH = "src/data/cv-timeline.ts"
 import { TimelineEntry } from "@/components/TimelineEntry"
 
 const importAssets = () => {
@@ -238,28 +242,54 @@ export default function EditPost() {
               />
             </div>
             
-            <div className="pt-4 border-t">
-              <Label>AI Update Prompt</Label>
-              <div className="mt-2 p-4 bg-muted rounded-md">
-                <pre className="text-xs whitespace-pre-wrap">{generatePrompt()}</pre>
+            <div className="pt-4 border-t space-y-4">
+              <div>
+                <Label>Quick Edit on GitHub</Label>
+                <p className="text-xs text-muted-foreground mt-1 mb-2">
+                  Open the timeline data file directly in GitHub's editor for quick manual edits.
+                </p>
+                <Button
+                  asChild
+                  className="w-full"
+                  variant="outline"
+                >
+                  <a 
+                    href={`https://github.com/${GITHUB_REPO}/edit/main/${GITHUB_FILE_PATH}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Edit on GitHub
+                  </a>
+                </Button>
               </div>
-              <Button
-                onClick={copyToClipboard}
-                className="mt-2 w-full"
-                variant="secondary"
-              >
-                {copied ? (
-                  <>
-                    <Check className="mr-2 h-4 w-4" />
-                    Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy className="mr-2 h-4 w-4" />
-                    Copy Prompt
-                  </>
-                )}
-              </Button>
+              
+              <div>
+                <Label>AI Update Prompt</Label>
+                <p className="text-xs text-muted-foreground mt-1 mb-2">
+                  Or copy this prompt to paste into Lovable's chat for AI-assisted updates.
+                </p>
+                <div className="p-4 bg-muted rounded-md">
+                  <pre className="text-xs whitespace-pre-wrap">{generatePrompt()}</pre>
+                </div>
+                <Button
+                  onClick={copyToClipboard}
+                  className="mt-2 w-full"
+                  variant="secondary"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="mr-2 h-4 w-4" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="mr-2 h-4 w-4" />
+                      Copy Prompt
+                    </>
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
           
