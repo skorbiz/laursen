@@ -1,50 +1,56 @@
-import { useState, useMemo } from "react"
-import { useParams, useNavigate } from "react-router-dom"
-import { timelineData, TimelineEntry as TimelineEntryType } from "@/data/cv-timeline"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { ArrowLeft, Copy, Check, ExternalLink } from "lucide-react"
-import { toast } from "sonner"
+import { useState, useMemo } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  timelineData,
+  TimelineEntry as TimelineEntryType,
+  resolveText,
+} from "@/data/cv-timeline";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { ArrowLeft, Copy, Check, ExternalLink } from "lucide-react";
+import { toast } from "sonner";
 
 // GitHub repository info - update these if the repo changes
-const GITHUB_REPO = "skorbiz/laursen"
-const GITHUB_FILE_PATH = "src/data/cv-timeline.ts"
-import { TimelineEntry } from "@/components/TimelineEntry"
+const GITHUB_REPO = "skorbiz/laursen";
+const GITHUB_FILE_PATH = "src/data/cv-timeline.ts";
+import { TimelineEntry } from "@/components/TimelineEntry";
 
 const importAssets = () => {
-  const images = import.meta.glob('@/assets/*', { eager: true });
+  const images = import.meta.glob("@/assets/*", { eager: true });
   const imageMap: Record<string, string> = {};
-  
+
   Object.entries(images).forEach(([path, module]) => {
-    const filename = path.split('/').pop();
+    const filename = path.split("/").pop();
     if (filename && (module as any).default) {
       imageMap[filename] = (module as any).default;
     }
   });
-  
+
   return imageMap;
 };
 
 const assetImages = importAssets();
 
 export default function EditPost() {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const entry = timelineData.find((e, index) => String(index) === id)
-  
-  const [title, setTitle] = useState(entry?.title || "")
-  const [text, setText] = useState(entry?.text || "")
-  const [date, setDate] = useState(entry?.date || "")
-  const [startDate, setStartDate] = useState(entry?.startDate || "")
-  const [selectedImage, setSelectedImage] = useState(entry?.image || "")
-  const [largeBanner, setLargeBanner] = useState(entry?.largeBanner || false)
-  const [imagePosition, setImagePosition] = useState(entry?.imagePosition || "center")
-  const [tags, setTags] = useState(entry?.tags?.join(", ") || "")
-  const [category, setCategory] = useState(entry?.category || "project")
-  const [copied, setCopied] = useState(false)
-  
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const entry = timelineData.find((e, index) => String(index) === id);
+
+  const [title, setTitle] = useState(entry?.title || "");
+  const [text, setText] = useState(resolveText(entry?.text));
+  const [date, setDate] = useState(entry?.date || "");
+  const [startDate, setStartDate] = useState(entry?.startDate || "");
+  const [selectedImage, setSelectedImage] = useState(entry?.image || "");
+  const [largeBanner, setLargeBanner] = useState(entry?.largeBanner || false);
+  const [imagePosition, setImagePosition] = useState(
+    entry?.imagePosition || "center",
+  );
+  const [tags, setTags] = useState(entry?.tags?.join(", ") || "");
+  const [category, setCategory] = useState(entry?.category || "project");
+  const [copied, setCopied] = useState(false);
+
   if (!entry) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 flex items-center justify-center">
@@ -53,61 +59,77 @@ export default function EditPost() {
           <Button onClick={() => navigate("/")}>Back to Timeline</Button>
         </div>
       </div>
-    )
+    );
   }
-  
+
   const generatePrompt = () => {
     const prompt = `For post at index ${id}, update the following:
 - Title: "${title}"
-- Date: "${date}"${startDate ? `\n- Start Date: "${startDate}"` : ''}
+- Date: "${date}"${startDate ? `\n- Start Date: "${startDate}"` : ""}
 - Image: "${selectedImage}"
 - Large Banner: ${largeBanner}
 - Image Position: "${imagePosition}"
 - Text: "${text}"
-- Tags: [${tags.split(",").map(t => `"${t.trim()}"`).join(", ")}]
-- Category: "${category}"`
-    
-    return prompt
-  }
-  
+- Tags: [${tags
+      .split(",")
+      .map((t) => `"${t.trim()}"`)
+      .join(", ")}]
+- Category: "${category}"`;
+
+    return prompt;
+  };
+
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(generatePrompt())
-    setCopied(true)
-    toast.success("Prompt copied to clipboard!")
-    setTimeout(() => setCopied(false), 2000)
-  }
+    navigator.clipboard.writeText(generatePrompt());
+    setCopied(true);
+    toast.success("Prompt copied to clipboard!");
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   // Create a preview entry object from the current form state
-  const previewEntry: TimelineEntryType = useMemo(() => ({
-    title,
-    text,
-    date,
-    startDate,
-    image: selectedImage,
-    largeBanner,
-    imagePosition,
-    tags: tags.split(",").map(t => t.trim()).filter(Boolean),
-    category: category as "work" | "project" | "community",
-    links: entry?.links || []
-  }), [title, text, date, startDate, selectedImage, largeBanner, imagePosition, tags, category, entry?.links])
-  
+  const previewEntry: TimelineEntryType = useMemo(
+    () => ({
+      title,
+      text,
+      date,
+      startDate,
+      image: selectedImage,
+      largeBanner,
+      imagePosition,
+      tags: tags
+        .split(",")
+        .map((t) => t.trim())
+        .filter(Boolean),
+      category: category as "work" | "project" | "community",
+      links: entry?.links || [],
+    }),
+    [
+      title,
+      text,
+      date,
+      startDate,
+      selectedImage,
+      largeBanner,
+      imagePosition,
+      tags,
+      category,
+      entry?.links,
+    ],
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       <div className="max-w-6xl mx-auto px-6 py-8">
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/")}
-          className="mb-6"
-        >
+        <Button variant="ghost" onClick={() => navigate("/")} className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Timeline
         </Button>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {/* Edit Form */}
           <div className="space-y-4">
             <h1 className="text-3xl font-bold">Edit Post</h1>
-            
+
             <div>
               <Label htmlFor="title">Title</Label>
               <Input
@@ -116,7 +138,7 @@ export default function EditPost() {
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="startDate">Start Date (optional)</Label>
@@ -136,7 +158,7 @@ export default function EditPost() {
                 />
               </div>
             </div>
-            
+
             <div>
               <Label htmlFor="image">Image</Label>
               <select
@@ -152,7 +174,7 @@ export default function EditPost() {
                 ))}
               </select>
             </div>
-            
+
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
@@ -163,7 +185,7 @@ export default function EditPost() {
               />
               <Label htmlFor="largeBanner">Large Banner</Label>
             </div>
-            
+
             <div>
               <Label htmlFor="imagePosition">Image Vertical Position</Label>
               <div className="flex items-center gap-4">
@@ -172,12 +194,20 @@ export default function EditPost() {
                   id="imagePosition"
                   min="0"
                   max="100"
-                  value={imagePosition === 'center' ? 50 : parseInt(imagePosition.replace(/\D/g, '')) || 50}
-                  onChange={(e) => setImagePosition(`center ${e.target.value}%`)}
+                  value={
+                    imagePosition === "center"
+                      ? 50
+                      : parseInt(imagePosition.replace(/\D/g, "")) || 50
+                  }
+                  onChange={(e) =>
+                    setImagePosition(`center ${e.target.value}%`)
+                  }
                   className="flex-1"
                 />
                 <span className="text-sm text-muted-foreground min-w-[60px]">
-                  {imagePosition === 'center' ? '50%' : imagePosition.replace('center ', '')}
+                  {imagePosition === "center"
+                    ? "50%"
+                    : imagePosition.replace("center ", "")}
                 </span>
               </div>
               <div className="flex gap-2 mt-2">
@@ -185,7 +215,7 @@ export default function EditPost() {
                   type="button"
                   size="sm"
                   variant="outline"
-                  onClick={() => setImagePosition('center 0%')}
+                  onClick={() => setImagePosition("center 0%")}
                 >
                   Top
                 </Button>
@@ -193,7 +223,7 @@ export default function EditPost() {
                   type="button"
                   size="sm"
                   variant="outline"
-                  onClick={() => setImagePosition('center')}
+                  onClick={() => setImagePosition("center")}
                 >
                   Center
                 </Button>
@@ -201,13 +231,13 @@ export default function EditPost() {
                   type="button"
                   size="sm"
                   variant="outline"
-                  onClick={() => setImagePosition('center 100%')}
+                  onClick={() => setImagePosition("center 100%")}
                 >
                   Bottom
                 </Button>
               </div>
             </div>
-            
+
             <div>
               <Label htmlFor="category">Category</Label>
               <select
@@ -221,7 +251,7 @@ export default function EditPost() {
                 <option value="community">Community</option>
               </select>
             </div>
-            
+
             <div>
               <Label htmlFor="text">Description</Label>
               <Textarea
@@ -231,7 +261,7 @@ export default function EditPost() {
                 rows={6}
               />
             </div>
-            
+
             <div>
               <Label htmlFor="tags">Tags (comma-separated)</Label>
               <Input
@@ -241,19 +271,16 @@ export default function EditPost() {
                 placeholder="ROS2, Navigation, AI"
               />
             </div>
-            
+
             <div className="pt-4 border-t space-y-4">
               <div>
                 <Label>Quick Edit on GitHub</Label>
                 <p className="text-xs text-muted-foreground mt-1 mb-2">
-                  Open the timeline data file directly in GitHub's editor for quick manual edits.
+                  Open the timeline data file directly in GitHub's editor for
+                  quick manual edits.
                 </p>
-                <Button
-                  asChild
-                  className="w-full"
-                  variant="outline"
-                >
-                  <a 
+                <Button asChild className="w-full" variant="outline">
+                  <a
                     href={`https://github.com/${GITHUB_REPO}/edit/main/${GITHUB_FILE_PATH}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -263,14 +290,17 @@ export default function EditPost() {
                   </a>
                 </Button>
               </div>
-              
+
               <div>
                 <Label>AI Update Prompt</Label>
                 <p className="text-xs text-muted-foreground mt-1 mb-2">
-                  Or copy this prompt to paste into Lovable's chat for AI-assisted updates.
+                  Or copy this prompt to paste into Lovable's chat for
+                  AI-assisted updates.
                 </p>
                 <div className="p-4 bg-muted rounded-md">
-                  <pre className="text-xs whitespace-pre-wrap">{generatePrompt()}</pre>
+                  <pre className="text-xs whitespace-pre-wrap">
+                    {generatePrompt()}
+                  </pre>
                 </div>
                 <Button
                   onClick={copyToClipboard}
@@ -292,21 +322,17 @@ export default function EditPost() {
               </div>
             </div>
           </div>
-          
+
           {/* Preview */}
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Preview</h2>
-            
+
             <div className="relative">
-              <TimelineEntry 
-                entry={previewEntry} 
-                index={0}
-                side="left"
-              />
+              <TimelineEntry entry={previewEntry} index={0} side="left" />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Cyber Resilience Act compliance as code</title>
+  <desc id="desc">European stars flow through standards and machine-readable policy into secure software delivery.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071b50"/>
+      <stop offset="0.48" stop-color="#09316e"/>
+      <stop offset="1" stop-color="#07152e"/>
+    </linearGradient>
+    <radialGradient id="blueGlow">
+      <stop stop-color="#18d9ff" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#18d9ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow">
+      <stop stop-color="#ffd83d" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#ffd83d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#ffd83d"/>
+      <stop offset=".4" stop-color="#ff7a45"/>
+      <stop offset=".72" stop-color="#15e2d1"/>
+      <stop offset="1" stop-color="#37a8ff"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#22f0d1"/>
+      <stop offset="1" stop-color="#1684ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="15" stdDeviation="14" flood-color="#020819" flood-opacity=".72"/>
+    </filter>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#70bfff" stroke-opacity=".09"/>
+      <circle cx="0" cy="0" r="2" fill="#70bfff" fill-opacity=".2"/>
+    </pattern>
+    <path id="star" d="M0-10 2.35-3.24 9.51-3.09 3.8 1.24 5.88 8.09 0 4-5.88 8.09-3.8 1.24-9.51-3.09-2.35-3.24Z"/>
+  </defs>
+
+  <rect width="1200" height="480" rx="18" fill="url(#background)"/>
+  <rect width="1200" height="480" rx="18" fill="url(#grid)"/>
+  <ellipse cx="184" cy="235" rx="260" ry="250" fill="url(#goldGlow)" opacity=".42"/>
+  <ellipse cx="945" cy="225" rx="340" ry="310" fill="url(#blueGlow)" opacity=".31"/>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M-40 379C155 309 192 117 385 177S631 428 823 260s240-79 420-139" stroke="#13dbff" stroke-opacity=".18" stroke-width="35"/>
+    <path d="M-30 367C154 302 205 126 390 185S633 408 819 252s247-78 426-147" stroke="url(#ribbon)" stroke-width="7" filter="url(#glow)"/>
+    <path d="M-20 405C176 350 219 173 405 218S632 448 849 286s241-83 382-152" stroke="#58ecff" stroke-opacity=".42" stroke-width="2" stroke-dasharray="3 14"/>
+  </g>
+
+  <!-- EU constellation -->
+  <g transform="translate(205 220) rotate(-12)" fill="#ffd83d" filter="url(#glow)">
+    <use href="#star" transform="translate(0 -108)"/>
+    <use href="#star" transform="translate(54 -94)"/>
+    <use href="#star" transform="translate(94 -54)"/>
+    <use href="#star" transform="translate(108 0)"/>
+    <use href="#star" transform="translate(94 54)"/>
+    <use href="#star" transform="translate(54 94)"/>
+    <use href="#star" transform="translate(0 108)"/>
+    <use href="#star" transform="translate(-54 94)"/>
+    <use href="#star" transform="translate(-94 54)"/>
+    <use href="#star" transform="translate(-108 0)"/>
+    <use href="#star" transform="translate(-94 -54)"/>
+    <use href="#star" transform="translate(-54 -94)"/>
+  </g>
+  <g transform="translate(205 220) rotate(-8)" text-anchor="middle" font-family="Arial, sans-serif">
+    <text y="-10" fill="#fff" font-size="68" font-weight="800" letter-spacing="2">CRA</text>
+    <text y="22" fill="#b8e9ff" font-size="15" font-weight="700" letter-spacing="3">EU 2024/2847</text>
+  </g>
+
+  <!-- Standards become machine-readable policy -->
+  <g transform="translate(485 66) rotate(7)" filter="url(#shadow)">
+    <path d="M30 0H228l68 68v278H30C13 346 0 333 0 316V30C0 13 13 0 30 0Z" fill="#f5f8ff"/>
+    <path d="M228 0v48c0 11 9 20 20 20h48" fill="#b9ddff"/>
+    <rect x="30" y="32" width="106" height="31" rx="15" fill="#ff594d"/>
+    <text x="83" y="53" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800">LEGISLATION</text>
+    <text x="30" y="104" fill="#102859" font-family="Arial, sans-serif" font-size="28" font-weight="800">Rules, but runnable.</text>
+    <path d="M32 133H242M32 155H218" stroke="#9cb4d4" stroke-width="8" stroke-linecap="round"/>
+    <g font-family="monospace" font-size="18" font-weight="700">
+      <text x="31" y="199" fill="#7858dc">risk:</text><text x="98" y="199" fill="#0b8b9a">high</text>
+      <text x="31" y="228" fill="#7858dc">control:</text><text x="120" y="228" fill="#e94a3c">SBOM</text>
+      <text x="31" y="257" fill="#7858dc">review:</text><text x="120" y="257" fill="#087dc1">required</text>
+    </g>
+    <rect x="31" y="286" width="72" height="30" rx="6" fill="#102859"/>
+    <rect x="112" y="286" width="78" height="30" rx="6" fill="#ffce33"/>
+    <rect x="199" y="286" width="66" height="30" rx="6" fill="#1dd7be"/>
+    <text x="67" y="306" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="700">IEC 62443</text>
+    <text x="151" y="306" text-anchor="middle" fill="#102859" font-family="Arial, sans-serif" font-size="13" font-weight="700">ISO</text>
+    <text x="232" y="306" text-anchor="middle" fill="#063f4d" font-family="Arial, sans-serif" font-size="13" font-weight="700">YAML</text>
+  </g>
+
+  <!-- Code stream and CI gates -->
+  <g transform="translate(770 107) rotate(-5)" font-family="monospace" filter="url(#shadow)">
+    <rect width="236" height="204" rx="18" fill="#081328" stroke="#33dff0" stroke-width="3"/>
+    <circle cx="24" cy="23" r="6" fill="#ff5f57"/>
+    <circle cx="44" cy="23" r="6" fill="#ffbd2e"/>
+    <circle cx="64" cy="23" r="6" fill="#28c840"/>
+    <path d="M0 42H236" stroke="#33dff0" stroke-opacity=".35"/>
+    <g font-size="17" font-weight="700">
+      <text x="20" y="75" fill="#ffca3a">policy</text><text x="86" y="75" fill="#f4f7ff">:</text>
+      <text x="37" y="103" fill="#3fe3c5">- test</text><text x="101" y="103" fill="#ff7c67">risk</text>
+      <text x="37" y="131" fill="#3fe3c5">- verify</text><text x="120" y="131" fill="#72baff">deadline</text>
+      <text x="37" y="159" fill="#3fe3c5">- publish</text><text x="129" y="159" fill="#d9a7ff">typst</text>
+    </g>
+    <rect x="20" y="174" width="195" height="13" rx="6" fill="#17385a"/>
+    <rect x="20" y="174" width="174" height="13" rx="6" fill="#28e09b"/>
+  </g>
+
+  <!-- Security outcome -->
+  <g transform="translate(1012 212) rotate(9)" filter="url(#shadow)">
+    <path d="M0-105C54-105 91-128 91-128v112C91 54 47 98 0 121-47 98-91 54-91-16v-112S-54-105 0-105Z" fill="url(#shield)" stroke="#b9fff5" stroke-width="5"/>
+    <path d="m-43 0 29 29 60-69" fill="none" stroke="#fff" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g fill="#9feaff">
+    <circle cx="369" cy="97" r="5"/><circle cx="421" cy="366" r="7"/><circle cx="729" cy="80" r="4"/>
+    <circle cx="748" cy="370" r="6"/><circle cx="1098" cy="87" r="5"/><circle cx="1128" cy="349" r="4"/>
+  </g>
+  <g fill="none" stroke="#6ce9ff" stroke-width="2" stroke-opacity=".45">
+    <path d="m343 98 26-1 18 17"/><path d="m421 366 21-22h31"/><path d="m729 80 22 17h31"/>
+    <path d="m748 370 32-28h39"/><path d="m1098 87 28 14 32-18"/><path d="m1128 349 24-22h34"/>
+  </g>
+</svg>

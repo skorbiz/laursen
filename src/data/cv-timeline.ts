@@ -19,59 +19,139 @@ export interface TimelineEntry {
   date: string;
   startDate?: string;
   image: string;
-  draft?: string;  // Your original input - not displayed publicly
-  text: string;    // AI-polished version for display
+  // Strings may be split into an array of lines for readability in source;
+  // arrays are joined with a single space into one paragraph when displayed.
+  draft?: string | string[]; // Your original input - not displayed publicly
+  text: string | string[]; // AI-polished version for display
   tags?: string[];
-  links?: { url: string; label: string; type?: 'github' | 'video' | 'website' | 'demo' }[];
-  category: 'work' | 'project' | 'community';
+  links?: {
+    url: string;
+    label: string;
+    type?: "github" | "video" | "website" | "demo";
+  }[];
+  category: "work" | "project" | "community";
   hidden?: boolean; // Set to true to hide from display
   largeBanner?: boolean; // Set to true for double height banner
   imagePosition?: string; // CSS object-position value for vertical image positioning (e.g., 'center', 'top', 'center 70%')
 }
 
+// Joins multi-line (array) text into a single paragraph for display/editing.
+export const resolveText = (value: string | string[] | undefined): string =>
+  Array.isArray(value) ? value.join(" ") : (value ?? "");
+
 export const timelineData: TimelineEntry[] = [
+  {
+    title: "Compliance as Code - CRA",
+    date: "2026",
+    image: "compliance-cra.svg",
+    text: [
+      "Represented our team in a Jensen workgroup handling Cyber Resilience Act (CRA) compliance.",
+      "Converted legislation into both business processes and concrete stack hardning.",
+      "Integrate compliance into the developer workflow: risk assessments defined in YAML, compliance documents generated with Typst and Docusaurus, and review deadlines enforced as unit tests.",
+      "The aim was something lightweight but well defined, Repository-embedded (not excel or a full GRC system), and something that integrates naturally with LLMs workflows, e.g. reviewing the risk assessments as part of PR reviews.",
+    ],
+    tags: [
+      "CRA",
+      "Compliance",
+      "ComplianceAsCode",
+      "ISO40000",
+      "IEC62443",
+      "Typst",
+      "CICD",
+      "Security",
+    ],
+    links: [
+      {
+        url: "https://github.com/skorbiz/compliance-as-code",
+        label: "GitHub: Compliance as Code",
+        type: "github",
+      },
+    ],
+    category: "project",
+  },
   {
     title: "Edge Data Collection Platform",
     date: "2026",
     image: "mezcada-poc1.gif",
     text: "Deployed prototype data collection stack at a commercial laundry facility. System collects data from legacy PLC machines and pushes to cloud for processing. Designed for retrofitting with existing systems and corporate IT requirements while maintaining modern capabilities including over-the-air updates, observability, and continuous deployment close to hardware.",
-    tags: ["EdgeComputing", "IoT", "Balena", "OpenTelemetry", "Azure", "Grafana", "Networking"],
+    tags: [
+      "EdgeComputing",
+      "IoT",
+      "Balena",
+      "OpenTelemetry",
+      "Azure",
+      "Grafana",
+      "Networking",
+    ],
     category: "project",
-    imagePosition: "center 82%"
+    imagePosition: "center 82%",
   },
   {
     title: "Home IoT Migration",
     date: "2026",
     image: "home-iot.jpg",
     text: "Migrated home automation to open source alternatives. Implemented multi-room audio streaming using Librespot, Snapcast, and Balena on Raspberry Pi devices. Automated lighting and smart appliances with Home Assistant. Replaced many big-tech dependencies with self-hosted and privacy-focused solutions.",
-    tags: ["HomeAutomation", "HomeAssistant", "Balena", "OpenSource", "Snapcast", "RaspberryPi"],
-    links: [{ url: "https://github.com/skorbiz/balena_snapcast_server", label: "GitHub: Multiroom Audio", type: "github" }],
-    category: "project"
+    tags: [
+      "HomeAutomation",
+      "HomeAssistant",
+      "Balena",
+      "OpenSource",
+      "Snapcast",
+      "RaspberryPi",
+    ],
+    links: [
+      {
+        url: "https://github.com/skorbiz/balena_snapcast_server",
+        label: "GitHub: Multiroom Audio",
+        type: "github",
+      },
+    ],
+    category: "project",
   },
   {
     title: "Jensen Group - Founding Software Developer",
     date: "2025",
     image: "jensen_group_logo.png",
     text: "New team, new task, and no preexisting code. Collect data from heavy duty laundry machines and provide meaningful insights. Tasks include architecting, prototyping and developing the system for deployment at scale.",
-    tags: ["Architecture", "CloudComputing", "IoT", "Analytics", "Networking", "EdgeComputing"],
-    category: "work"
+    tags: [
+      "Architecture",
+      "CloudComputing",
+      "IoT",
+      "Analytics",
+      "Networking",
+      "EdgeComputing",
+    ],
+    category: "work",
   },
   {
     title: "Skid-steering robot for inspection",
     date: "2025",
     image: "fls_air.gif",
     text: "Can you build a robot in three weeks? With great colleagues and conservative design decisions (and only a little bit of panic), then yes it's entirely possible. We built this working prototype for a customer to show at an exhibition. The robot is skid steered and mostly based on ROS2 Nav2. 3 weeks from rough CAD drawings and functional POC. Including everything from sourcing of components, printing to coding, web UI and tuning of navigation.",
-    tags: ["ROS2", "Nav2", "Gazebo", "CrossDepartmentCollaboration", "GreatColleagues"],
-    category: "project"
+    tags: [
+      "ROS2",
+      "Nav2",
+      "Gazebo",
+      "CrossDepartmentCollaboration",
+      "GreatColleagues",
+    ],
+    category: "project",
   },
   {
     title: "Weed Removal Robot - Navigation & Control",
     date: "2025",
-    image: "o-robotics.png", 
+    image: "o-robotics.png",
     text: "Assisted a client with their weed removal robot designed for paved environments. Wrapped their motor drivers using ROS2 Control and helped integrate a GPS navigation stack in both the Gazebo simulation and the physical mobile robot.",
-    tags: ["ROS2", "ROS2Control", "Nav2", "GPSNavigation", "AutonomousRobots", "Gazebo"],
+    tags: [
+      "ROS2",
+      "ROS2Control",
+      "Nav2",
+      "GPSNavigation",
+      "AutonomousRobots",
+      "Gazebo",
+    ],
     category: "project",
-    largeBanner: true
+    largeBanner: true,
   },
   {
     title: "Forklift Robot - ROS2 Simulation & Navigation",
@@ -81,56 +161,86 @@ export const timelineData: TimelineEntry[] = [
     tags: ["Forklift", "Gazebo", "Nav2", "Docker", "Livox", "SLAM"],
     category: "project",
     largeBanner: true,
-    imagePosition: "center 75%"
+    imagePosition: "center 75%",
   },
   {
     title: "Gas Leak Detection - Boston Dynamics Spot & Fluke SV600",
     date: "2024-2025",
     image: "spot1.jpg",
-    draft: "Integrated Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Included project managment and scoping, development of python plugins for interacting with doors and firealarm, safety regulations, ",
+    draft:
+      "Integrated Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Included project managment and scoping, development of python plugins for interacting with doors and firealarm, safety regulations, ",
     text: "Integrated Boston Dynamics Spot robot with Fluke SV600 acoustic imager for autonomous gas leak detection. Managed project scope and development, created Python plugins for door and fire alarm interactions, ensured safety regulation compliance, and conducted Wi-Fi network analysis.",
     links: [
-      { url: "https://www.flukeprocessinstruments.com/en-us/products/imaging-solutions/acoustic-imaging-solutions/sv600-fixed-acoustic-imager", label: "SV600 Specs", type: "website" },
-      { url: "https://bostondynamics.com/products/spot/", label: "Spot Robot", type: "website" }
+      {
+        url: "https://www.flukeprocessinstruments.com/en-us/products/imaging-solutions/acoustic-imaging-solutions/sv600-fixed-acoustic-imager",
+        label: "SV600 Specs",
+        type: "website",
+      },
+      {
+        url: "https://bostondynamics.com/products/spot/",
+        label: "Spot Robot",
+        type: "website",
+      },
     ],
-    tags: ["BostonDynamicsSpot", "FlukeSV600", "AcousticImaging", "Python", "Integration", "ProjectManagement"],
+    tags: [
+      "BostonDynamicsSpot",
+      "FlukeSV600",
+      "AcousticImaging",
+      "Python",
+      "Integration",
+      "ProjectManagement",
+    ],
     category: "project",
     largeBanner: true,
-    imagePosition: "center 21%"
+    imagePosition: "center 21%",
   },
   {
     title: "Enabled Robot Playtime",
     date: "2025",
     image: "enabled.png",
     links: [
-      { url: "https://www.linkedin.com/posts/johan-sund-laursen_enabledrobotics-moveit-ros2-activity-7309853141770895361-kC3J?utm_source=share&utm_medium=member_desktop&rcm=ACoAACRmOckBcV81y-M8tdhMUuDC4Rc3nGq8WlM", label: "Video", type: "video" },
+      {
+        url: "https://www.linkedin.com/posts/johan-sund-laursen_enabledrobotics-moveit-ros2-activity-7309853141770895361-kC3J?utm_source=share&utm_medium=member_desktop&rcm=ACoAACRmOckBcV81y-M8tdhMUuDC4Rc3nGq8WlM",
+        label: "Video",
+        type: "video",
+      },
     ],
     text: "Implemented box tracking system using Enabled Robot mobile manipulator. Integrated MoveIT motion planning with ROS2 and Qualisys motion capture system for real-time object tracking and manipulation 🤖.",
-    tags: ["EnabledRobot", "MobileManipulators", "ROS2", "MoveIT", "Qualisys", "MotionCapture"],
+    tags: [
+      "EnabledRobot",
+      "MobileManipulators",
+      "ROS2",
+      "MoveIT",
+      "Qualisys",
+      "MotionCapture",
+    ],
     category: "project",
-    largeBanner: true
+    largeBanner: true,
   },
   {
-    title: "Made Safety - Safe Collaboration Between Robot Manipulators and AMRs",
+    title:
+      "Made Safety - Safe Collaboration Between Robot Manipulators and AMRs",
     date: "2024",
     image: "madeSafe.jpg",
-    draft: "Lead the Made Safety project. The goal was to develop a safety system that would allow safe collaboration between robot manipulators and autonomous mobile robots in industrial environments. The project included the development of a safety controller that allowed collaboration between the mobile robot platforms safety and the safety on the robot workcell only when the to were docked.",
+    draft:
+      "Lead the Made Safety project. The goal was to develop a safety system that would allow safe collaboration between robot manipulators and autonomous mobile robots in industrial environments. The project included the development of a safety controller that allowed collaboration between the mobile robot platforms safety and the safety on the robot workcell only when the to were docked.",
     text: "Led Made Safety project developing safety systems for collaboration between robot manipulators and autonomous mobile robots in industrial environments. Developed safety controller enabling secure communication between mobile robot platform safety systems and robot workcell safety systems during docking operations.",
     tags: ["Safety", "SICK", "MIR", "IndustrialRobots", "SafetyController"],
     category: "project",
-    largeBanner: false
+    largeBanner: false,
   },
   {
     title: "Alitrak Robot - Outdoor Autonomous Navigation Platform",
     date: "2024",
     startDate: "2023",
     image: "alitrak.jpg",
-    draft: "Participated in the big european reasearch project Canopies. The goal was to develop robots for grape harvesting. Our role was converting the Alitrak platform into a platform sutible for autonomous navigation. This included backwards engineering the CAN interface for the tracks, adding sensors and drivers and modelling the robot in Gazebo and ROS.",
+    draft:
+      "Participated in the big european reasearch project Canopies. The goal was to develop robots for grape harvesting. Our role was converting the Alitrak platform into a platform sutible for autonomous navigation. This included backwards engineering the CAN interface for the tracks, adding sensors and drivers and modelling the robot in Gazebo and ROS.",
     text: "Participated in European Canopies research project developing robots for grape harvesting. Converted Alitrak platform for autonomous navigation by reverse-engineering CAN interface for track controls, integrating sensors and drivers, and creating robot simulation models in Gazebo and ROS.",
     tags: ["ROS2", "Gazebo", "URDF", "CAN", "OutdoorRobots", "Agriculture"],
     category: "project",
     largeBanner: true,
-    imagePosition: "center 25%"
+    imagePosition: "center 25%",
   },
   {
     title: "Public Speaking - When Mobile Robots Leave the Factory Floor",
@@ -138,15 +248,22 @@ export const timelineData: TimelineEntry[] = [
     image: "manufacturing-line.jpg",
     text: "Delivered presentation on the evolution of mobile robots beyond traditional factory environments. Discussed applications in logistics, healthcare, agriculture, and service industries, exploring how mobile robotics is transforming various sectors outside manufacturing.",
     tags: ["PublicSpeaking", "MobileRobots"],
-    category: "community"
+    category: "community",
   },
   {
     title: "Public Speaking - Algorithms in Autonomous Mobile Robots",
     date: "2023",
     image: "classroom-robotics.jpg",
     text: "Delivered presentation on algorithms in autonomous robots with Dr. Kristine V. K. Knudsen from SDU Robotics. Covered navigation algorithms, mapping, path planning, and obstacle avoidance. Explored what makes algorithms good or bad, and how mathematical approaches drive robotic decision-making.",
-    tags: ["PublicSpeaking", "Algorithms", "Navigation", "PathPlanning", "SLAM", "Mathematics"],
-    category: "community"
+    tags: [
+      "PublicSpeaking",
+      "Algorithms",
+      "Navigation",
+      "PathPlanning",
+      "SLAM",
+      "Mathematics",
+    ],
+    category: "community",
   },
   {
     title: "Teknologisk Institut - Robotics Specialist",
@@ -154,7 +271,7 @@ export const timelineData: TimelineEntry[] = [
     image: "dti_logo.png",
     text: "Working as robotics consultant on commercial and research-funded projects. Responsibilities include software development, project management, teaching, customer visits and technical inspections. Landed and executed the largest integration project in department history.",
     tags: ["Consulting", "Integration", "ProjectManagement", "MobileRobots"],
-    category: "work"
+    category: "work",
   },
   {
     title: "Christmas Coding Event - 2D Podracing Game",
@@ -162,20 +279,25 @@ export const timelineData: TimelineEntry[] = [
     image: "podracer.gif",
     text: "Organised and led Christmas coding event. Developed 2D podracing game engine where colleagues could write bots to compete in various challenges. Created programming competition combining gaming with algorithmic problem-solving.",
     links: [
-      { url: "https://github.com/skorbiz/podracer", label: "Code", type: "github" },
+      {
+        url: "https://github.com/skorbiz/podracer",
+        label: "Code",
+        type: "github",
+      },
     ],
     tags: ["Competition", "Algorithms", "PhysicsSimulation", "Bots"],
     category: "community",
-    largeBanner: false
+    largeBanner: false,
   },
   {
     title: "Bazel Build System Migration",
     date: "2022",
     image: "code-monitor.jpg",
-    draft: "As part of a larger effort across the robot stack at MIR we switched from the Catkin (cmake) based build system (stitched together with pydoit for anything not ROS) to Bazel. The purpose was to improve the development workflow, reduce build times, and make it easier to manage dependencies across the large codebase.",
+    draft:
+      "As part of a larger effort across the robot stack at MIR we switched from the Catkin (cmake) based build system (stitched together with pydoit for anything not ROS) to Bazel. The purpose was to improve the development workflow, reduce build times, and make it easier to manage dependencies across the large codebase.",
     text: "Migrated robot software stack from Catkin (cmake) and pydoit build system to Bazel. Improved development workflow, reduced build times, and simplified dependency management across large codebase containing both ROS and non-ROS components.",
     tags: ["Bazel", "Catkin", "Pydoit", "TDD", "BuildSystems"],
-    category: "project"
+    category: "project",
   },
   {
     title: "Mobile Industrial Robots - Team Lead",
@@ -186,7 +308,7 @@ export const timelineData: TimelineEntry[] = [
     tags: ["TeamLead", "Scrum", "TDD", "JIRA"],
     category: "work",
     largeBanner: true,
-    imagePosition: "center"
+    imagePosition: "center",
   },
   {
     title: "Testable Navigation Stack",
@@ -195,7 +317,7 @@ export const timelineData: TimelineEntry[] = [
     image: "circuit-board.jpg",
     text: "Developed and maintained comprehensive navigation stack for autonomous mobile robots. Created testable architecture that improved code quality and reduced integration issues. Implemented path planning, obstacle avoidance, and localisation algorithms.",
     tags: ["Navigation", "TDD", "GTEST", "C++"],
-    category: "project"
+    category: "project",
   },
   {
     title: "Laser Scanner Analysis Project",
@@ -203,7 +325,7 @@ export const timelineData: TimelineEntry[] = [
     image: "laser-scanner.jpg",
     text: "Conducted analysis of laser scanner performance and characteristics for mobile robot navigation. Evaluated different sensors, analysed noise patterns, and resolved complex bugs in robot docking performance through systematic sensor characterisation.",
     tags: ["LaserScanners", "Analysis", "Perception", "Optimisation"],
-    category: "project"
+    category: "project",
   },
   {
     title: "Mobile Industrial Robots - Robot Software Developer",
@@ -212,15 +334,22 @@ export const timelineData: TimelineEntry[] = [
     image: "mir_logo.jpg",
     text: "Developed and maintained software for MiR autonomous mobile robots. Created testable navigation stack, conducted laser scanner analysis, and renewed developer infrastructure. Focused on core navigation algorithms and sensor integration.",
     tags: ["C++", "Python", "Navigation", "SensorIntegration"],
-    category: "work"
+    category: "work",
   },
   {
     title: "Teaching - Robots in Context",
     date: "2017",
     image: "manipulator-arm.jpg",
     text: "Taught introductory robotics course covering kinematic modelling, control theory, path planning, and core algorithms including RANSAC and Kalman filtering. Developed hands-on lab exercises and programming assignments.",
-    tags: ["Teaching", "Kinematics", "Control", "PathPlanning", "RANSAC", "Kalman"],
-    category: "community"
+    tags: [
+      "Teaching",
+      "Kinematics",
+      "Control",
+      "PathPlanning",
+      "RANSAC",
+      "Kalman",
+    ],
+    category: "community",
   },
   {
     title: "University of Southern Denmark - Scientific Assistant",
@@ -229,7 +358,7 @@ export const timelineData: TimelineEntry[] = [
     text: "Continued PhD research in robotics manipulation and assembly. Developed domain-specific languages for robot control and investigated reversible execution methods for error recovery.",
     tags: ["Research", "Teaching", "DSL", "ErrorRecovery"],
     category: "work",
-    hidden: true
+    hidden: true,
   },
   {
     title: "PhD Degree - Robotics Manipulation",
@@ -237,8 +366,15 @@ export const timelineData: TimelineEntry[] = [
     startDate: "2013",
     image: "sdu_logo.jpg",
     text: "Dissertation focused on domain-specific languages for robotic assembly with emphasis on reversible programming languages. Developed methods enabling robots to execute programs both forward and backward, allowing error correction through trial-and-error approaches without additional error-handling code.",
-    tags: ["PhD", "Assembly", "ErrorRecovery", "DSL", "Research", "Reversibility"],
-    category: "work"
+    tags: [
+      "PhD",
+      "Assembly",
+      "ErrorRecovery",
+      "DSL",
+      "Research",
+      "Reversibility",
+    ],
+    category: "work",
   },
   // Insert paper maybe
   {
@@ -247,18 +383,34 @@ export const timelineData: TimelineEntry[] = [
     image: "swarm-robots.jpg",
     text: "Visiting researcher at University of Ottawa, Canada. Developed driver and conducted research using E-Puck robots for swarm robotics and emergent behaviour applications. Implemented distributed control algorithms for multi-robot coordination.",
     links: [
-      { url: "https://github.com/skorbiz/epuck_driver", label: "Code", type: "github" },
+      {
+        url: "https://github.com/skorbiz/epuck_driver",
+        label: "Code",
+        type: "github",
+      },
     ],
-    tags: ["SwarmRobotics", "EmergentBehaviour", "MultiRobot", "DistributedControl", "Research"],
-    category: "project"
+    tags: [
+      "SwarmRobotics",
+      "EmergentBehaviour",
+      "MultiRobot",
+      "DistributedControl",
+      "Research",
+    ],
+    category: "project",
   },
   {
     title: "Master's Thesis - Industrial Automation Reuse Study",
     date: "2015",
     image: "manufacturing-line.jpg",
     text: "Master's thesis investigating methods for reuse and transfer between industrial automation tasks. Developed frameworks for code reusability in robotic manufacturing systems and analysed efficiency improvements in production environments.",
-    tags: ["MasterThesis", "Automation", "Reusability", "Manufacturing", "Efficiency"],
+    tags: [
+      "MasterThesis",
+      "Automation",
+      "Reusability",
+      "Manufacturing",
+      "Efficiency",
+    ],
     category: "project",
-    hidden: true
+    hidden: true,
   },
 ];
