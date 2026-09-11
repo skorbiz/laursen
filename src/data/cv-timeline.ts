@@ -51,12 +51,10 @@ export const timelineData: TimelineEntry[] = [
       "The aim was something lightweight but well defined, Repository-embedded (not excel or a full GRC system), and something that integrates naturally with LLMs workflows, e.g. reviewing the risk assessments as part of PR reviews.",
     ],
     tags: [
-      "CRA",
-      "Compliance",
       "ComplianceAsCode",
+      "CRA",
       "ISO40000",
       "IEC62443",
-      "Typst",
       "CICD",
       "Security",
     ],
