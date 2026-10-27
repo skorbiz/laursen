@@ -164,6 +164,26 @@ export const CVTimeline = () => {
         <p className="text-muted-foreground">
           Built with passion for robotics and innovation 🤖
         </p>
+        <a
+          href="https://www.simpleanalytics.com?utm_source=skorbiz.github.io/laursen&utm_content=badge"
+          referrerPolicy="origin"
+          target="_blank"
+          className="inline-block mt-4"
+        >
+          <picture>
+            <source
+              srcSet="https://simpleanalyticsbadges.com/skorbiz.github.io/laursen?mode=dark&counter=false"
+              media="(prefers-color-scheme: dark)"
+            />
+            <img
+              src="https://simpleanalyticsbadges.com/skorbiz.github.io/laursen?mode=light&counter=false"
+              alt="Simple Analytics"
+              loading="lazy"
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
+            />
+          </picture>
+        </a>
       </div>
     </div>
   );
