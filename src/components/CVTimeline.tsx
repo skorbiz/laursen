@@ -11,11 +11,11 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 import { EditModeToggle } from "./EditModeToggle";
 
-type CategoryFilter = 'work' | 'project' | 'community';
+type CategoryFilter = "work" | "project" | "community";
 
 /**
  * CVTimeline Component
- * 
+ *
  * Main component that renders the professional timeline interface.
  * Features:
  * - Responsive design (mobile-first)
@@ -26,12 +26,12 @@ type CategoryFilter = 'work' | 'project' | 'community';
  */
 export const CVTimeline = () => {
   // Track which categories are visible (all visible by default)
-  const [visibleCategories, setVisibleCategories] = useState<Set<CategoryFilter>>(
-    new Set(['work', 'project', 'community'])
-  );
+  const [visibleCategories, setVisibleCategories] = useState<
+    Set<CategoryFilter>
+  >(new Set(["work", "project", "community"]));
 
   const toggleCategory = (category: CategoryFilter) => {
-    setVisibleCategories(prev => {
+    setVisibleCategories((prev) => {
       const next = new Set(prev);
       if (next.has(category)) {
         next.delete(category);
@@ -44,7 +44,7 @@ export const CVTimeline = () => {
 
   // Filter out hidden entries and by selected categories
   const visibleTimelineData = timelineData.filter(
-    entry => !entry.hidden && visibleCategories.has(entry.category)
+    (entry) => !entry.hidden && visibleCategories.has(entry.category),
   );
 
   return (
@@ -58,32 +58,55 @@ export const CVTimeline = () => {
         <h1 className="text-4xl font-bold bg-gradient-to-r from-tech-blue to-tech-cyan bg-clip-text text-transparent mb-4">
           Robotics Engineer
         </h1>
-        <h2 className="text-2xl text-muted-foreground mb-2">Professional Timeline</h2>
+        <h2 className="text-2xl text-muted-foreground mb-2">
+          Professional Timeline
+        </h2>
         <div className="w-24 h-1 bg-gradient-to-r from-tech-blue to-tech-cyan mx-auto rounded-full mb-8"></div>
-        
+
         {/* Introduction */}
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Experienced software developer and robotics engineer with a diverse background, including multi-year
-            research, ad-hoc consultancy, short-term projects, and ongoing maintenance of complex software stacks.
-            Specialized in high-level software for autonomous robots, including navigation, perception, and control.
-            Professionally curious and loves engaging in discussions about ideas and solutions.
+            Experienced software developer and robotics engineer with a diverse
+            background, including multi-year research, ad-hoc consultancy,
+            short-term projects, and ongoing maintenance of complex software
+            stacks. Specialized in high-level software for autonomous robots,
+            including navigation, perception, and control. Professionally
+            curious and loves engaging in discussions about ideas and solutions.
           </p>
           <p className="text-sm text-muted-foreground/80 mb-6 italic">
-            This timeline represents my introduction into AI-agent based programming. Learning and experimenting with Lovable
-            to showcase some of my fun highlights in an interactive format.
+            This timeline represents my introduction into AI-agent based
+            programming. Learning and experimenting with Lovable to showcase
+            some of my fun highlights in an interactive format.
           </p>
-          
+
           {/* Social Links */}
           <div className="flex justify-center gap-4">
-            <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
-              <a href="https://github.com/skorbiz" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2"
+              asChild
+            >
+              <a
+                href="https://github.com/skorbiz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github size={16} />
                 GitHub
               </a>
             </Button>
-            <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
-              <a href="https://www.linkedin.com/in/johan-sund-laursen/" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2"
+              asChild
+            >
+              <a
+                href="https://www.linkedin.com/in/johan-sund-laursen/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Linkedin size={16} />
                 LinkedIn
               </a>
@@ -96,27 +119,27 @@ export const CVTimeline = () => {
       <div className="flex justify-center mb-8">
         <div className="flex items-center gap-6 bg-card/50 backdrop-blur-sm border rounded-lg px-4 py-2">
           <button
-            onClick={() => toggleCategory('work')}
+            onClick={() => toggleCategory("work")}
             className={`flex items-center gap-2 transition-opacity ${
-              visibleCategories.has('work') ? 'opacity-100' : 'opacity-40'
+              visibleCategories.has("work") ? "opacity-100" : "opacity-40"
             }`}
           >
             <div className="w-3 h-3 bg-category-work rounded-full"></div>
             <span className="text-sm text-muted-foreground">Workplace</span>
           </button>
           <button
-            onClick={() => toggleCategory('project')}
+            onClick={() => toggleCategory("project")}
             className={`flex items-center gap-2 transition-opacity ${
-              visibleCategories.has('project') ? 'opacity-100' : 'opacity-40'
+              visibleCategories.has("project") ? "opacity-100" : "opacity-40"
             }`}
           >
             <div className="w-3 h-3 bg-category-project rounded-full"></div>
             <span className="text-sm text-muted-foreground">Projects</span>
           </button>
           <button
-            onClick={() => toggleCategory('community')}
+            onClick={() => toggleCategory("community")}
             className={`flex items-center gap-2 transition-opacity ${
-              visibleCategories.has('community') ? 'opacity-100' : 'opacity-40'
+              visibleCategories.has("community") ? "opacity-100" : "opacity-40"
             }`}
           >
             <div className="w-3 h-3 bg-category-community rounded-full"></div>
@@ -129,7 +152,7 @@ export const CVTimeline = () => {
       <div className="relative">
         {/* Central timeline line */}
         <div className="absolute left-4 md:left-1/2 md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-timeline-line z-0" />
-        
+
         {/* Mobile: Single column */}
         <div className="md:hidden flex flex-col gap-6">
           {visibleTimelineData.map((entry, index) => (
@@ -145,14 +168,14 @@ export const CVTimeline = () => {
         {/* Desktop: Single column with alternating sides and overlap */}
         <div className="hidden md:block">
           {visibleTimelineData.map((entry, index) => (
-            <div 
+            <div
               key={index}
-              className={`relative ${index === 0 ? '' : '-mt-16'}`}
+              className={`relative ${index === 0 ? "" : "-mt-16"}`}
             >
               <TimelineEntry
                 entry={entry}
                 index={index}
-                side={index % 2 === 0 ? 'left' : 'right'}
+                side={index % 2 === 0 ? "left" : "right"}
               />
             </div>
           ))}
@@ -164,26 +187,29 @@ export const CVTimeline = () => {
         <p className="text-muted-foreground">
           Built with passion for robotics and innovation 🤖
         </p>
-        <a
-          href="https://www.simpleanalytics.com?utm_source=skorbiz.github.io/laursen&utm_content=badge"
-          referrerPolicy="origin"
-          target="_blank"
-          className="inline-block mt-4"
-        >
-          <picture>
-            <source
-              srcSet="https://simpleanalyticsbadges.com/skorbiz.github.io/laursen?mode=dark&counter=false"
-              media="(prefers-color-scheme: dark)"
-            />
-            <img
-              src="https://simpleanalyticsbadges.com/skorbiz.github.io/laursen?mode=light&counter=false"
-              alt="Simple Analytics"
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
-            />
-          </picture>
-        </a>
+        <div className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground">
+          <span>Analytics powered by:</span>
+          <a
+            href="https://www.simpleanalytics.com?utm_source=skorbiz.github.io/laursen&utm_content=badge"
+            referrerPolicy="origin"
+            target="_blank"
+            className="inline-block"
+          >
+            <picture>
+              <source
+                srcSet="https://simpleanalyticsbadges.com/skorbiz.github.io/laursen?mode=dark&counter=false"
+                media="(prefers-color-scheme: dark)"
+              />
+              <img
+                src="https://simpleanalyticsbadges.com/skorbiz.github.io/laursen?mode=light&counter=false"
+                alt="Simple Analytics"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                crossOrigin="anonymous"
+              />
+            </picture>
+          </a>
+        </div>
       </div>
     </div>
   );
